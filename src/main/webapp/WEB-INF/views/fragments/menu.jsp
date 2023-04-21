@@ -37,12 +37,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
-
-			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
 			<acme:menu-suboption code="master.menu.administrator.banner" action="/authenticated/banner/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
-
 			<acme:menu-suboption code="master.menu.administrator.create.bulletin" action="/administrator/bulletin/create"/>
 		</acme:menu-option>
  		<acme:menu-option code="master.menu.authenticated.notes" access="isAuthenticated()">
