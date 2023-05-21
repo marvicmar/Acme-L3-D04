@@ -15,7 +15,6 @@ administrator.offer.form.label.draftMode = In edition
 administrator.offer.form.button.create = Register
 administrator.offer.form.button.delete = Delete
 administrator.offer.form.button.update = Update
-administrator.offer.form.button.publish = Publish
 
 administrator.offer.error.code.start-future = The start date must be in the future
 administrator.offer.error.code.end-future = The end date must be in the future

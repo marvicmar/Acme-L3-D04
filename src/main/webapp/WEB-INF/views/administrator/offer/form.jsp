@@ -16,7 +16,6 @@
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
 			<acme:submit code="offer.form.button.update" action="/administrator/offer/update"/>
 			<acme:submit code="offer.form.button.delete" action="/administrator/offer/delete"/>
-			<acme:submit code="offer.form.button.publish" action="/administrator/offer/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="offer.form.button.create" action="/administrator/offer/create"/>

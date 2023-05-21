@@ -16,7 +16,6 @@ offer.form.label.price = Precio
 offer.form.button.create = Registrar
 offer.form.button.delete = Eliminar
 offer.form.button.update = Actualizar
-offer.form.button.publish = Publicar
 
 administrator.offer.error.code.start-future = La fecha de comienzo debe ser futura
 administrator.offer.error.code.end-future = La fecha de fin debe ser futura
