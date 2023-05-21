@@ -18,3 +18,4 @@ offer.form.button.delete = Eliminar
 offer.form.button.update = Actualizar
 offer.form.button.publish = Publicar
 
+offer.error.spam = El texto contiene Spam

@@ -11,10 +11,12 @@ import acme.repositories.SpamRepository;
 @Service
 public class SpamService {
 
+	// Internal state ---------------------------------------------------------
 	@Autowired
 	private SpamRepository repository;
 
 
+	// Methods -----------------------------------------------------------------
 	public boolean validateTextInput(final String input) {
 		String spamWords;
 		double spamThreshold;
@@ -23,6 +25,6 @@ public class SpamService {
 		spamThreshold = this.repository.findSpamThreshold();
 
 		final SpamFilter spamFilter = new SpamFilter(spamWords, spamThreshold, "-");
-		return !spamFilter.isSpam(input);
+		return input == null || !spamFilter.isSpam(input);
 	}
 }

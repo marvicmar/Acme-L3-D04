@@ -1,9 +1,9 @@
 key,name,vatNumber,summary,link,key:userAccount
 company-01,Company 01,123456789,Summary 01,http://www.example.com,user-account-company-01
 company-02,Company 02,987654321,Summary 02,http://www.example.com,user-account-company-02
-company-03,Company with 75 characters 000000000000000000000000000000000000000000000003,1234567890123456789012345,Summary with 100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,http://www.example.com,user-account-company-01
-company-05,"Company with comma,", "123456789,","Summary with comma,",http://www.example.com,user-account-company-01
-company-06,"Company with strange letters: áéíóúüñ", "123456789 áéíóúüñ","Summary with strange letters: áéíóúüñ",http://www.example.com,user-account-company-01
-company-08,Company in other language: 日本語, 123456789日本語, Summary in other language: 日本語, http://www.example.com,user-account-company-01
-company-04,"Company with point.", "123456789.", "Summary with point.", http://www.example.com,user-account-company-01
-company-07,Company with strange characters: !@#$%^&*(), 123456789!@#$%^&*(), Summary with strange characters: !@#$%^&*(), http://www.example.com,user-account-company-01
+company-03,Company with 75 characters 000000000000000000000000000000000000000000000003,1234567890123456789012345,Summary with 100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,http://www.example.com,user-account-company-03
+company-04,"Company with point.", "123456789.", "Summary with point.", http://www.example.com,user-account-company-04
+company-05,"Company with comma,", "123456789,","Summary with comma,",http://www.example.com,user-account-company-05
+company-06,"Company with strange letters: áéíóúüñ", "123456789 áéíóúüñ","Summary with strange letters: áéíóúüñ",http://www.example.com,user-account-company-06
+company-07,Company with strange characters: !@#$%^&*(), 123456789!@#$%^&*(), Summary with strange characters: !@#$%^&*(), http://www.example.com,user-account-company-07
+company-08,Company in other language: 日本語, 123456789日本語, Summary in other language: 日本語, http://www.example.com,user-account-company-08

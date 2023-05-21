@@ -28,6 +28,9 @@ company.practicum.list.label.code = Código
 company.practicum.list.label.title = Título
 company.practicum.list.label.abstractPracticum = Resumen práctica
 company.practicum.list.label.estimatedTimeInHours = Tiempo estimado en horas
+company.practicum.list.label.published = Publicada
+company.practicum.list.label.yes = Si
+company.practicum.list.label.no = No
 
 # Messages for buttons in list
 company.practicum.list.button.create = Crear práctica
@@ -35,3 +38,7 @@ company.practicum.list.button.create = Crear práctica
 # Messages for error in form
 company.practicum.form.error.not-in-range = El tiempo estimado en horas debe estar entre el valor real por 0.9 y el valor real por 1.1
 company.practicum.form.error.not-unique-code = El código debe ser único
+company.practicum.form.error.spam.code = El código no puede ser spam
+company.practicum.form.error.spam.title = El título no puede ser spam
+company.practicum.form.error.spam.abstractPracticum = El resumen de la práctica no puede ser spam
+company.practicum.form.error.spam.goals = Los objetivos no pueden ser spam

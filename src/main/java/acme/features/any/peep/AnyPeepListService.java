@@ -20,9 +20,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.peep.Peep;
 import acme.framework.components.accounts.Any;
 import acme.framework.components.models.Tuple;
-import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.BinderHelper;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 
 @Service
@@ -30,14 +28,14 @@ public class AnyPeepListService extends AbstractService<Any, Peep> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
-		"moment", "title", "nick", "message", "email", "link", "draftMode"
+	protected static final String[] PROPERTIES = {
+			"moment", "title", "nick", "message", "email", "link", "draftMode"
 	};
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyPeepRepository		repository;
+	protected AnyPeepRepository repository;
 
 	// AbstractService interface ----------------------------------------------ç
 
@@ -89,11 +87,4 @@ public class AnyPeepListService extends AbstractService<Any, Peep> {
 		tuple = BinderHelper.unbind(object, AnyPeepListService.PROPERTIES);
 		super.getResponse().setData(tuple);
 	}
-
-	@Override
-	public void onSuccess() {
-		if (super.getRequest().getMethod().equals(HttpMethod.POST))
-			PrincipalHelper.handleUpdate();
-	}
-
 }

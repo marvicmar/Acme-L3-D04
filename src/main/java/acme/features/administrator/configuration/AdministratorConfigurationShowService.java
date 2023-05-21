@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.configuration.Configuration;
 import acme.framework.components.accounts.Administrator;
-import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 
@@ -14,13 +13,13 @@ import acme.framework.services.AbstractService;
 public class AdministratorConfigurationShowService extends AbstractService<Administrator, Configuration> {
 
 	// Constants -------------------------------------------------------------
-	protected static final String[]					PROPERTIES	= {
-		"defaultCurrency", "acceptedCurrencies", "spamWords", "spamThreshold"
+	protected static final String[] PROPERTIES = {
+			"defaultCurrency", "acceptedCurrencies", "spamWords", "spamThreshold"
 	};
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected AdministratorConfigurationRepository	repository;
+	protected AdministratorConfigurationRepository repository;
 
 
 	// AbstractService interface ----------------------------------------------
@@ -31,13 +30,7 @@ public class AdministratorConfigurationShowService extends AbstractService<Admin
 
 	@Override
 	public void authorise() {
-		boolean status;
-		Principal principal;
-
-		principal = super.getRequest().getPrincipal();
-		status = principal.hasRole(Administrator.class);
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override

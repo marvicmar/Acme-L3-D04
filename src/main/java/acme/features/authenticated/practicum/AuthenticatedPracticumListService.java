@@ -1,15 +1,16 @@
 
 package acme.features.authenticated.practicum;
 
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import acme.entities.practicum.Practicum;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.Collection;
 
 @Service
 public class AuthenticatedPracticumListService extends AbstractService<Authenticated, Practicum> {
@@ -32,13 +33,7 @@ public class AuthenticatedPracticumListService extends AbstractService<Authentic
 
 	@Override
 	public void authorise() {
-		boolean status;
-		Principal principal;
-
-		principal = super.getRequest().getPrincipal();
-		status = principal.isAuthenticated();
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -62,7 +57,10 @@ public class AuthenticatedPracticumListService extends AbstractService<Authentic
 		String payload;
 
 		tuple = super.unbind(practicum, AuthenticatedPracticumListService.PROPERTIES);
-		payload = String.format("%s; %s; %s; %s", practicum.getCourse().getTitle(), practicum.getCourse().getCode(), practicum.getAbstractPracticum(), practicum.getGoals());
+		payload = String.format("%s; %s; %s; %s", practicum.getCourse().getTitle(),
+				practicum.getCourse().getCode(),
+				practicum.getAbstractPracticum(),
+				practicum.getGoals());
 		tuple.put("payload", payload);
 
 		super.getResponse().setData(tuple);

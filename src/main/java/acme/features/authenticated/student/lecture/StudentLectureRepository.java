@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.courses.Course;
-import acme.entities.courses.Lecture;
+import acme.entities.lecture.Lecture;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository

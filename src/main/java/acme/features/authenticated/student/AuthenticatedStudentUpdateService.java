@@ -11,13 +11,16 @@ import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
+import acme.services.SpamService;
 
 @Service
 public class AuthenticatedStudentUpdateService extends AbstractService<Authenticated, Student> {
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected AuthenticatedStudentRepository repository;
+	protected AuthenticatedStudentRepository	repository;
+	@Autowired
+	protected SpamService						spamService;
 
 
 	@Override
@@ -53,6 +56,14 @@ public class AuthenticatedStudentUpdateService extends AbstractService<Authentic
 	@Override
 	public void validate(final Student object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("statement"))
+			super.state(this.spamService.validateTextInput(object.getStatement()), "statement", "student.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("strongFeatures"))
+			super.state(this.spamService.validateTextInput(object.getStrongFeatures()), "strongFeatures", "student.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("weakFeatures"))
+			super.state(this.spamService.validateTextInput(object.getStrongFeatures()), "weakFeatures", "student.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("link"))
+			super.state(this.spamService.validateTextInput(object.getLink()), "link", "student.error.spam");
 	}
 
 	@Override

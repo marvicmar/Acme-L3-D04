@@ -27,10 +27,10 @@ public class AuthenticatedConsumerController extends AbstractController<Authenti
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedConsumerCreateService	createService;
+	protected AuthenticatedConsumerCreateService createService;
 
-	@Autowired
-	protected AuthenticatedConsumerUpdateService	updateService;
+	//@Autowired
+	//protected AuthenticatedConsumerUpdateService	updateService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -38,7 +38,7 @@ public class AuthenticatedConsumerController extends AbstractController<Authenti
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("create", this.createService);
-		super.addBasicCommand("update", this.updateService);
+		//super.addBasicCommand("update", this.updateService);
 	}
 
 }

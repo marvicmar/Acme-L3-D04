@@ -1,17 +1,13 @@
 
 package acme.features.authenticated.practicum;
 
-import acme.entities.courses.Course;
-import acme.entities.practicum.Practicum;
-import acme.framework.components.accounts.Authenticated;
-import acme.framework.components.accounts.Principal;
-import acme.framework.components.jsp.SelectChoices;
-import acme.framework.components.models.Tuple;
-import acme.framework.services.AbstractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import acme.entities.practicum.Practicum;
+import acme.framework.components.accounts.Authenticated;
+import acme.framework.components.models.Tuple;
+import acme.framework.services.AbstractService;
 
 @Service
 public class AuthenticatedPracticumShowService extends AbstractService<Authenticated, Practicum> {
@@ -41,12 +37,10 @@ public class AuthenticatedPracticumShowService extends AbstractService<Authentic
 		boolean status;
 		int practicumId;
 		Practicum practicum;
-		Principal principal;
 
 		practicumId = super.getRequest().getData("id", int.class);
-		principal = super.getRequest().getPrincipal();
 		practicum = this.repository.findOnePracticumById(practicumId);
-		status = !practicum.isDraftMode() && principal.isAuthenticated();
+		status = !practicum.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -66,15 +60,10 @@ public class AuthenticatedPracticumShowService extends AbstractService<Authentic
 	public void unbind(final Practicum practicum) {
 		assert practicum != null;
 
-		Collection<Course> courses;
-		SelectChoices choices;
 		Tuple tuple;
 
-		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", practicum.getCourse());
 		tuple = super.unbind(practicum, AuthenticatedPracticumShowService.PROPERTIES);
-		tuple.put("course", choices);
-		tuple.put("courses", courses);
+		tuple.put("course", practicum.getCourse().getTitle());
 		tuple.put("nameCompany", practicum.getCompany().getName());
 
 		super.getResponse().setData(tuple);

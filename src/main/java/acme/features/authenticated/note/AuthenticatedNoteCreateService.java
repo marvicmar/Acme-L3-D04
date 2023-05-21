@@ -13,6 +13,7 @@ import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
+import acme.services.SpamService;
 
 @Service
 public class AuthenticatedNoteCreateService extends AbstractService<Authenticated, Note> {
@@ -26,6 +27,8 @@ public class AuthenticatedNoteCreateService extends AbstractService<Authenticate
 
 	@Autowired
 	protected AuthenticatedNoteRepository	repository;
+	@Autowired
+	protected SpamService					spamService;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -72,10 +75,23 @@ public class AuthenticatedNoteCreateService extends AbstractService<Authenticate
 	public void validate(final Note note) {
 		assert note != null;
 
-		boolean confirmation;
+		if (!super.getBuffer().getErrors().hasErrors("confirmation")) {
+			boolean confirmation;
 
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+			confirmation = super.getRequest().getData("confirmation", boolean.class);
+
+			super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+		}
+		if (!super.getBuffer().getErrors().hasErrors("title"))
+			super.state(this.spamService.validateTextInput(note.getTitle()), "title", "note.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("author"))
+			super.state(this.spamService.validateTextInput(note.getAuthor()), "author", "note.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("message"))
+			super.state(this.spamService.validateTextInput(note.getMessage()), "message", "note.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("emailAddress"))
+			super.state(this.spamService.validateTextInput(note.getEmailAddress()), "emailAddress", "note.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("link"))
+			super.state(this.spamService.validateTextInput(note.getLink()), "link", "note.error.spam");
 	}
 
 	@Override

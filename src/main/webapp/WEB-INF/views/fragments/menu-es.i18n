@@ -16,11 +16,10 @@ master.menu.sign-in = Entrar
 master.menu.sign-out = Salir
 
 # master.menu.any #################################################################
-master.menu.any = Peep
-master.menu.any.peeps = Listado Peeps
+master.menu.any = Cualquiera
+master.menu.any.peeps = Ver todos los mensajes
 
 # master.menu.anonymous #######################################################
-
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.favourite-link.alesanfel = 76743201K: Santiago Félix, Alejandro
@@ -29,109 +28,85 @@ master.menu.anonymous.favourite-link.sersansan2 = 75918873J: Santiago Sánchez, 
 master.menu.anonymous.favorite-link.marvicmar = 48190702K:Vico Martín, María
 
 # master.menu.authenticated ####################################################
-
 master.menu.authenticated = Autenticado
 master.menu.authenticated.favourite-link = Enlace favorito
+master.menu.authenticated.all-notes = Ver todas las notas
+master.menu.authenticated.all-bulletins = Ver todos los boletines
 master.menu.authenticated.all-practicums = Ver todas las prácticas
-master.menu.company.dashboard = Panel de indicadores
+master.menu.authenticated.all-audits = Ver todos los audits
+master.menu.authenticated.Tutorial = Ver todos los tutoriales
+master.menu.authenticated.offer = Ver todas las ofertas
 
 # master.menu.administrator ###################################################
-
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
-
-master.menu.administrator.banner = Listar banners
-
+master.menu.administrator.banner = Ver todos los banners
 master.menu.administrator.configuration = Configuración
-
 master.menu.administrator.create.bulletin = Crear bulletin
-
-
+master.menu.administrator.offer = Ver todas las ofertas
 
 # master.menu.assistant ########################################################
 master.menu.assistant = Asistentes
-master.menu.assistant.dashboard =DashBoard
-
+master.menu.assistant.favourite-link = Enlace favorito
+master.menu.assistant.dashboard = DashBoard
+master.menu.assistant = Tutoriales
+master.menu.assistant.list-all = Ver todos los tutoriales
+master.menu.assistant.list-mine = Ver mis tutoriales
+master.menu.assistant.session.list-all = Ver todas las sesiones
 
 # master.menu.authenticated.notes ########################################################
-
 master.menu.authenticated.notes = Notas
-master.menu.authenticated.note.list = Listado de notas
+master.menu.authenticated.note.list = Ver todas las notas
 
 # master.menu.tutorials ##########################################################
-
 master.menu.tutorials = Tutoriales
-master.menu.user-account.tutorials = Lista tutoriales
+master.menu.user-account.tutorials = Ver todos los tutoriales
 
 # master.menu.provider ########################################################
-
 master.menu.provider = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
 
-# master.menu.assistant ##########################################################
-master.menu.assistant = Tutoriales
-master.menu.assistant.list-all = Listado de Tutoriales
-master.menu.assistant.list-mine = Mis tutoriales
-master.menu.assistant.session.list-all = Listado de Sesiones
-
 # master.menu.consumer ##########################################################
-
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
-
 
 # master.menu.user-account.offer ################################################
 master.menu.user-account.offer = Ofertas
 
 # master.menu.company ##########################################################
-
 master.menu.company = Compañía
 master.menu.company.favourite-link = Enlace favorito
 master.menu.company.all-practicums = Ver todas las prácticas
 master.menu.company.my-practicums = Ver mis prácticas
 
-# master.menu.user-account ####################################################
-
-# master.menu.consumer ##########################################################
-
-
-master.menu.student = Estudiante
-master.menu.student.enrolment.list = Mis matrículas
-
-
 # master.menu.student ##########################################################
-
 master.menu.student = Estudiante
 master.menu.student.favourite-link = Enlace favorito
 master.menu.student.courses = Cursos
+master.menu.student = Estudiante
+master.menu.student.enrolment.list = Ver mis matrículas
 
 # master.menu.user-account.bulletin ####################################################
 master.menu.user-account.bulletin = Boletines
 
 # master.menu.auditor ##########################################################
 master.menu.auditor = Auditor
-master.menu.auditor.list-mine = Mostrar mis audits
-master.menu.auditor.list-publish = Mostrar audits publicados
-master.menu.auditor.list-by-course = Mostrar audits por curso
+master.menu.auditor.list-mine = Ver mis audits
+master.menu.auditor.list-publish = Ver todos los audits
+master.menu.auditor.list-by-course = Ver audits por curso
 
 # master.menu.company ##########################################################
-
 master.menu.company = Compañía
 master.menu.company.favourite-link = Enlace favorito
 master.menu.company.all-practicums = Ver todas las prácticas
 master.menu.company.my-practicums = Ver mis prácticas
-
-# master.menu.assistant ##########################################################
-
-master.menu.assistant = Asistente
-master.menu.assistant.favourite-link = Enlace favorito
+master.menu.company.dashboard = Panel de indicadores
 
 # master.menu.user-account ####################################################
-
 master.menu.user-account = Cuenta
 master.menu.user-account.general-data = Datos generales
 master.menu.user-account.provider = Datos de proveedor

@@ -1,6 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-17 17:22:31.289","GET","/authenticated/audit/list-mine","62","200 OK"
-"2023-04-17 17:22:33.375","GET","/authenticated/audit/show","18","200 OK"
-"2023-04-17 17:22:33.548","GET","/authenticated/audit/show","9","200 OK"
-"2023-04-17 17:22:35.601","GET","/authenticated/auditing-record/list","25","200 OK"
-"2023-04-17 17:22:41.99","GET","/authenticated/auditing-record/show","4625","500 INTERNAL_SERVER_ERROR"

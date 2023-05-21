@@ -30,3 +30,5 @@ authenticated.auditingRecord.form.button.unpublish = Unpublish
 authenticated.auditingRecord.form.button.delete = Delete
 
 audit.error.edit-draftMode = Can not update a public audit
+auditingRecord.error.not-valid-mark = You have to write a mark like A+/A/B/C/F/F-
+auditingRecord.error.not-enougth-time = Minimum dutarion 30 minutes

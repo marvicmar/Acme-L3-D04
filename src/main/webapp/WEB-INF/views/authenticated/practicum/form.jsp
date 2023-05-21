@@ -17,8 +17,10 @@
 
 <acme:form readonly="true">
   <acme:input-textbox code="authenticated.practicum.form.label.code" path="code"/>
+  <acme:input-textbox code="authenticated.practicum.form.label.course" path="course"/>
   <acme:input-textbox code="authenticated.practicum.form.label.title" path="title"/>
   <acme:input-textarea code="authenticated.practicum.form.label.abstractPracticum" path="abstractPracticum"/>
+  <acme:input-textarea code="authenticated.practicum.form.label.goals" path="goals"/>
   <acme:input-double code="authenticated.practicum.form.label.estimatedTimeInHours" path="estimatedTimeInHours"/>
   <acme:input-textbox code="authenticated.practicum.form.label.nameCompany" path="nameCompany"/>
 </acme:form>

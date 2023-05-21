@@ -1,7 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-20 11:04:12.247","GET","/authenticated/offer/list","52","200 OK"
-"2023-04-20 11:04:14.555","GET","/authenticated/offer/create","7","200 OK"
-"2023-04-20 11:04:31.353","POST","/authenticated/offer/create","149","200 OK"
-"2023-04-20 11:05:18.721","POST","/authenticated/offer/create","39228","200 OK"
-"2023-04-20 11:07:36.866","POST","/authenticated/offer/create","2637","200 OK"
-"2023-04-20 11:08:03.852","POST","/authenticated/offer/create","1537","200 OK"

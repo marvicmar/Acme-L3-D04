@@ -101,61 +101,106 @@
 </h2>
 
 <div>
+	<div style="display: flex">
+		<input type="radio" id="theory_session" name="type" value="theory_session">
+		<label for="theory_session"><acme:message code="company.dashboard.form.graph.theory-session"/></label>
+
+		<input type="radio" id="hands_on_session" name="type" value="hands_on_session" style="margin-left: 0.5rem">
+		<label for="hands_on_session"><acme:message code="company.dashboard.form.graph.hands-on-session"/></label>
+	</div>
+
 	<canvas id="canvas"></canvas>
-	Total ${totalNumberOfPracticaByMonth.get('FEBRUARY')}
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+
+	console.log("Hello World");
+	console.log(document.getElementById('theory_session').checked);
+	console.log()
+	console.log("${totalNumberOfPracticaByMonthForTheorySession.get("DECEMBER")}")
+	console.log("${totalNumberOfPracticaByMonthForHandsOnSession.get("DECEMBER")}")
+
+	function getType() {
+		console.log(document.getElementById('theory_session').checked);
+		if (document.getElementById('theory_session').checked) {
+			return [
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('JANUARY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('FEBRUARY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('MARCH')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('APRIL')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('MAY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('JUNE')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('JULY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('AUGUST')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('SEPTEMBER')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('OCTOBER')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('NOVEMBER')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForTheorySession.get('DECEMBER')}"/>
+			]
+		} else if (document.getElementById('hands_on_session').checked) {
+			return [
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('JANUARY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('FEBRUARY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('MARCH')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('APRIL')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('MAY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('JUNE')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('JULY')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('AUGUST')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('SEPTEMBER')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('OCTOBER')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('NOVEMBER')}"/>,
+				<jstl:out value="${totalNumberOfPracticaByMonthForHandsOnSession.get('DECEMBER')}"/>
+			]
+		}
+	}
+
+	function graph() {
+		console.log(getType() + " " + getType().length);
 		var data = {
-			labels : [
-					"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"
+			labels: [
+				"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
 			],
-			datasets : [
+			datasets: [
 				{
-					data : [
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('JANUARY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('FEBRUARY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('MARCH')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('APRIL')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('MAY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('JUNE')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('JULY')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('AUGUST')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('SEPTEMBER')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('OCTOBER')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('NOVEMBER')}"/>,
-						<jstl:out value="${totalNumberOfPracticaByMonth.get('DECEMBER')}"/>
-					]
+					data: getType()
 				}
 			]
 		};
 		var options = {
-			scales : {
-				yAxes : [
+			scales: {
+				yAxes: [
 					{
-						ticks : {
-							suggestedMin : 0.0,
-							suggestedMax : 1.0
+						ticks: {
+							suggestedMin: 0.0,
+							suggestedMax: 1.0
 						}
 					}
 				]
 			},
-			legend : {
-				display : false
+			legend: {
+				display: false
 			}
 		};
-	
+
 		var canvas, context;
-	
+
 		canvas = document.getElementById("canvas");
 		context = canvas.getContext("2d");
 		new Chart(context, {
-			type : "bar",
-			data : data,
-			options : options
+			type: "bar",
+			data: data,
+			options: options
 		});
+	}
+
+	$(document).ready(function () {
+		graph();
 	});
+
+	const radios = document.getElementsByName('type');
+	radios.forEach(radio => radio.addEventListener('change', graph));
+
 </script>
 
 <acme:return/>

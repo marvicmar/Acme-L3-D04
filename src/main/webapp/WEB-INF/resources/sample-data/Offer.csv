@@ -1,9 +1,9 @@
-key,instantiation,heading,summary,startDate,endDate,price,link,draftMode
-offer-01,2020/10/10 10:00,heading-01,summary-01,2025/09/09 15:00,2025/10/10 15:00,EUR 10.0,http://www.example.com,0
-offer-02,2020/10/11 10:00,heading-02,summary-02,2025/09/10 15:00,2025/10/11 15:00,USD 10.0,http://www.example.com,0
-offer-03,2020/10/12 10:00,heading-03,summary-03,2025/09/11 15:00,2025/10/12 15:00,EUR 10.0,http://www.example.com,0
-offer-04,2020/10/13 10:00,heading-04,summary-04,2025/12/09 15:00,2025/10/13 15:00,EUR 10.0,http://www.example.com,0
-offer-05,2020/10/14 10:00,heading-05,summary-05,2025/09/13 15:00,2025/10/14 15:00,USD 10.0,http://www.example.com,0
-offer-06,2020/10/15 10:00,heading-06,summary-06,2025/09/14 15:00,2025/10/15 15:00,EUR 10.0,http://www.example.com,0
-offer-07,2020/10/16 10:00,heading-07,summary-07,2025/09/15 15:00,2025/10/16 15:00,EUR 10.0,http://www.example.com,0
-offer-08,2020/10/17 10:00,heading-08,summary-08,2025/09/16 15:00,2025/10/17 15:00,USD10.0,http://www.example.com,0
+key,instantiation,heading,summary,startDate,endDate,price,link
+offer-01,2020/10/10 10:00,heading-01,summary-01,2025/09/09 15:00,2025/10/10 15:00,EUR 10.50,http://www.example.com
+offer-02,2020/10/11 10:00,Esto es solo una prueba para ver que la longitud máxima de este campo es 75,summary-02,2025/09/10 15:00,2025/10/11 15:00,USD 10.0,http://www.example.com
+offer-03,2020/10/12 10:00,heading-03,Esto es solo una prueba para ver que la longitud máxima de este campo la cuál en este caso es de 100,2025/09/11 15:00,2025/10/12 15:00,EUR 10.0,http://www.example.com
+offer-04,2020/10/13 10:00,heading-04,سەگەکەمم خۆشدەوێت کە ناوی کۆکۆیە,2025/12/09 15:00,2025/10/13 15:00,EUR 10.0,http://www.example.com
+offer-05,2020/10/14 10:00,私はココという名前の犬が大好きです,summary-05,2025/09/13 15:00,2025/10/14 15:00,USD 120.8,
+offer-06,2020/10/15 10:00,heading-06,summary-06,2025/09/14 15:00,2025/10/15 15:00,EUR 87.56,http://www.example.com
+offer-07,2020/10/16 10:00,heading-07,summary-07,2025/09/15 15:00,2025/10/16 15:00,EUR 10.0,http://www.example.com
+offer-08,2020/10/17 10:00,heading-08,summary-08,2025/09/16 15:00,2025/10/17 15:00,USD10.0,

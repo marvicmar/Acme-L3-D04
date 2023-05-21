@@ -42,7 +42,7 @@ public class Practicum extends AbstractEntity {
 	private String				abstractPracticum;
 
 	@NotBlank
-	@Length
+	@Length(max = 100)
 	private String				goals;
 
 	@Positive

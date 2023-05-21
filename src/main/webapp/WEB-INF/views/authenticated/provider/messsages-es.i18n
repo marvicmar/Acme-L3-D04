@@ -13,3 +13,5 @@ authenticated.provider.form.label.sector = Sector:
 
 authenticated.provider.form.button.create = Registrar
 authenticated.provider.form.button.update = Actualizar
+
+provider.error.spam = El texto contiene Spam

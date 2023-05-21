@@ -20,6 +20,10 @@ student.enrolment.form.label.motivation = Motivation:
 student.enrolment.form.label.goals = Goals:
 student.enrolment.form.label.course = Course:
 student.enrolment.form.label.workTime = Work time:
+student.enrolment.form.label.cardHolderName = Card holder name:
+student.enrolment.form.label.cardNumber = Card number:
+student.enrolment.form.label.expirationDate = Expiration date:
+student.enrolment.form.label.cvv = CVV
 
 
 student.enrolment.form.button.activities = Activities
@@ -29,3 +33,6 @@ student.enrolment.form.button.publish = Publish
 student.enrolment.form.button.create = Create
 
 student.enrolment.form.error.duplicated = Duplicated code
+student.enrolment.form.error.expirationDate = Invalid expiration date
+
+enrolment.error.spam = The text contents Spam

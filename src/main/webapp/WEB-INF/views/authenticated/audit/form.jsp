@@ -17,17 +17,17 @@
 
 
 <acme:form>
-	<acme:input-textbox readonly="${!draftMode || !myAudit}" code="authenticated.audit.form.label.course" path="course.code"/>
+	<acme:input-textbox readonly="true" code="authenticated.audit.form.label.course" path="course.code"/>
 	<acme:input-textbox readonly="true" code="authenticated.audit.form.label.firm" path="auditor.firm"/>
-	<acme:input-textbox readonly="${!draftMode || !myAudit}" code="authenticated.audit.form.label.code" path="code"/>
-	<acme:input-textarea readonly="${!draftMode || !myAudit}" code="authenticated.audit.form.label.conclusion" path="conclusion"/>
-	<acme:input-textarea readonly="${!draftMode || !myAudit}" code="authenticated.audit.form.label.strongPoints" path="strongPoints"/>
-	<acme:input-textarea readonly="${!draftMode || !myAudit}" code="authenticated.audit.form.label.weakPoints" path="weakPoints"/>
+	<acme:input-textbox readonly="true" code="authenticated.audit.form.label.code" path="code"/>
+	<acme:input-textarea readonly="true" code="authenticated.audit.form.label.conclusion" path="conclusion"/>
+	<acme:input-textarea readonly="true" code="authenticated.audit.form.label.strongPoints" path="strongPoints"/>
+	<acme:input-textarea readonly="true" code="authenticated.audit.form.label.weakPoints" path="weakPoints"/>
 	<jstl:if test="${myAudit}">
 		<acme:input-checkbox readonly="true" code="authenticated.audit.form.label.draftMode" path="draftMode"/>
 	</jstl:if>
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete') && isAuditor}">
+		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
 			<acme:submit method="get" code="authenticated.audit.form.button.records" action="/authenticated/auditing-record/list?auditId=${id}"/>
 			
 			<acme:submit test="${myAudit && draftMode}" code="authenticated.audit.form.button.publish" action="/authenticated/audit/publish"/>

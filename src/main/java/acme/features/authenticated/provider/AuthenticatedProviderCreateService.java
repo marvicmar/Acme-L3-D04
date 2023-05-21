@@ -23,6 +23,7 @@ import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Provider;
+import acme.services.SpamService;
 
 @Service
 public class AuthenticatedProviderCreateService extends AbstractService<Authenticated, Provider> {
@@ -30,8 +31,9 @@ public class AuthenticatedProviderCreateService extends AbstractService<Authenti
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuthenticatedProviderRepository repository;
-
+	protected AuthenticatedProviderRepository	repository;
+	@Autowired
+	protected SpamService						spamService;
 	// AbstractService<Authenticated, Provider> ---------------------------
 
 
@@ -76,6 +78,10 @@ public class AuthenticatedProviderCreateService extends AbstractService<Authenti
 	@Override
 	public void validate(final Provider object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("company"))
+			super.state(this.spamService.validateTextInput(object.getCompany()), "company", "provider.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("sector"))
+			super.state(this.spamService.validateTextInput(object.getSector()), "sector", "provider.error.spam");
 	}
 
 	@Override

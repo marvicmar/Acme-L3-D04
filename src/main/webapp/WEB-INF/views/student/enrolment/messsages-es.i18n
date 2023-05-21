@@ -20,6 +20,10 @@ student.enrolment.form.label.motivation = Motivación
 student.enrolment.form.label.goals = Metas
 student.enrolment.form.label.course = Curso
 student.enrolment.form.label.workTime = Tiempo de trabajo
+student.enrolment.form.label.cardHolderName = Nombre del titular
+student.enrolment.form.label.cardNumber = Número de tarjeta
+student.enrolment.form.label.expirationDate = Fecha de caducidad
+student.enrolment.form.label.cvv = CVV
 
 
 student.enrolment.form.button.activities = Actividades
@@ -29,3 +33,6 @@ student.enrolment.form.button.publish = Publicar
 student.enrolment.form.button.create = Crear
 
 student.enrolment.form.error.duplicated = Código duplicado
+student.enrolment.form.error.expirationDate = Fecha de caducidad incorrecta
+
+enrolment.error.spam = El texto contiene Spam

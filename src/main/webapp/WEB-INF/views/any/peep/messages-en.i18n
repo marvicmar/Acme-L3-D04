@@ -10,3 +10,10 @@ any.peep.list.title = Title
 any.peep.list.nick = Nick
 
 any.peep.button.publish = Publish Peep
+
+peep.error.spam = The text contents Spam
+any.peep.form.error.spam.title = The title cannot be spam
+any.peep.form.error.spam.nick = The nick cannot be spam
+any.peep.form.error.spam.message = The message cannot be spam
+any.peep.form.error.spam.email = The email cannot be spam
+any.peep.form.error.spam.link = The link cannot be spam

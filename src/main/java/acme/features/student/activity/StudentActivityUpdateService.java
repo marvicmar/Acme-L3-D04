@@ -11,6 +11,7 @@ import acme.framework.components.models.Tuple;
 import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
+import acme.services.SpamService;
 
 @Service
 public class StudentActivityUpdateService extends AbstractService<Student, Activity> {
@@ -24,6 +25,8 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 	@Autowired
 	protected StudentActivityRepository	repository;
+	@Autowired
+	protected SpamService				spamService;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -74,6 +77,14 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 		if (!super.getBuffer().getErrors().hasErrors("endPeriod") && !super.getBuffer().getErrors().hasErrors("startPeriod"))
 			super.state(MomentHelper.isAfter(object.getEndDate(), object.getStartDate()), "endPeriod", "student.activity.form.error.endPeriod-too-soon");
+		if (!super.getBuffer().getErrors().hasErrors("title"))
+			super.state(this.spamService.validateTextInput(object.getTitle()), "title", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("summary"))
+			super.state(this.spamService.validateTextInput(object.getSummary()), "summary", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("link"))
+			super.state(this.spamService.validateTextInput(object.getLink()), "link", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("link"))
+			super.state(this.spamService.validateTextInput(object.getLink()), "link", "activity.error.spam");
 	}
 
 	@Override

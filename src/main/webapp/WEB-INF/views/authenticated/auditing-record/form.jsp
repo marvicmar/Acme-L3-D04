@@ -17,12 +17,12 @@
 
 
 <acme:form>
-	<acme:input-textbox readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.subject" path="subject"/>
-	<acme:input-textbox readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.assessment" path="assessment"/>
-	<acme:input-moment readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.startAudit" path="startAudit"/>
-	<acme:input-moment readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.endAudit" path="endAudit"/>
-	<acme:input-select readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.mark" path="mark" choices="${choice}"/>
-	<acme:input-url readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.link" path="link"/>
+	<acme:input-textbox readonly="true" code="authenticated.auditingRecord.form.label.subject" path="subject"/>
+	<acme:input-textbox readonly="true" code="authenticated.auditingRecord.form.label.assessment" path="assessment"/>
+	<acme:input-moment readonly="true" code="authenticated.auditingRecord.form.label.startAudit" path="startAudit"/>
+	<acme:input-moment readonly="true" code="authenticated.auditingRecord.form.label.endAudit" path="endAudit"/>
+	<acme:input-textbox readonly="true" code="authenticated.auditingRecord.form.label.mark" path="mark"/>
+	<acme:input-url readonly="true" code="authenticated.auditingRecord.form.label.link" path="link"/>
 	
 	<jstl:if test="${myAudit}">
 		<acme:input-checkbox readonly="true" code="authenticated.auditingRecord.form.label.draftMode" path="auditDraftMode"/>

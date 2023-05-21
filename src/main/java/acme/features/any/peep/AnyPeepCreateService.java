@@ -12,6 +12,7 @@
 
 package acme.features.any.peep;
 
+import acme.services.SpamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,14 +29,16 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
-		"moment", "title", "nick", "message", "email", "link", "draftMode"
+	protected static final String[] PROPERTIES = {
+			"moment", "title", "nick", "message", "email", "link", "draftMode"
 	};
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyPeepRepository		repository;
+	protected AnyPeepRepository repository;
+	@Autowired
+	protected SpamService spamDetector;
 
 	// AbstractService<Authenticated, Consumer> ---------------------------
 
@@ -83,6 +86,18 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 	@Override
 	public void validate(final Peep object) {
 		assert object != null;
+
+		// Spam validation
+		if (!super.getBuffer().getErrors().hasErrors("title"))
+			super.state(this.spamDetector.validateTextInput(object.getTitle()), "title", "any.peep.form.error.spam.title");
+		if (!super.getBuffer().getErrors().hasErrors("nick"))
+			super.state(this.spamDetector.validateTextInput(object.getNick()), "nick", "any.peep.form.error.spam.nick");
+		if (!super.getBuffer().getErrors().hasErrors("message"))
+			super.state(this.spamDetector.validateTextInput(object.getMessage()), "message", "any.peep.form.error.spam.message");
+		if (!super.getBuffer().getErrors().hasErrors("email"))
+			super.state(this.spamDetector.validateTextInput(object.getEmail()), "email", "any.peep.form.error.spam.email");
+		if (!super.getBuffer().getErrors().hasErrors("link"))
+			super.state(this.spamDetector.validateTextInput(object.getLink()), "link", "any.peep.form.error.spam.link");
 
 	}
 

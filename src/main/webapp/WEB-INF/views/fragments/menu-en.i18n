@@ -19,19 +19,16 @@
 # they accept any liabilities with respect to them.
 
 # master.menu #################################################################
-
 master.menu.home = Home
 master.menu.sign-up = Sign up
 master.menu.sign-in = Sign in
 master.menu.sign-out = Sign out
 
 # master.menu.any #################################################################
-master.menu.any = Peep
+master.menu.any = Any
 master.menu.any.peeps = Peeps List
 
-
 # master.menu.anonymous #######################################################
-
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.favourite-link.alesanfel = 76743201K: Santiago Félix, Alejandro
@@ -39,88 +36,68 @@ master.menu.anonymous.favourite-link.alepervaz = 49190242G: Perez Vazquez, Aleja
 master.menu.anonymous.favourite-link.sersansan2 = 75918873J: Santiago Sánchez, Sergio
 master.menu.anonymous.favorite-link.marvicmar = 48190702K:Vico Martín, María
 
-# master.menu.administrator ###################################################
+# master.menu.authenticathed ##################################################
+master.menu.authenticated = Authenticated
+master.menu.authenticated.favourite-link = Favourite link
+master.menu.authenticated.all-notes = List all notes
+master.menu.authenticated.all-bulletins = List all bulletins
+master.menu.authenticated.all-practicums = List all practicums
+master.menu.authenticated.all-audits = List all audits
+master.menu.authenticated.Tutorial = List all tutorials
+master.menu.authenticated.offer = List all offers
+master.menu.authenticated.all-audits = List all audits
 
+# master.menu.administrator ###################################################
 master.menu.administrator = Administrator
 master.menu.administrator.dashboard = Dashboard
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
-
-master.menu.administrator.banner = List banners
+master.menu.administrator.banner = List all banners
 master.menu.administrator.configuration = Configuration
-
 master.menu.administrator.create.bulletin = Create bulletin
-
-
+master.menu.administrator.offer = List all offers
 
 # master.menu.assistant ########################################################
 master.menu.assistant = Assistant
-master.menu.assistant.dashboard =DashBoard
-
-# master.menu.authenticated.notes ########################################################
-
-master.menu.authenticated.notes = Notes
-master.menu.authenticated.note.list = Notes List
-
-
-# master.menu.authenticated ####################################################
-
-master.menu.authenticated = Authenticated
-master.menu.authenticated.favourite-link = Favourite link
-master.menu.authenticated.all-practicums = List all practicums
+master.menu.assistant.dashboard = DashBoard
+master.menu.assistant.list-all = List all tutorials
+master.menu.assistant.list-mine = List my tutorials
+master.menu.assistant.session.list-all = List all sessions
 
 # master.menu.provider ########################################################
-
 master.menu.provider = Provider
 master.menu.provider.favourite-link = Favourite link
 
-# master.menu.assistant ##########################################################
-master.menu.assistant = Tutorials
-master.menu.assistant.list-all = Tutorials List
-master.menu.assistant.list-mine = My Tutorials
-master.menu.assistant.session.list-all = Session List
-
 # master.menu.consumer ##########################################################
-
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
-
 # master.menu.user-account.offer ################################################
 master.menu.user-account.offer = Offers
-
-
-# master.menu.consumer ##########################################################
-
-master.menu.student = Student
-master.menu.student.enrolment.list = My enrolments
-
-
 
 # master.menu.student ##########################################################
 master.menu.student = Student
 master.menu.student.favourite-link = Favourite link
 master.menu.student.courses = Courses
+master.menu.student.enrolment.list = List my enrolments
 
 # master.menu.tutorials ##########################################################
 master.menu.tutorials = Tutorials
-master.menu.user-account.tutorials =  tutorials list
+master.menu.user-account.tutorials =  Tutorials
 
 # master.menu.user-account.bulletin ####################################################
 master.menu.user-account.bulletin = Bulletins
 
 # master.menu.auditor ##########################################################
-
 master.menu.auditor = Auditor
-master.menu.auditor.list-mine = Show my audits
-master.menu.auditor.list-publish = Show published audits
-master.menu.auditor.list-by-course = Show audits by course
+master.menu.auditor.list-mine = List my audits
+master.menu.auditor.list-publish = List all audits
+master.menu.auditor.list-by-course = List all audits by course
 
 
 # master.menu.company ##########################################################
-
 master.menu.company = Company
 master.menu.company.favourite-link = Favourite link
 master.menu.company.all-practicums = List all practicums
@@ -132,9 +109,7 @@ master.menu.company.dashboard = Dashboard
 master.menu.assistant = Assistant
 master.menu.assistant.favourite-link = Favourite link
 
-
 # master.menu.user-account ####################################################
-
 master.menu.user-account = Account
 master.menu.user-account.general-data = General data
 master.menu.user-account.provider = Provider data

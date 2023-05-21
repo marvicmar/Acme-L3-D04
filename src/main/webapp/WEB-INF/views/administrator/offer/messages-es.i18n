@@ -1,0 +1,31 @@
+offer.list.label.heading = Titulo
+offer.list.label.startDate = Comienzo
+offer.list.label.endDate = Fin
+offer.list.label.price = Precio
+
+offer.form.label.instantiation = Creado
+offer.form.label.heading = Titulo
+offer.form.label.startDate = Comienzo
+offer.form.label.endDate = Fin
+offer.form.label.summary = Mensaje
+offer.form.label.link = Enlace
+offer.form.label.draftMode = En edición
+offer.form.label.price = Precio
+
+
+offer.form.button.create = Registrar
+offer.form.button.delete = Eliminar
+offer.form.button.update = Actualizar
+
+administrator.offer.error.code.start-future = La fecha de comienzo debe ser futura
+administrator.offer.error.code.end-future = La fecha de fin debe ser futura
+administrator.offer.error.code.start-before-end = La fecha de comienzo debe ser anterior a la fecha de fin
+administrator.offer.error.code.short-availability = La oferta debe estar disponible al menos 1 semana
+administrator.offer.error.code.short-start = La oferta debe comenzar al menos 1 día después de su creación
+administrator.offer.error.code.price-negative = El precio no puede ser negativo
+
+administrator.error.spam = El texto contiene Spam
+administrator.offer.form.error.spam.heading = La cabecera no puede ser spam
+administrator.offer.form.error.spam.summary = El mensaje no puede ser spam
+administrator.offer.error.form.spam.link = El enlace no puede ser spam
+

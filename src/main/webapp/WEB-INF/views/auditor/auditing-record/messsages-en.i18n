@@ -1,0 +1,37 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+
+authenticated.auditingRecord.form.label.subject = Subject
+authenticated.auditingRecord.form.label.assessment = Assessment
+authenticated.auditingRecord.form.label.startAudit = Start
+authenticated.auditingRecord.form.label.endAudit = End
+authenticated.auditingRecord.form.label.duration = Duration
+authenticated.auditingRecord.form.label.mark = Mark
+authenticated.auditingRecord.form.label.link = Link
+authenticated.auditingRecord.form.label.draftMode = Audit in edition
+authenticated.auditingRecord.form.label.special = Audit as correction
+authenticated.auditingRecord.form.label.placeHolder.mark = A+ / A / B / C / F / F-
+
+
+
+authenticated.auditingRecord.form.button.create = Register
+authenticated.auditingRecord.form.button.correction = Register correction
+authenticated.auditingRecord.form.button.update = Update
+authenticated.auditingRecord.form.button.publish = Publish
+authenticated.auditingRecord.form.button.unpublish = Unpublish
+authenticated.auditingRecord.form.button.delete = Delete
+
+audit.error.edit-draftMode = Can not update a public audit
+auditingRecord.error.not-valid-mark = You have to write a mark like A+/A/B/C/F/F-
+auditingRecord.error.not-enougth-time = Minimum dutarion 30 minutes
+
+auditingRecord.error.spam = The text contents Spam

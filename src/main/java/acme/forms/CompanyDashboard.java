@@ -19,7 +19,9 @@ public class CompanyDashboard extends AbstractForm {
 	// Attributes -------------------------------------------------------------
 
 	// Total number of practicas (the index in the list represent the months).
-	private Map<String, Long>	totalNumberOfPracticaByMonth;
+	private Map<String, Long> totalNumberOfPracticaByMonthForTheorySession;
+	private Map<String, Long> totalNumberOfPracticaByMonthForHandsOnSession;
+
 
 	// Average, deviation, minimum, and maximum period length of the sessions in their practica.
 	private Statistic			sessionLength;

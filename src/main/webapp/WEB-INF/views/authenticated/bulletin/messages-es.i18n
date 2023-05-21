@@ -6,4 +6,6 @@ bulletin.form.label.moment = Fue creado en
 bulletin.form.label.title = Titulo
 bulletin.form.label.message = Mensaje
 bulletin.form.label.flags = Critico
-bulletin.form.label.link = link con Informacion
+bulletin.form.label.link = Link con Informacion
+
+bulletin.error.spam = El texto contiene Spam

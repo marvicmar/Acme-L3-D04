@@ -1,5 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-12 17:03:03.237","GET","/authenticated/course/list-course","36","200 OK"
-"2023-04-12 17:03:04.926","GET","/authenticated/course/show","9","200 OK"
-"2023-04-12 17:03:05.098","GET","/authenticated/course/show","7","200 OK"
-"2023-04-12 17:03:15.262","POST","/authenticated/audit/list-course","85","200 OK"

@@ -16,12 +16,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
+import acme.features.auditor.AuditorRepository;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.BinderHelper;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
+import acme.services.CurrencyService;
 
 @Service
 public class AuthenticatedCourseShowService extends AbstractService<Authenticated, Course> {
@@ -29,13 +31,18 @@ public class AuthenticatedCourseShowService extends AbstractService<Authenticate
 	//Constants
 
 	public final static String[]			PROPERTIES	= {
-		"id", "code", "title", "courseAbstract", "retailPrice", "furtherInformation", "type"
+		"id", "code", "title", "courseAbstract", "retailPrice", "link", "type"
 	};
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	protected AuthenticatedCourseRepository	repository;
+	@Autowired
+	protected CurrencyService				currencyService;
+
+	@Autowired
+	protected AuditorRepository				auditorRepository;
 
 	// AbstractService interface ----------------------------------------------ç
 
@@ -77,11 +84,15 @@ public class AuthenticatedCourseShowService extends AbstractService<Authenticate
 	@Override
 	public void unbind(final Course object) {
 		assert object != null;
-
+		int accountId;
+		boolean isAuditor;
 		Tuple tuple;
-
+		accountId = super.getRequest().getPrincipal().getAccountId();
+		isAuditor = this.auditorRepository.findOneAuditorByUserAccountId(accountId) != null;
 		tuple = BinderHelper.unbind(object, AuthenticatedCourseShowService.PROPERTIES);
+		tuple.put("retailPrice", this.currencyService.changeIntoSystemCurrency(object.getRetailPrice()));
 		super.getResponse().setData(tuple);
+		super.getResponse().setGlobal("isAuditor", isAuditor);
 	}
 
 	@Override

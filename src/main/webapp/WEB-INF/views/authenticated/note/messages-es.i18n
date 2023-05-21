@@ -10,4 +10,6 @@ note.form.label.message = Mensaje
 note.form.label.email = Email
 note.form.label.link = link
 note.form.label.confirmation = Confirmacion
-note.form.button.create = Crear Note
+note.form.button.create = Crear Nota
+
+note.error.spam = El texto contiene Spam

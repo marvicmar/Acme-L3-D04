@@ -13,3 +13,5 @@ authenticated.consumer.form.label.sector = Sector
 
 authenticated.consumer.form.button.create = Register
 authenticated.consumer.form.button.update = Update
+
+consumer.error.spam = The text contents Spam

@@ -1,3 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-13 10:51:17.999","GET","/authenticated/auditing-record/list","29","500 INTERNAL_SERVER_ERROR"
-"2023-04-13 10:51:32.345","GET","/authenticated/auditing-record/list","47","200 OK"

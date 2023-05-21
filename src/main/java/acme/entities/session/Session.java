@@ -53,8 +53,7 @@ public class Session extends AbstractEntity {
 	@URL
 	protected String			link;
 
-	@NotNull
-	protected Boolean			draftMode;
+	protected boolean			draftMode;
 
 	// Derived attributes -----------------------------------------------------
 

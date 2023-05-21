@@ -20,3 +20,5 @@ authenticated.tutorial.list.label.code = Code
 authenticated.tutorial.list.label.title = Title
 authenticated.tutorial.form.label.goals = goals
 authenticated.tutorial.list.label.estimatedTime = Estimated time in hours
+
+tutorial.error.spam = The text contents Spam

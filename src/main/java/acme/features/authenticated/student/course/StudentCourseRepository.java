@@ -16,7 +16,7 @@ public interface StudentCourseRepository extends AbstractRepository {
 	@Query("select o from Student o")
 	List<Student> findAllStudent();
 
-	@Query("select o from Course o")
+	@Query("select o from Course o where o.draftMode=false")
 	List<Course> findAllCourse();
 
 	@Query("select o from Course o where o.id = :id")

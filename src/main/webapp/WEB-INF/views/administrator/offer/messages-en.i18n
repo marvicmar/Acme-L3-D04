@@ -1,0 +1,29 @@
+administrator.offer.list.label.heading = Title
+administrator.offer.list.label.startDate = Start
+administrator.offer.list.label.endDate = End
+administrator.offer.list.label.price = Price
+
+administrator.offer.form.label.instantiation = Creation at
+administrator.offer.form.label.heading = Title
+administrator.offer.form.label.startDate = Start
+administrator.offer.form.label.endDate = End
+administrator.offer.form.label.summary = Summary
+administrator.offer.form.label.link = Link
+administrator.offer.form.label.price = Price
+administrator.offer.form.label.draftMode = In edition
+
+administrator.offer.form.button.create = Register
+administrator.offer.form.button.delete = Delete
+administrator.offer.form.button.update = Update
+
+administrator.offer.error.code.start-future = The start date must be in the future
+administrator.offer.error.code.end-future = The end date must be in the future
+administrator.offer.error.code.start-before-end = The start date must be before the end date
+administrator.offer.error.code.short-availability = The offer must be available for at least 1 week
+administrator.offer.error.code.short-start = The offer must be available for at least 1 day
+administrator.offer.error.code.price-negative = The price must be positive
+
+offer.error.spam = The text contents Spam
+administrator.offer.form.error.spam.heading = The heading cannot be spam
+administrator.offer.form.error.spam.summary = The summary cannot be spam
+administrator.offer.error.form.spam.link = The link cannot be spam

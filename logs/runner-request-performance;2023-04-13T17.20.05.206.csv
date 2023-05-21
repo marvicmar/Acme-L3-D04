@@ -1,5 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-13 17:16:23.768","GET","/authenticated/audit/list-mine","60","200 OK"
-"2023-04-13 17:16:25.413","GET","/authenticated/audit/create","20","200 OK"
-"2023-04-13 17:16:45.302","GET","/authenticated/audit/list-mine","10","200 OK"
-"2023-04-13 17:16:46.639","GET","/authenticated/audit/create","8","200 OK"

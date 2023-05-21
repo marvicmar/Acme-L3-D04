@@ -25,3 +25,5 @@ student.activity.form.button.delete = Delete
 
 student.activity.form.error.endPeriod-too-soon = The activity must end after it begins
 student.activity.form.error.type-cannot-be-balanced = Type cannot be BALANCED
+
+activity.error.spam = The text contents Spam

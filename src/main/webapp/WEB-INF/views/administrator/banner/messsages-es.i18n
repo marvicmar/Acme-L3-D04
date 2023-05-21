@@ -1,0 +1,29 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.banner.form.label.instant = Última modificación
+administrator.banner.form.label.displayStart = Desde
+administrator.banner.form.label.displayEnd = A
+administrator.banner.form.label.picture = Fotografía
+administrator.banner.form.label.slogan = Eslogan
+administrator.banner.form.label.link = Link
+
+administrator.banner.form.button.create = Registrar
+administrator.banner.form.button.update = Actualizar
+administrator.banner.form.button.delete = Eliminar
+
+administrator.banner.error.startDate.beforeInstantiation = El banner debe ser mostrado después de su creación o su actualización
+administrator.banner.error.finishDate.beforeStartDate = El banner debe ser mostrado antes de su finalización
+administrator.banner.error.finishDate.notLongEnough = El banner debe ser mostrado durante al menos 1 semana
+
+banner.error.spam = El texto contiene Spam
+administrator.banner.form.error.spam.slogan = El eslogan no puede ser spam
+administrator.banner.form.error.spam.link = El link no puede ser spam
+administrator.banner.form.error.spam.picture = La imagen no puede ser spam

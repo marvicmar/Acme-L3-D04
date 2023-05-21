@@ -12,3 +12,8 @@ practicum-10,FF678,Title in other language: 日本語,Abstract practicum in othe
 practicum-11,ZZZ333,<script>alert('The title alert');</script>,<script>alert('The abstract practicum alert');</script>,<script>alert('The goals alert');</script>,1,company-01,course-02,false
 practicum-12,ZZZ444,<h1>The title in HTML</h1>,<h1>The abstract practicum in HTML</h1>,<h1>The goals in HTML</h1>,2,company-02,course-03,false
 practicum-13,ZZZ555,DROP TABLE practicum;,DELETE FROM practicum;,TRUNCATE TABLE practicum;,3,company-01,course-04,false
+practicum-14,ZZZ666,Perfect estimated time, Perfect estimated time, Perfect estimated time,168,company-01,course-05,true
+practicum-15,ZZZ777,Upper 0.9, Upper 0.9, Upper 0.9,153,company-01,course-05,true
+practicum-16,ZZZ888,Lower 1.1, Lower 1.1, Lower 1.1,183,company-01,course-05,true
+practicum-17,ZZZ999,Lower 0.9, Lower 0.9, Lower 0.9,152,company-01,course-05,true
+practicum-18,ZZZ000,Upper 1.1, Upper 1.1, Upper 1.1,184,company-01,course-05,true

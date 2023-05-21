@@ -1,46 +1,48 @@
 
 package acme.services;
 
-import acme.components.ExchangeRate;
-import acme.framework.components.datatypes.Money;
-import acme.repositories.CurrencyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import acme.components.ExchangeRate;
+import acme.framework.components.datatypes.Money;
+import acme.repositories.CurrencyRepository;
+
 @Service
 public class CurrencyService {
 
+	// Internal state ---------------------------------------------------------
+	@Autowired
+	private CurrencyRepository repository;
 
-    // Internal state ---------------------------------------------------------
-    @Autowired
-    private CurrencyRepository repository;
 
+	// Methods ----------------------------------------------------------------
+	public Money changeIntoSystemCurrency(final Money source) {
+		assert source != null;
 
-    // Methods ----------------------------------------------------------------
-    public Money changeIntoSystemCurrency(final Money source) {
-        assert source != null;
+		String targetCurrency;
+		RestTemplate api;
+		ExchangeRate exchangeRate;
+		Double rate;
+		double targetAmount;
+		Money target;
 
-        String targetCurrency;
-        RestTemplate api;
-        ExchangeRate record;
-        Double rate;
-        double targetAmount;
-        Money target;
+		targetCurrency = this.repository.findCurrentCurrency();
 
-        targetCurrency = this.repository.findCurrentCurrency();
-        api = new RestTemplate();
-        record = api.getForObject(
-                "https://api.exchangerate.host/latest?base={0}&symbols={1}",
-                ExchangeRate.class, source.getCurrency(), targetCurrency);
+		if (source.getCurrency().equals(targetCurrency))
+			return source;
 
-        assert record != null;
+		api = new RestTemplate();
+		exchangeRate = api.getForObject("https://api.exchangerate.host/latest?base={0}&symbols={1}", ExchangeRate.class, source.getCurrency(), targetCurrency);
 
-        rate = record.getRates().get(targetCurrency);
-        targetAmount = rate * source.getAmount();
-        target = new Money();
-        target.setAmount(targetAmount);
-        target.setCurrency(targetCurrency);
-        return target;
-    }
+		assert exchangeRate != null;
+
+		rate = exchangeRate.getRates().get(targetCurrency);
+		targetAmount = rate * source.getAmount();
+		target = new Money();
+		target.setAmount(targetAmount);
+		target.setCurrency(targetCurrency);
+		return target;
+	}
 }

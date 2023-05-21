@@ -22,3 +22,5 @@ student.course.list.label.code = Code
 student.course.list.label.title = Title
 student.course.list.label.courseType = Type
 student.course.list.label.retailPrice = Retail price
+
+course.error.spam = The text contents Spam

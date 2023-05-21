@@ -5,9 +5,16 @@ user-account-assistant-01,true,"UserIdentity{name: 'Assistant1', surname: 'assis
 user-account-assistant-02,true,"UserIdentity{name: 'Assistant2', surname: 'assistant', email: 'assistant2@acme.com'}",assistant2,assistant2
 user-account-company-01,true,"UserIdentity{name: 'Company1', surname: 'Acme', email: 'company1@acme.com'}",company1,company1
 user-account-company-02,true,"UserIdentity{name: 'Company2', surname: 'Acme', email: 'company2@acme.com'}",company2,company2
+user-account-company-03,true,"UserIdentity{name: 'Company3', surname: 'Acme', email: 'company3@acme.com'}",company3,company3
+user-account-company-04,true,"UserIdentity{name: 'Company4', surname: 'Acme', email: 'company4@acme.com'}",company4,company4
+user-account-company-05,true,"UserIdentity{name: 'Company5', surname: 'Acme', email: 'company5@acme.com'}",company5,company5
+user-account-company-06,true,"UserIdentity{name: 'Company6', surname: 'Acme', email: 'company6@acme.com'}",company6,company6
+user-account-company-07,true,"UserIdentity{name: 'Company7', surname: 'Acme', email: 'company7@acme.com'}",company7,company7
+user-account-company-08,true,"UserIdentity{name: 'Company8', surname: 'Acme', email: 'company8@acme.com'}",company8,company8
 user-account-administrator-001,true,"UserIdentity{name: 'Administrator1', surname: 'Acme', email: 'administrator1@acme.com'}",administrator1,administrator1
 user-account-administrator-002,true,"UserIdentity{name: 'Administrator2', surname: 'Acme2', email: 'administrator2@acme.com'}",administrator2,administrator2
 user-account-student-01,true,"UserIdentity{name: 'Emma', surname: 'Watson', email: 'emma.watson@acme.com'}",student1,student1
 user-account-student-02,true,"UserIdentity{name: 'Theo', surname: 'James', email: 'theo.james@acme.com'}",student2,student2
+user-account-student-03,false,"UserIdentity{name: 'Oscar', surname: 'Martin', email: 'oscar.martin@acme.com'}",student3,student3
 user-account-lecturer-01,true,"UserIdentity{name: 'Megan', surname: 'Watson', email: 'megan.watson@acme.com'}",lecturer1,lecturer1
 user-account-lecturer-02,true,"UserIdentity{name: 'John', surname: 'James', email: 'john.james@acme.com'}",lecturer2,lecturer2

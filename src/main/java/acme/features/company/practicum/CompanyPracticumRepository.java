@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
-import acme.entities.session_practicum.SessionPracticum;
+import acme.entities.sessionPracticum.SessionPracticum;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Company;
 

@@ -23,3 +23,5 @@ authenticated.course.type = Tipo
 authenticated.course.form.button.create = Registrar
 authenticated.course.form.button.update = Actualizar
 authenticated.course.form.button.show-audit = Mostrar audits
+
+course.error.spam = El texto contiene Spam

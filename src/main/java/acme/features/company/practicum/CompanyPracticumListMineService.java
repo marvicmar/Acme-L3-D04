@@ -1,15 +1,17 @@
 
 package acme.features.company.practicum;
 
-import acme.entities.practicum.Practicum;
-import acme.framework.components.accounts.Principal;
-import acme.framework.components.models.Tuple;
-import acme.framework.services.AbstractService;
-import acme.roles.Company;
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import acme.entities.practicum.Practicum;
+import acme.framework.components.accounts.Principal;
+import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MessageHelper;
+import acme.framework.services.AbstractService;
+import acme.roles.Company;
 
 @Service
 public class CompanyPracticumListMineService extends AbstractService<Company, Practicum> {
@@ -51,11 +53,14 @@ public class CompanyPracticumListMineService extends AbstractService<Company, Pr
 		assert practicum != null;
 
 		Tuple tuple;
+		String published;
 		String payload;
 
 		tuple = super.unbind(practicum, CompanyPracticumListMineService.PROPERTIES);
+		published = MessageHelper.getMessage(!practicum.isDraftMode() ? "company.practicum.list.label.yes" : "company.practicum.list.label.no");
 		payload = String.format("%s; %s; %s; %s", practicum.getCourse().getTitle(), practicum.getCourse().getCode(), practicum.getAbstractPracticum(), practicum.getGoals());
 		tuple.put("payload", payload);
+		tuple.put("published", published);
 
 		super.getResponse().setData(tuple);
 	}

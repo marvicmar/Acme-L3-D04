@@ -3,6 +3,7 @@ package acme.forms;
 
 import java.util.Map;
 
+import acme.datatypes.Statistic;
 import acme.entities.enums.Approach;
 import acme.framework.data.AbstractForm;
 import lombok.Getter;
@@ -22,17 +23,9 @@ public class StudentDashboard extends AbstractForm {
 	private Map<Approach, Integer>	totalNumberOfActivities;
 
 	//Average, deviation, minimum, and maximum period of the activities in his or her workbook;
-	private Double					averageAtivities;
-	private Double					deviationAtivities;
-	private Double					minimumAtivities;
-	private Double					maximumAtivities;
-
+	private Statistic				sessionLength;
 	// Average, deviation, minimum, and maximum time length of his or her enrolled.
-	private Double					averageEnrolled;
-	private Double					deviationEnrolled;
-	private Double					minimumEnrolled;
-	private Double					maximumEnrolled;
-
+	private Statistic				tutorialLength;
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------

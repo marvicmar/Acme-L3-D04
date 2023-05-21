@@ -29,23 +29,35 @@
       		<acme:menu-suboption code="master.menu.anonymous.favorite-link.marvicmar" action="https://zacatrus.es/"/>
 		</acme:menu-option>
 
+		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated">
+			<acme:menu-suboption code="master.menu.authenticated.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.authenticated.Tutorial" action="/authenticated/tutorial/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.all-notes" action="/authenticated/note/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.all-bulletins" action="/authenticated/bulletin/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.all-practicums" action="/authenticated/practicum/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.offer" action="/authenticated/offer/list"/>
+			<acme:menu-suboption code="master.menu.authenticated.all-audits" action="/authenticated/audit/list-publish"/>
+			<acme:menu-suboption code="master.menu.auditor.list-by-course" action="/authenticated/course/list-course"/>
+		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.populate-initial" action="/administrator/populate-initial"/>
-			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>			
+			<acme:menu-suboption code="master.menu.administrator.populate-sample" action="/administrator/populate-sample"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
-			<acme:menu-suboption code="master.menu.administrator.banner" action="/authenticated/banner/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.configuration" action="/administrator/configuration/show"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.create.bulletin" action="/administrator/bulletin/create"/>
+			<acme:menu-suboption code="master.menu.administrator.banner" action="/administrator/banner/list"/>
+			<acme:menu-suboption code="master.menu.administrator.offer" action="/administrator/offer/list"/>
 		</acme:menu-option>
- 		<acme:menu-option code="master.menu.authenticated.notes" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.authenticated.note.list" action="/authenticated/note/list"/>
-		</acme:menu-option>
+
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
 			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
@@ -54,34 +66,30 @@
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 			<acme:menu-suboption code="master.menu.assistant.list-all" action="/assistant/tutorial/list-all"/>
 			<acme:menu-suboption code="master.menu.assistant.list-mine" action="/assistant/tutorial/list-mine"/>
-			<acme:menu-suboption code="master.menu.assistant.session.list-all" action="/assistant/session/list-all"/>
-      <acme:menu-separator/>
-      <acme:menu-suboption code="master.menu.assistant.dashboard" action="/assistant/assistant-dashboard/show"/>
+			<acme:menu-suboption code="master.menu.assistant.session.list-all" action="/assistant/session/list-all"/> <!-- Creo que no es necesario -->
+      		<acme:menu-separator/>
+      		<acme:menu-suboption code="master.menu.assistant.dashboard" action="/assistant/assistant-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
 			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.user-account.offer" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.user-account.offer" action="/authenticated/offer/list"/>
-		</acme:menu-option>
+
+
 		<acme:menu-option code="master.menu.student" access="hasRole('Student')">
 			<acme:menu-suboption code="master.menu.student.enrolment.list" action="/student/enrolment/list"/>
 			<acme:menu-suboption code="master.menu.student.courses" action="/student/course/list"/>
 			<acme:menu-suboption code="master.menu.student.favourite-link" action="http://www.example.com/"/>
 		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.user-account.bulletin" access="isAuthenticated()">
-			<acme:menu-suboption code="master.menu.user-account.bulletin" action="/authenticated/bulletin/list"/>
-    </acme:menu-option>
-
-		<acme:menu-option code="master.menu.auditor" access="isAuthenticated()">
-				<acme:menu-suboption code="master.menu.auditor.list-mine" action="/authenticated/audit/list-mine" access="hasRole('Auditor')"/>
-
-			<acme:menu-suboption code="master.menu.auditor.list-publish" action="/authenticated/audit/list-publish"/>
+		
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.list-mine" action="/auditor/audit/list-mine" />
+			<acme:menu-suboption code="master.menu.auditor.list-publish" action="/auditor/audit/list-publish"/>
 			<acme:menu-suboption code="master.menu.auditor.list-by-course" action="/authenticated/course/list-course"/>
+
 		</acme:menu-option>
+
 		<acme:menu-option code="master.menu.company" access="hasRole('Company')">
 			<acme:menu-suboption code="master.menu.company.favourite-link" action="http://www.example.com/"/>
 			<acme:menu-separator/>
@@ -90,16 +98,11 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.company.dashboard" action="/company/company-dashboard/show"/>
 		</acme:menu-option>
-		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
-			<acme:menu-suboption code="master.menu.assistant.favourite-link" action="http://www.example.com/"/>
-	</acme:menu-option>
-
 	</acme:menu-left>
 
 	<acme:menu-right>
 		<acme:menu-option code="master.menu.sign-up" action="/anonymous/user-account/create" access="isAnonymous()"/>
 		<acme:menu-option code="master.menu.sign-in" action="/master/sign-in" access="isAnonymous()"/>
-
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Provider')"/>

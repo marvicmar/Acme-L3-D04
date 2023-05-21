@@ -12,6 +12,7 @@ import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
+import acme.services.SpamService;
 
 @Service
 public class AuthenticatedStudentCreateService extends AbstractService<Authenticated, Student> {
@@ -24,6 +25,8 @@ public class AuthenticatedStudentCreateService extends AbstractService<Authentic
 	// Internal state ---------------------------------------------------------
 	@Autowired
 	protected AuthenticatedStudentRepository	repository;
+	@Autowired
+	protected SpamService						spamService;
 
 
 	@Override
@@ -61,12 +64,20 @@ public class AuthenticatedStudentCreateService extends AbstractService<Authentic
 	public void bind(final Student object) {
 		assert object != null;
 
-		super.bind(object, PROPERTIES);
+		super.bind(object, AuthenticatedStudentCreateService.PROPERTIES);
 	}
 
 	@Override
 	public void validate(final Student object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("statement"))
+			super.state(this.spamService.validateTextInput(object.getStatement()), "statement", "student.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("strongFeatures"))
+			super.state(this.spamService.validateTextInput(object.getStrongFeatures()), "strongFeatures", "student.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("weakFeatures"))
+			super.state(this.spamService.validateTextInput(object.getStrongFeatures()), "weakFeatures", "student.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("link"))
+			super.state(this.spamService.validateTextInput(object.getLink()), "link", "student.error.spam");
 	}
 
 	@Override
@@ -80,7 +91,7 @@ public class AuthenticatedStudentCreateService extends AbstractService<Authentic
 	public void unbind(final Student object) {
 		Tuple tuple;
 
-		tuple = super.unbind(object, PROPERTIES);
+		tuple = super.unbind(object, AuthenticatedStudentCreateService.PROPERTIES);
 
 		super.getResponse().setData(tuple);
 	}

@@ -14,6 +14,8 @@ authenticated.practicum.form.label.title = Title
 authenticated.practicum.form.label.abstractPracticum = Abstract practicum
 authenticated.practicum.form.label.estimatedTimeInHours = Estimated time in hours
 authenticated.practicum.form.label.nameCompany = Name company
+authenticated.practicum.form.label.course = Course
+authenticated.practicum.form.label.goals = Goals
 
 # Messages for label in list
 authenticated.practicum.list.label.code = Code

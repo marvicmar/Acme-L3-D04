@@ -1,6 +1,14 @@
 
 package acme.features.company.practicum;
 
+import java.util.Collection;
+
+import acme.framework.controllers.HttpMethod;
+import acme.framework.helpers.PrincipalHelper;
+import acme.services.SpamService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
 import acme.framework.components.accounts.Principal;
@@ -8,10 +16,6 @@ import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.Collection;
 
 @Service
 public class CompanyPracticumUpdateService extends AbstractService<Company, Practicum> {
@@ -24,6 +28,8 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	// Internal state ---------------------------------------------------------
 	@Autowired
 	protected CompanyPracticumRepository	repository;
+	@Autowired
+	protected SpamService spamDetector;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -96,6 +102,16 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 
 			super.state(isUnique || noChangeCode, "code", "company.practicum.form.error.not-unique-code");
 		}
+
+		// Spam validation
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(this.spamDetector.validateTextInput(practicum.getCode()), "code", "company.practicum.form.error.spam.code");
+		if (!super.getBuffer().getErrors().hasErrors("title"))
+			super.state(this.spamDetector.validateTextInput(practicum.getTitle()), "title", "company.practicum.form.error.spam.title");
+		if (!super.getBuffer().getErrors().hasErrors("abstractPracticum"))
+			super.state(this.spamDetector.validateTextInput(practicum.getAbstractPracticum()), "abstractPracticum", "company.practicum.form.error.spam.abstractPracticum");
+		if (!super.getBuffer().getErrors().hasErrors("goals"))
+			super.state(this.spamDetector.validateTextInput(practicum.getGoals()), "goals", "company.practicum.form.error.spam.goals");
 	}
 
 	@Override
@@ -122,5 +138,11 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 		tuple.put("courses", courses);
 
 		super.getResponse().setData(tuple);
+	}
+
+	@Override
+	public void onSuccess() {
+		if (super.getRequest().getMethod().equals(HttpMethod.POST))
+			PrincipalHelper.handleUpdate();
 	}
 }

@@ -1,8 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-16 05:17:31.077","GET","/authenticated/audit/list-mine","116","200 OK"
-"2023-04-16 05:17:33.932","GET","/authenticated/audit/show","40","200 OK"
-"2023-04-16 05:17:34.131","GET","/authenticated/audit/show","24","200 OK"
-"2023-04-16 05:17:47.836","GET","/authenticated/auditing-record/list","11003","200 OK"
-"2023-04-16 05:17:51.918","GET","/authenticated/auditing-record/create","24","500 INTERNAL_SERVER_ERROR"
-"2023-04-16 05:19:09.661","GET","/authenticated/auditing-record/list","3810","200 OK"
-"2023-04-16 05:19:13.297","GET","/authenticated/auditing-record/create","48","200 OK"

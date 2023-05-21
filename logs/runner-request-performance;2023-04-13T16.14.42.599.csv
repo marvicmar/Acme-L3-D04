@@ -1,2 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-13 14:47:20.729","GET","/authenticated/audit/list-mine","104","200 OK"

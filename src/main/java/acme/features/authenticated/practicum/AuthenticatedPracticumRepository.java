@@ -1,14 +1,15 @@
 
 package acme.features.authenticated.practicum;
 
+import java.util.Collection;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
 import acme.framework.components.accounts.UserAccount;
 import acme.framework.repositories.AbstractRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
-
-import java.util.Collection;
 
 @Repository
 public interface AuthenticatedPracticumRepository extends AbstractRepository {

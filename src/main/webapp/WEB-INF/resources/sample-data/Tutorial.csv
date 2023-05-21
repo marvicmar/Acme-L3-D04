@@ -1,6 +1,6 @@
 key,code,title,summary,goals,EstimatedTime,draftMode,key:course,key:assistant
-tutorial-01,TUT001,title1,summary1,goal1,10.2,false,course-01,assistant-01
-tutorial-02,TUT002,title2,summary2,goal2,10.3,false,course-02,assistant-02
+tutorial-01,TUT001,title with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB,summary1,goal1,10.2,false,course-01,assistant-01
+tutorial-02,TUT002,title2,summary2,goals with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBANDKSDJKNSADJKSANDKJASNDS,10.3,false,course-02,assistant-02
 tutorial-03,ADG754,title3,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,goal3,40.3,false,course-01,assistant-01
 tutorial-04,ADG755,title4,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,goal4,5.3,false,course-01,assistant-01
 tutorial-05,ADG758,title5,<script>alert('The title alert');</script>,goal4,7.3,false,course-01,assistant-01

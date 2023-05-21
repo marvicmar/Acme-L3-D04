@@ -1,4 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-11 18:21:16.772","GET","/anonymous/user-account/create","38","200 OK"
-"2023-04-11 18:21:33.431","GET","/anonymous/user-account/create","11","200 OK"
-"2023-04-12 06:53:24.669","GET","/authenticated/user-account/update","64","200 OK"

@@ -22,7 +22,12 @@
 	<acme:input-textarea code="student.enrolment.form.label.goals" path="goals"/>
 	<acme:input-select code="student.enrolment.form.label.course" path="course" choices="${courses}"/>
 	<acme:input-textbox code="student.enrolment.form.label.workTime" path="workTime" readonly="true"/>
-	
+	<jstl:if test="${(_command != 'create')}">
+		<acme:input-textbox code="student.enrolment.form.label.cardHolderName" path="cardHolderName"/>
+		<acme:input-textbox code="student.enrolment.form.label.cardNumber" path="cardNumber"/>
+		<acme:input-textbox code="student.enrolment.form.label.expirationDate" path="expirationDate"/>
+		<acme:input-textbox code="student.enrolment.form.label.cvv" path="cvv"/>
+	</jstl:if>
 
 	<jstl:choose>	 
 		<jstl:when test="${(_command == 'show'||_command == 'update'||_command == 'delete'||_command == 'publish') && draftMode == false}">

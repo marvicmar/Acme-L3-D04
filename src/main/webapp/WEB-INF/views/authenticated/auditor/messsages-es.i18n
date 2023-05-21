@@ -18,3 +18,5 @@ authenticated.auditor.course.title = Título
 
 authenticated.auditor.form.button.create = Registrar
 authenticated.auditor.form.button.update = Actualizar
+
+auditor.error.spam = El texto contiene Spam

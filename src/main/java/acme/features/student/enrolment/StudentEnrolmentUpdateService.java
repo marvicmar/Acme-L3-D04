@@ -13,6 +13,7 @@ import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
+import acme.services.SpamService;
 
 @Service
 public class StudentEnrolmentUpdateService extends AbstractService<Student, Enrolment> {
@@ -25,6 +26,8 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 	// Internal state ---------------------------------------------------------
 	@Autowired
 	protected StudentEnrolmentRepository	repository;
+	@Autowired
+	protected SpamService					spamService;
 
 
 	// AbstractService <Student,Enrolment> ----------------------------------------------
@@ -75,7 +78,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		courseId = super.getRequest().getData("course", int.class);
 		course = this.repository.findOneCourseById(courseId);
 
-		super.bind(enrolment, StudentEnrolmentCreateService.PROPERTIES);
+		super.bind(enrolment, StudentEnrolmentUpdateService.PROPERTIES);
 		enrolment.setCourse(course);
 	}
 
@@ -88,7 +91,23 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 
 			existing = this.repository.findOneEnrolmentByCode(enrolment.getCode());
 			super.state(existing == null || existing.getId() == enrolment.getId(), "code", "asistant.tutorial.form.error.not-unique-code");
+			super.state(this.spamService.validateTextInput(enrolment.getCode()), "code", "enrolment.error.spam");
+
 		}
+		if (!super.getBuffer().getErrors().hasErrors("motivation"))
+			super.state(this.spamService.validateTextInput(enrolment.getMotivation()), "motivation", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("goals"))
+			super.state(this.spamService.validateTextInput(enrolment.getGoals()), "goals", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cardHolderName"))
+			super.state(this.spamService.validateTextInput(enrolment.getCardHolderName()), "cardHolderName", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cardLowerNibble"))
+			super.state(this.spamService.validateTextInput(enrolment.getCardLowerNibble()), "cardLowerNibble", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cardNumber"))
+			super.state(this.spamService.validateTextInput(enrolment.getCardNumber()), "cardNumber", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("expirationDate"))
+			super.state(this.spamService.validateTextInput(enrolment.getExpirationDate()), "expirationDate", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cvv"))
+			super.state(this.spamService.validateTextInput(enrolment.getCvv()), "cvv", "enrolment.error.spam");
 
 	}
 
@@ -110,7 +129,7 @@ public class StudentEnrolmentUpdateService extends AbstractService<Student, Enro
 		courses = this.repository.findManyCourses();
 		choices = SelectChoices.from(courses, "code", object.getCourse());
 
-		tuple = super.unbind(object, StudentEnrolmentCreateService.PROPERTIES);
+		tuple = super.unbind(object, StudentEnrolmentUpdateService.PROPERTIES);
 		tuple.put("course", choices.getSelected().getKey());
 		tuple.put("courses", choices);
 		tuple.put("draftMode", object.isDraftMode());

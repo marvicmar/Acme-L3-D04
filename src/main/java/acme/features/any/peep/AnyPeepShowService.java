@@ -12,37 +12,42 @@
 
 package acme.features.any.peep;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import acme.entities.peep.Peep;
 import acme.framework.components.accounts.Any;
 import acme.framework.components.models.Tuple;
-import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.BinderHelper;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class AnyPeepShowService extends AbstractService<Any, Peep> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
-		"moment", "title", "nick", "message", "email", "link", "draftMode"
+	protected static final String[] PROPERTIES = {
+			"moment", "title", "nick", "message", "email", "link", "draftMode"
 	};
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyPeepRepository		repository;
+	protected AnyPeepRepository repository;
 
 	// AbstractService interface ----------------------------------------------ç
 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int id;
+		final Peep peep;
+
+		id = super.getRequest().getData("id", int.class);
+		peep = this.repository.findOnePeepById(id);
+		status = peep != null;
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -91,11 +96,4 @@ public class AnyPeepShowService extends AbstractService<Any, Peep> {
 		tuple = BinderHelper.unbind(object, AnyPeepShowService.PROPERTIES);
 		super.getResponse().setData(tuple);
 	}
-
-	@Override
-	public void onSuccess() {
-		if (super.getRequest().getMethod().equals(HttpMethod.POST))
-			PrincipalHelper.handleUpdate();
-	}
-
 }

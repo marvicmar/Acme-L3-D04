@@ -12,14 +12,16 @@ import acme.framework.helpers.BinderHelper;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
+import acme.services.SpamService;
 
 @Service
 public class AuthenticatedAssistantUpdateService extends AbstractService<Authenticated, Assistant> {
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected AuthenticatedAssistantRepository repository;
-
+	protected AuthenticatedAssistantRepository	repository;
+	@Autowired
+	protected SpamService						spamService;
 	// AbstractService interface ----------------------------------------------
 
 
@@ -57,6 +59,15 @@ public class AuthenticatedAssistantUpdateService extends AbstractService<Authent
 	@Override
 	public void validate(final Assistant object) {
 		assert object != null;
+		if (!super.getBuffer().getErrors().hasErrors("supervisor"))
+			super.state(this.spamService.validateTextInput(object.getSupervisor()), "supervisor", "assistant.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("expertiseFields"))
+			super.state(this.spamService.validateTextInput(object.getExpertiseFields()), "expertiseFields", "assistant.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("resume"))
+			super.state(this.spamService.validateTextInput(object.getResume()), "resume", "assistant.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("furtherInfo"))
+			super.state(this.spamService.validateTextInput(object.getFurtherInfo()), "furtherInfo", "assistant.error.spam");
+
 	}
 
 	@Override

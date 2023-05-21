@@ -1,0 +1,35 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2023 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+
+authenticated.audit.form.label.course = Curso (código)
+authenticated.audit.form.label.code = Código del audit
+authenticated.audit.form.label.conclusion = Conclusión
+authenticated.audit.form.label.strongPoints = Puntos fuertes
+authenticated.audit.form.label.weakPoints = Puntos débiles
+authenticated.audit.form.label.firm = Firma del auditor
+authenticated.audit.form.label.draftMode = En edición
+
+
+
+authenticated.audit.form.button.create = Registrar
+authenticated.audit.form.button.update = Actualizar
+authenticated.audit.form.button.delete = Eliminar
+authenticated.audit.form.button.records = Registros
+authenticated.audit.form.button.publish = Publicar
+authenticated.audit.form.button.unpublish = Despublicar
+
+audit.error.exist-code = El código ya existe
+audit.error.not-exist-curse = El curso no existe
+audit.error.edit-draftMode = No puedes actualizar un audit público
+auditingRecord.error.not-valid-mark = Debes introducir una calificación tal que A+/A/B/C/F/F-
+auditingRecord.error.not-enougth-time = Duración mínima 30 minutos
+
+offer.error.spam = El texto contiene Spam

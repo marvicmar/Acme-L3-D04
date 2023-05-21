@@ -17,3 +17,9 @@ authenticated.company.form.label.link = Enlace
 # Messages for label in list
 authenticated.company.form.button.create = Crear
 authenticated.company.form.button.update = Actualizar
+
+# Messages for error in form
+authenticated.company.error.spam.name = El nombre no puede ser spam
+authenticated.company.error.spam.vatNumber = El número VAT no puede ser spam
+authenticated.company.error.spam.summary = La descripción no puede ser spam
+authenticated.company.error.spam.link = El enlace no puede ser spam

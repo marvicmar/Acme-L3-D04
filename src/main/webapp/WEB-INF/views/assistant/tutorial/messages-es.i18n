@@ -4,6 +4,7 @@ assistant.tutorial.list.label.estimatedTime = Tiempo Estimado
 assistant.tutorial.list.label.title = Titulo
 assistant.tutorial.list.button.create = Crear Tutorial
 assistant.session.list.button.create = Crear Sesion
+assistant.tutorial.list.label.summary = Resumen
 
 # form ###############################################################
 assistant.tutorial.form.label.code = Codigo
@@ -19,3 +20,5 @@ assistant.tutorial.form.button.delete = Eliminar Tutorial
 assistant.tutorial.form.button.publish = Publicar Tutorial
 assistant.session.form.button.session = Listado de sesiones
 assistant.session.form.button.create = Crear Session
+
+assistant.error.spam = El texto contiene Spam

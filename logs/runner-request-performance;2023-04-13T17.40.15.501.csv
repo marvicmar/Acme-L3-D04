@@ -1,9 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-13 17:38:29.397","GET","/authenticated/course/list-course","45","200 OK"
-"2023-04-13 17:38:33.427","GET","/authenticated/audit/list-mine","27","200 OK"
-"2023-04-13 17:38:42.323","GET","/authenticated/audit/create","7190","200 OK"
-"2023-04-13 17:38:54.611","GET","/authenticated/audit/list-mine","11","200 OK"
-"2023-04-13 17:38:56.443","GET","/authenticated/audit/show","15","200 OK"
-"2023-04-13 17:38:56.591","GET","/authenticated/audit/show","9","200 OK"
-"2023-04-13 17:39:15.898","POST","/authenticated/audit/update","12536","500 INTERNAL_SERVER_ERROR"
-"2023-04-13 17:39:35.54","GET","/authenticated/audit/show","19","200 OK"

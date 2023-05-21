@@ -20,3 +20,5 @@ authenticated.tutorial.list.label.code = Codigo
 authenticated.tutorial.list.label.title = Titulo
 authenticated.tutorial.list.label.abstractPracticum = Resumen Practica
 authenticated.tutorial.list.label.estimatedTime = Tiempo estimado en horas
+
+tutorial.error.spam = El texto contiene Spam

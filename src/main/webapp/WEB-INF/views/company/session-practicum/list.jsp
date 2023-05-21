@@ -21,7 +21,6 @@
     <acme:list-column code="company.session-practicum.list.label.end" path="end" width="5%"/>
     <acme:list-column code="company.session-practicum.list.label.start" path="start" width="5%"/>
     <acme:list-column code="company.session-practicum.list.label.additional" path="additional" width="5%"/>
-    <acme:list-column code="company.session-practicum.list.label.confirmed" path="confirmed" width="5%"/>
     <acme:list-payload path="payload"/>
 </acme:list>
 <jstl:if test="${extraAvailable}">

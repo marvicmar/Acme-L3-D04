@@ -1,4 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-12 15:25:39.612","GET","/authenticated/course/list-course","37","200 OK"
-"2023-04-12 15:25:42.979","GET","/authenticated/course/show","5","500 INTERNAL_SERVER_ERROR"
-"2023-04-12 15:25:48.121","GET","/authenticated/course/list-course","11","200 OK"

@@ -1,6 +1,7 @@
 
 package acme.features.authenticated.company;
 
+import acme.services.SpamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,8 @@ public class AuthenticatedCompanyUpdateService extends AbstractService<Authentic
 	// Internal state ---------------------------------------------------------
 	@Autowired
 	protected AuthenticatedCompanyRepository	repository;
+	@Autowired
+	protected SpamService spamDetector;
 
 
 	// AbstractService interface ----------------------------------------------
@@ -33,13 +36,7 @@ public class AuthenticatedCompanyUpdateService extends AbstractService<Authentic
 
 	@Override
 	public void authorise() {
-		boolean status;
-		Principal principal;
-
-		principal = super.getRequest().getPrincipal();
-		status = principal.hasRole(Authenticated.class);
-
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(true);
 	}
 
 	@Override
@@ -51,6 +48,7 @@ public class AuthenticatedCompanyUpdateService extends AbstractService<Authentic
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
 		company = this.repository.findOneCompanyByUserAccountId(userAccountId);
+
 		super.getBuffer().setData(company);
 	}
 
@@ -64,6 +62,16 @@ public class AuthenticatedCompanyUpdateService extends AbstractService<Authentic
 	@Override
 	public void validate(final Company company) {
 		assert company != null;
+
+		// Spam validation
+		if (!super.getBuffer().getErrors().hasErrors("name"))
+			super.state(this.spamDetector.validateTextInput(company.getName()), "name", "authenticated.company.error.spam.name");
+		if (!super.getBuffer().getErrors().hasErrors("vatNumber"))
+			super.state(this.spamDetector.validateTextInput(company.getVatNumber()), "vatNumber", "authenticated.company.error.spam.vatNumber");
+		if (!super.getBuffer().getErrors().hasErrors("summary"))
+			super.state(this.spamDetector.validateTextInput(company.getSummary()), "summary", "authenticated.company.error.spam.summary");
+		if (!super.getBuffer().getErrors().hasErrors("link"))
+			super.state(this.spamDetector.validateTextInput(company.getLink()), "link", "authenticated.company.error.spam.link");
 	}
 
 	@Override

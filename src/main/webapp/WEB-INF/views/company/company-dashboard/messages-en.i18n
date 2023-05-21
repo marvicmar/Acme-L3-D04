@@ -28,4 +28,6 @@ company.dashboard.form.label.session-length.deviation = Deviation
 
 # Messages for the dashboard form about the practica by month
 company.dashboard.form.title.total-number-practica-by-month = Total number of practica by month
+company.dashboard.form.graph.theory-session = Theory session
+company.dashboard.form.graph.hands-on-session = Hands-on session
 

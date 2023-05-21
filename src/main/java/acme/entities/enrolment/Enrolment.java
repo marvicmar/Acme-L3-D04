@@ -13,6 +13,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.Length;
 
 import acme.entities.activities.Activity;
@@ -46,12 +47,23 @@ public class Enrolment extends AbstractEntity {
 	@Length(max = 100)
 	protected String			goals;
 
+	@Length(max = 75)
 	protected String			cardHolderName;
 
+	@Pattern(regexp = "^\\d{4}$")
 	protected String			cardLowerNibble;
 
-	@NotNull
 	protected boolean			draftMode;
+
+	@Transient
+	@CreditCardNumber
+	protected String			cardNumber;
+	@Transient
+	@Pattern(regexp = "^\\d{2}/\\d{2}$")
+	protected String			expirationDate;
+	@Transient
+	@Pattern(regexp = "^\\d{3}$")
+	protected String			cvv;
 
 
 	// Derived attributes -----------------------------------------------------

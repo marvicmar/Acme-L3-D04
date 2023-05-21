@@ -47,7 +47,7 @@ public class TutorialShowService extends AbstractService<Authenticated, Tutorial
 		userAccountId = principal.getAccountId();
 		userAccount = this.repository.findOneUserAccountById(userAccountId);
 		tutorial = this.repository.findOneTutorialById(tutorialId);
-		status = !tutorial.getDraftMode() && principal.isAuthenticated();
+		status = !tutorial.isDraftMode() && principal.isAuthenticated();
 
 		super.getResponse().setAuthorised(status);
 	}

@@ -15,3 +15,5 @@ assistant.session.form.button.update = Actualizar Sesion
 assistant.session.form.button.delete = Eliminar Sesion
 assistant.session.form.button.publish = Publicar Sesion
 assistant.session.form.button.create = Crear Sesion
+
+assistant.error.spam = El texto contiene Spam

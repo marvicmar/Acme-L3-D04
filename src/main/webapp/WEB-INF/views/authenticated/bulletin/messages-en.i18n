@@ -7,3 +7,5 @@ bulletin.form.label.title = Titulo
 bulletin.form.label.message = Mensaje
 bulletin.form.label.flags = Flags
 bulletin.form.label.link = Aditional information
+
+bulletin.error.spam = The text contents Spam

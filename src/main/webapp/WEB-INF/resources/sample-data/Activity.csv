@@ -1,4 +1,4 @@
 key,title,summary,type,startDate,endDate,link,key:enrolment
-Activities-01,title-1,summary1,HANDS_ON_SESSION,2020/12/31 0:00,2025/06/25 13:00,,enrolment-01
-Activities-02,title-2,summary2,THEORY_SESSION,2023/03/15 21:00,2023/03/15 23:00,http://www.example.com,enrolment-02
-Activities-03,title-3,summary3,HANDS_ON_SESSION,2021/01/01 0:00,2021/01/01 5:00,https://www.icsi.in/icsi-2019/programme/student-03,enrolment-03
+Activities-01,Esto es solo una prueba para ver que la longitud máxima de este campo es 75,summary1,HANDS_ON_SESSION,2020/12/31 0:00,2025/06/25 13:00,,enrolment-01
+Activities-02,title-2,Esto es solo una prueba para ver que la longitud máxima de este campo la cuál en este caso es de 100,THEORY_SESSION,2023/03/15 21:00,2023/03/15 23:00,http://www.example.com,enrolment-02
+Activities-03,Prueba caracteres: お寿司が大好きです,Prueba de caracteres: من سوشیم خۆشدەوێت,HANDS_ON_SESSION,2021/01/01 0:00,2021/01/01 5:00,https://www.icsi.in/icsi-2019/programme/student-03,enrolment-03

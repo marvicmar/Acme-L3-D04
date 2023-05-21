@@ -19,3 +19,5 @@ offer.form.button.create = Register
 offer.form.button.delete = Delete
 offer.form.button.update = Update
 offer.form.button.publish = Publish
+
+offer.error.spam = The text contents Spam

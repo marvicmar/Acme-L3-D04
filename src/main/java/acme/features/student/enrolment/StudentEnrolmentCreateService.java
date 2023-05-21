@@ -13,18 +13,21 @@ import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Student;
+import acme.services.SpamService;
 
 @Service
 public class StudentEnrolmentCreateService extends AbstractService<Student, Enrolment> {
 
 	// Constants -------------------------------------------------------------
 	public static final String[]			PROPERTIES	= {
-		"code", "motivation", "goals"
+		"code", "motivation", "goals", "cardHolderName"
 	};
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
 	protected StudentEnrolmentRepository	repository;
+	@Autowired
+	protected SpamService					spamService;
 
 
 	// AbstractService <Student,Enrolment> ----------------------------------------------
@@ -83,7 +86,23 @@ public class StudentEnrolmentCreateService extends AbstractService<Student, Enro
 
 			existing = this.repository.findOneEnrolmentByCode(enrolment.getCode());
 			super.state(existing == null, "code", "asistant.tutorial.form.error.not-unique-code");
+			super.state(this.spamService.validateTextInput(enrolment.getCode()), "code", "enrolment.error.spam");
+
 		}
+		if (!super.getBuffer().getErrors().hasErrors("motivation"))
+			super.state(this.spamService.validateTextInput(enrolment.getMotivation()), "motivation", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("goals"))
+			super.state(this.spamService.validateTextInput(enrolment.getGoals()), "goals", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cardHolderName"))
+			super.state(this.spamService.validateTextInput(enrolment.getCardHolderName()), "cardHolderName", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cardLowerNibble"))
+			super.state(this.spamService.validateTextInput(enrolment.getCardLowerNibble()), "cardLowerNibble", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cardNumber"))
+			super.state(this.spamService.validateTextInput(enrolment.getCardNumber()), "cardNumber", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("expirationDate"))
+			super.state(this.spamService.validateTextInput(enrolment.getExpirationDate()), "expirationDate", "enrolment.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("cvv"))
+			super.state(this.spamService.validateTextInput(enrolment.getCvv()), "cvv", "enrolment.error.spam");
 
 	}
 

@@ -1,5 +1,0 @@
-timestamp,method,feature,time,status
-"2023-04-20 11:18:10.521","GET","/authenticated/offer/list","48","200 OK"
-"2023-04-20 11:18:13.74","GET","/authenticated/offer/show","10","200 OK"
-"2023-04-20 11:18:13.961","GET","/authenticated/offer/show","10","200 OK"
-"2023-04-20 11:18:16.29","POST","/authenticated/offer/delete","15","500 INTERNAL_SERVER_ERROR"
