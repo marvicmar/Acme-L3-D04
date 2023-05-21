@@ -14,12 +14,12 @@
 	<acme:input-url code="administrator.offer.form.label.link" path="link"/>
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
-			<acme:submit code="offer.form.button.update" action="/authenticated/offer/update"/>
-			<acme:submit code="offer.form.button.delete" action="/authenticated/offer/delete"/>
-			<acme:submit code="offer.form.button.publish" action="/authenticated/offer/publish"/>
+			<acme:submit code="offer.form.button.update" action="/administrator/offer/update"/>
+			<acme:submit code="offer.form.button.delete" action="/administrator/offer/delete"/>
+			<acme:submit code="offer.form.button.publish" action="/administrator/offer/publish"/>
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="offer.form.button.create" action="/authenticated/offer/create"/>
+			<acme:submit code="offer.form.button.create" action="/administrator/offer/create"/>
 		</jstl:when>		
 	</jstl:choose>	
 </acme:form>
