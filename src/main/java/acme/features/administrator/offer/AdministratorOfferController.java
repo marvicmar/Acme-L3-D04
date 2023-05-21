@@ -1,29 +1,29 @@
+
 package acme.features.administrator.offer;
 
-import acme.entities.offer.Offer;
-import acme.features.authenticated.offer.AuthenticatedOfferListService;
-import acme.features.authenticated.offer.AuthenticatedOfferShowService;
-import acme.framework.components.accounts.Administrator;
-import acme.framework.controllers.AbstractController;
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import javax.annotation.PostConstruct;
+import acme.entities.offer.Offer;
+import acme.framework.components.accounts.Administrator;
+import acme.framework.controllers.AbstractController;
 
 @Controller
 public class AdministratorOfferController extends AbstractController<Administrator, Offer> {
 
-    // Internal state ---------------------------------------------------------
+	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected AdministratorOfferListService listService;
+	protected AdministratorOfferListService		listService;
 	@Autowired
-	protected AdministratorOfferShowService showService;
-    @Autowired
-    protected AdministratorOfferCreateService createService;
-    @Autowired
-    protected AdministratorOfferUpdateService updateService;
-    @Autowired
-    protected AdministratorOfferDeleteService deleteService;
+	protected AdministratorOfferShowService		showService;
+	@Autowired
+	protected AdministratorOfferCreateService	createService;
+	@Autowired
+	protected AdministratorOfferUpdateService	updateService;
+	@Autowired
+	protected AdministratorOfferDeleteService	deleteService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -32,8 +32,8 @@ public class AdministratorOfferController extends AbstractController<Administrat
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
-        super.addBasicCommand("create", this.createService);
-        super.addBasicCommand("update", this.updateService);
-        super.addBasicCommand("delete", this.deleteService);
+		super.addBasicCommand("create", this.createService);
+		super.addBasicCommand("update", this.updateService);
+		super.addBasicCommand("delete", this.deleteService);
 	}
 }

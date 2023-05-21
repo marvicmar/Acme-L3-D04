@@ -27,9 +27,9 @@ public class Bulletin extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
 	@Past
 	@Temporal(TemporalType.DATE)
+	@NotNull
 	protected Date				moment;
 
 	@NotBlank
