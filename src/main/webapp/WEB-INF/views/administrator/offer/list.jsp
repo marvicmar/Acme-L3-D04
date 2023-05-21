@@ -11,6 +11,6 @@
 	<acme:list-column code="administrator.offer.list.label.endDate" path="endDate" width="25%"/>
 	<acme:list-column code="administrator.offer.list.label.price" path="price" width="25%"/>
 </acme:list>
-<acme:button code="administrator.offer.form.button.create" action="/administrato/offer/create"/>
+<acme:button code="administrator.offer.form.button.create" action="/administrator/offer/create"/>
 
 

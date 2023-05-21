@@ -25,6 +25,6 @@ public class SpamService {
 		spamThreshold = this.repository.findSpamThreshold();
 
 		final SpamFilter spamFilter = new SpamFilter(spamWords, spamThreshold, "-");
-		return !spamFilter.isSpam(input);
+		return input == null || !spamFilter.isSpam(input);
 	}
 }
