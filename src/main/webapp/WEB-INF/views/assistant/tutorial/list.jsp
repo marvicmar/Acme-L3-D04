@@ -16,9 +16,10 @@
 <%@taglib prefix="acme" uri="http://www.the-acme-framework.org/"%>
 
 <acme:list>
-  <acme:list-column code="assistant.tutorial.list.label.title" path="title" width="10%"/>
+	<acme:list-column code="assistant.tutorial.list.label.code" path="code" width="10%"/>
+  <acme:list-column code="assistant.tutorial.list.label.title" path="title" width="30%"/>
   <acme:list-column code="assistant.tutorial.list.label.estimatedTime" path="estimatedTime" width="10%"/>
-  <acme:list-column code="assistant.tutorial.list.label.summary" path="summary" width="80%"/>
+  <acme:list-column code="assistant.tutorial.list.label.summary" path="summary" width="50%"/>
 </acme:list>
 <jstl:if test="${_command == 'list-mine'}">
 	<acme:button code="assistant.tutorial.list.button.create" action="/assistant/tutorial/create"/>
