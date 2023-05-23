@@ -12,7 +12,11 @@ sessionPracticum-10,Title in other language: ä¼�ä¸š,Abstract session in o
 sessionPracticum-11,<script>alert('The title alert');</script>,<script>alert('The abstract session alert');</script>,<script>alert('The description alert');</script>,2020/12/31 23:59,2021/01/15 23:59,https://www.icsi.in/icsi-2019/programme/practicum-11,practicum-10,false
 sessionPracticum-12,<h1>The title in HTML</h1>,<h1>The abstract session in HTML</h1>,<h1>The description in HTML</h1>,2020/12/31 23:59,2021/10/31 23:59,https://www.icsi.in/icsi-2019/programme/practicum-12,practicum-10,false
 sessionPracticum-13,DROP TABLE sessionPracticum;,DELETE FROM sessionPracticum;,TRUNCATE TABLE sessionPracticum;,2021/12/31 23:59,2022/05/23 23:59,https://www.icsi.in/icsi-2019/programme/practicum-13,practicum-10,false
+sessionPracticum-14,Session 2 week,Abstract session 2 week,Description 2 week,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-18,false
 sessionPracticum-15,Session 2 week,Abstract session 2 week,Description 2 week,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-14,false
 sessionPracticum-16,Session 2 week,Abstract session 2 week,Description 2 week,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-15,false
 sessionPracticum-17,Session 2 week,Abstract session 2 week,Description 2 week,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-16,false
 sessionPracticum-18,Session 2 week,Abstract session 2 week,Description 2 week,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-17,false
+sessionPracticum-19,YUpdate,YUpdate,YUpdate,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-19,false
+sessionPracticum-20,YAdditional,YAdditional,YAdditional,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-20,false
+sessionPracticum-21,YNoAdditional,YNoAdditional,YNoAdditional,2021/02/13 23:59,2021/02/20 23:59,https://www.icsi.in/icsi-2019/programme/practicum-14,practicum-21,true

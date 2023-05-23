@@ -1,0 +1,7 @@
+practicumRecordIndex,course,code,title,abstractPracticum,goals,estimatedTimeInHours
+0,D999,A123,Title with 75 characters 00000000000000000000000000000000000000000000000005,Abstract practicum with 100 characters 0000000000000000000000000000000000000000000000000000000000005,Goal with 100 characters 000000000000000000000000000000000000000000000000000000000000000000000000005,40.00
+1,A002,ABC012,Title 2,Abstract practicum 2,Goal 2,20.00
+2,E000,BB456,Title with point.,Abstract practicum with point.,Goal with point.,50.00
+3,CCC111,BCA123,Title 4,Abstract practicum 4,Goal 4,40.00
+4,AZA101,CC789,"Title with comma,","Abstract practicum with comma,","Goal with comma,",60.00
+5,ZA010,DD012,Title with strange letters: áéíóúüñ,Abstract practicum with strange letters: áéíóúüñ,Goal with strange letters: áéíóúüñ,70.00
