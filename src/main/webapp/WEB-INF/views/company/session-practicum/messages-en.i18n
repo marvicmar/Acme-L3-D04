@@ -44,6 +44,6 @@ company.session-practicum.error.start-after-now = The start date must be after t
 company.session-practicum.error.end-after-start = The end date must be after the start date
 company.session-practicum.error.confirmed = The session must be confirmed to be displayed in the public website
 company.session-practicum.error.spam.title = The title cannot be spam
-company.session-practicum.error.spam.abstractSession = The abstract cannot be spam
+company.session-practicum.error.spam.abstract-session = The abstract cannot be spam
 company.session-practicum.error.spam.description = The description cannot be spam
 company.session-practicum.error.spam.link = The link cannot be spam

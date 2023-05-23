@@ -1,22 +1,21 @@
 
 package acme.features.company.sessionPracticum;
 
-import java.time.temporal.ChronoUnit;
-import java.util.Date;
-
-import acme.framework.controllers.HttpMethod;
-import acme.framework.helpers.PrincipalHelper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import acme.entities.practicum.Practicum;
 import acme.entities.sessionPracticum.SessionPracticum;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
+import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.MomentHelper;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 import acme.services.SpamService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
 
 @Service
 public class CompanySessionPracticumCreateService extends AbstractService<Company, SessionPracticum> {
@@ -118,7 +117,7 @@ public class CompanySessionPracticumCreateService extends AbstractService<Compan
 				super.state(MomentHelper.isAfter(end, inAWeekFromStart), "end", "company.session-practicum.error.end-after-start");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("confirmed")) {
+		if (super.getRequest().hasData("confirmed") && !super.getBuffer().getErrors().hasErrors("confirmed")) {
 			Practicum practicum;
 			boolean confirmed;
 

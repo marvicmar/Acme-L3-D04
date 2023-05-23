@@ -1,25 +1,24 @@
 
 package acme.features.company.practicum;
 
-import java.time.Duration;
-import java.util.Collection;
-import java.util.Date;
-
-import acme.framework.controllers.HttpMethod;
-import acme.framework.helpers.PrincipalHelper;
-import acme.services.SpamService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
 import acme.entities.sessionPracticum.SessionPracticum;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.MomentHelper;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
+import acme.services.SpamService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.Duration;
+import java.util.Collection;
+import java.util.Date;
 
 @Service
 public class CompanyPracticumPublishService extends AbstractService<Company, Practicum> {
@@ -164,7 +163,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", practicum.getCourse());
+		choices = SelectChoices.from(courses, "code", practicum.getCourse());
 
 		tuple = super.unbind(practicum, CompanyPracticumPublishService.PROPERTIES);
 		tuple.put("draftMode", practicum.isDraftMode());

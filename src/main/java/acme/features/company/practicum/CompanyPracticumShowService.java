@@ -1,11 +1,6 @@
 
 package acme.features.company.practicum;
 
-import java.util.Collection;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
 import acme.framework.components.accounts.Principal;
@@ -13,6 +8,10 @@ import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.Collection;
 
 @Service
 public class CompanyPracticumShowService extends AbstractService<Company, Practicum> {
@@ -74,7 +73,7 @@ public class CompanyPracticumShowService extends AbstractService<Company, Practi
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", practicum.getCourse());
+		choices = SelectChoices.from(courses, "code", practicum.getCourse());
 		tuple = super.unbind(practicum, CompanyPracticumShowService.PROPERTIES);
 		tuple.put("course", choices);
 		tuple.put("courses", courses);

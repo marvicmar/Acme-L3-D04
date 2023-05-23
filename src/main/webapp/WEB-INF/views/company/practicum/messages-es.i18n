@@ -33,7 +33,7 @@ company.practicum.list.label.yes = Si
 company.practicum.list.label.no = No
 
 # Messages for buttons in list
-company.practicum.list.button.create = Crear práctica
+company.practicum.list.button.create = Crear
 
 # Messages for error in form
 company.practicum.form.error.not-in-range = El tiempo estimado en horas debe estar entre el valor real por 0.9 y el valor real por 1.1

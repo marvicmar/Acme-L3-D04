@@ -33,7 +33,7 @@ company.practicum.list.label.yes = Yes
 company.practicum.list.label.no = No
 
 # Messages for button in list
-company.practicum.list.button.create = Create practicum
+company.practicum.list.button.create = Create
 
 # Messages for error in form
 company.practicum.form.error.not-in-range = The estimated time in hours must be between the real value per 0.9 and the real value per 1.1

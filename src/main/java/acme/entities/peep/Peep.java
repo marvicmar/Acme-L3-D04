@@ -1,7 +1,11 @@
 
 package acme.entities.peep;
 
-import java.util.Date;
+import acme.framework.data.AbstractEntity;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -10,13 +14,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
-
-import acme.framework.data.AbstractEntity;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -47,10 +45,12 @@ public class Peep extends AbstractEntity {
 	private String				message;
 
 	@Email
+	@Length(max = 255)
 	private String				email;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
-	private boolean				draftMode			= true;
+	private boolean				draftMode;
 }

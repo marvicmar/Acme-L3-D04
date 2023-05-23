@@ -49,6 +49,7 @@ public class SessionPracticum extends AbstractEntity {
 	private Date				end;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
 	private boolean				additional;
