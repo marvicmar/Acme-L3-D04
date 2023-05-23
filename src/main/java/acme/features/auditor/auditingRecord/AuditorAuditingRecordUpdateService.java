@@ -101,10 +101,10 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 		final Date start = object.getStart();
 		final Date end = object.getEnd();
 		final Duration duration = MomentHelper.computeDuration(start, end);
-		if (!super.getBuffer().getErrors().hasErrors("mark"))
-			super.state(MomentHelper.isBefore(start, end), "mark", "auditingRecord.error.not-valid-mark");
-		if (!super.getBuffer().getErrors().hasErrors("endAudit"))
-			super.state(duration.toMinutes() >= 30, "endAudit", "auditingRecord.error.not-enougth-time");
+		if (!super.getBuffer().getErrors().hasErrors("end"))
+			super.state(MomentHelper.isBefore(start, end), "end", "auditingRecord.error.not-valid-time");
+		if (!super.getBuffer().getErrors().hasErrors("end"))
+			super.state(duration.toMinutes() >= 30, "end", "auditingRecord.error.not-enougth-time");
 		if (!super.getBuffer().getErrors().hasErrors("subject"))
 			super.state(this.spamService.validateTextInput(object.getSubject()), "subject", "auditingRecord.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("assessment"))
@@ -132,6 +132,7 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 		final int idAuditor = object.getAudit().getAuditor().getUserAccount().getId();
 		tuple = BinderHelper.unbind(object, AuditorAuditingRecordUpdateService.PROPERTIES);
 		tuple.put("myAudit", userAccountId == idAuditor);
+		tuple.put("auditDraftMode", object.getAudit().isDraftMode());
 		super.getResponse().setData(tuple);
 	}
 

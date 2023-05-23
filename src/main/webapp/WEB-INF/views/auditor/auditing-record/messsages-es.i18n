@@ -32,5 +32,6 @@ authenticated.auditingRecord.form.button.records = Registros
 audit.error.edit-draftMode = No puedes actualizar un audit público
 auditingRecord.error.not-valid-mark = Debes introducir una calificación tal que A+/A/B/C/F/F-
 auditingRecord.error.not-enougth-time = Duración mínima 30 minutos
+auditingRecord.error.not-valid-time = El comienzo debe ser anterior al fin
 
 auditingRecord.error.spam = El texto contiene Spam

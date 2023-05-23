@@ -42,10 +42,12 @@ public class AuditingRecord extends AbstractEntity {
 	@Length(max = 100)
 	protected String			assessment;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	protected Date				start;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	protected Date				end;
@@ -56,7 +58,7 @@ public class AuditingRecord extends AbstractEntity {
 	 */
 
 	@NotBlank
-	@Pattern(regexp = "^A\\+?|B|C|F-?$")
+	@Pattern(regexp = "^A\\+?|B|C|F-?$", message = "A+ / A / B / C / F / F-")
 	protected String			mark;
 
 	@URL
