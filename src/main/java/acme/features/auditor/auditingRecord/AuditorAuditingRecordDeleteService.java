@@ -28,7 +28,7 @@ public class AuditorAuditingRecordDeleteService extends AbstractService<Auditor,
 	//Constants
 
 	public final static String[]				PROPERTIES	= {
-		"subject", "assessment", "startAudit", "mark", "endAudit", "link", "special"
+		"subject", "assessment", "start", "mark", "end", "link", "special"
 	};
 
 	// Internal state ---------------------------------------------------------

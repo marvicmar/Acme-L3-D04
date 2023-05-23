@@ -34,7 +34,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 	//Constants
 
 	public final static String[]				PROPERTIES	= {
-		"subject", "assessment", "startAudit", "mark", "endAudit", "link", "special"
+		"subject", "assessment", "start", "mark", "end", "link", "special"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -99,8 +99,8 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 		final boolean draft = object.getAudit().isDraftMode();
 		if (!super.getBuffer().getErrors().hasErrors("special"))
 			super.state(draft || !draft && object.isSpecial(), "special", "audit.error.edit-draftMode");
-		final Date start = object.getStartAudit();
-		final Date end = object.getEndAudit();
+		final Date start = object.getStart();
+		final Date end = object.getEnd();
 		final Duration duration = MomentHelper.computeDuration(start, end);
 		if (!super.getBuffer().getErrors().hasErrors("mark"))
 			super.state(MomentHelper.isBefore(start, end), "mark", "auditingRecord.error.not-valid-mark");

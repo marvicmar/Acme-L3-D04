@@ -44,11 +44,11 @@ public class AuditingRecord extends AbstractEntity {
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	protected Date				startAudit;
+	protected Date				start;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	protected Date				endAudit;
+	protected Date				end;
 
 	/*
 	 * @NotNull
@@ -68,14 +68,14 @@ public class AuditingRecord extends AbstractEntity {
 	@Override
 	public String toString() {
 		//I adjust the getMark to get A+ or F- in case AP or FL
-		return "AuditingRecord [subject=" + this.subject + ", assessment=" + this.assessment + ", startAudit=" + this.startAudit + ", endAudit=" + this.endAudit + ", mark=" + this.mark.toString() + ", link=" + this.link + "]";
+		return "AuditingRecord [subject=" + this.subject + ", assessment=" + this.assessment + ", startAudit=" + this.start + ", endAudit=" + this.end + ", mark=" + this.mark.toString() + ", link=" + this.link + "]";
 	}
 
 	// Derived attributes -----------------------------------------------------
 
 	@Transient
 	public Duration getDuration() {
-		return MomentHelper.computeDuration(this.startAudit, this.endAudit);
+		return MomentHelper.computeDuration(this.start, this.end);
 	}
 
 

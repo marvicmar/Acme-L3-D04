@@ -19,8 +19,8 @@ public class AuditingRecordValidator implements Validator {
 	@Override
 	public void validate(final Object target, final Errors errors) {
 		final AuditingRecord auditingRecord = (AuditingRecord) target;
-		final Date start = auditingRecord.getStartAudit();
-		final Date end = auditingRecord.getEndAudit();
+		final Date start = auditingRecord.getStart();
+		final Date end = auditingRecord.getEnd();
 		final Duration duration = MomentHelper.computeDuration(start, end);
 		if (MomentHelper.isBefore(start, end))
 			errors.rejectValue("startAudit", "startAudit.afterEndAudit", "The Audit's start date is after Audit's end date");

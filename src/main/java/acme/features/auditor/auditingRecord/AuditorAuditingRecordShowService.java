@@ -30,7 +30,7 @@ public class AuditorAuditingRecordShowService extends AbstractService<Auditor, A
 	//Constants
 
 	public final static String[]				PROPERTIES	= {
-		"id", "subject", "assessment", "startAudit", "endAudit", "mark", "link", "special"
+		"id", "subject", "assessment", "start", "end", "mark", "link", "special"
 	};
 	// Internal state ---------------------------------------------------------
 
