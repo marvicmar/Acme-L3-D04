@@ -100,11 +100,14 @@ public class AuditorAuditingRecordUpdateService extends AbstractService<Auditor,
 			super.state(draft || !draft && object.isSpecial(), "special", "audit.error.edit-draftMode");
 		final Date start = object.getStart();
 		final Date end = object.getEnd();
-		final Duration duration = MomentHelper.computeDuration(start, end);
-		if (!super.getBuffer().getErrors().hasErrors("end"))
-			super.state(MomentHelper.isBefore(start, end), "end", "auditingRecord.error.not-valid-time");
-		if (!super.getBuffer().getErrors().hasErrors("end"))
-			super.state(duration.toMinutes() >= 30, "end", "auditingRecord.error.not-enougth-time");
+		if (start != null && end != null) {
+
+			final Duration duration = MomentHelper.computeDuration(start, end);
+			if (!super.getBuffer().getErrors().hasErrors("end"))
+				super.state(MomentHelper.isBefore(start, end), "end", "auditingRecord.error.not-valid-time");
+			if (!super.getBuffer().getErrors().hasErrors("end"))
+				super.state(duration.toMinutes() >= 30, "end", "auditingRecord.error.not-enougth-time");
+		}
 		if (!super.getBuffer().getErrors().hasErrors("subject"))
 			super.state(this.spamService.validateTextInput(object.getSubject()), "subject", "auditingRecord.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("assessment"))
