@@ -27,8 +27,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>336</x>
-      <y>28</y>
+      <x>371</x>
+      <y>14</y>
       <w>280</w>
       <h>112</h>
     </coordinates>
@@ -48,8 +48,8 @@ Session
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>315</x>
-      <y>238</y>
+      <x>350</x>
+      <y>224</y>
       <w>308</w>
       <h>105</h>
     </coordinates>
@@ -68,8 +68,8 @@ Tutorial
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>245</y>
+      <x>35</x>
+      <y>231</y>
       <w>217</w>
       <h>91</h>
     </coordinates>
@@ -86,8 +86,8 @@ Assistant
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>329</x>
-      <y>448</y>
+      <x>364</x>
+      <y>434</y>
       <w>280</w>
       <h>28</h>
     </coordinates>
@@ -100,8 +100,8 @@ Course
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>658</x>
-      <y>203</y>
+      <x>693</x>
+      <y>189</y>
       <w>280</w>
       <h>147</h>
     </coordinates>
@@ -123,8 +123,8 @@ TutorialDashboard
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>427</y>
+      <x>105</x>
+      <y>413</y>
       <w>168</w>
       <h>77</h>
     </coordinates>
@@ -139,8 +139,8 @@ Approach
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>210</x>
-      <y>287</y>
+      <x>245</x>
+      <y>273</y>
       <w>119</w>
       <h>28</h>
     </coordinates>
@@ -152,8 +152,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>707</x>
-      <y>42</y>
+      <x>742</x>
+      <y>28</y>
       <w>161</w>
       <h>49</h>
     </coordinates>
@@ -166,8 +166,8 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>609</x>
-      <y>63</y>
+      <x>644</x>
+      <y>49</y>
       <w>112</w>
       <h>21</h>
     </coordinates>
@@ -177,8 +177,8 @@ bg=blue</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>462</x>
-      <y>133</y>
+      <x>497</x>
+      <y>119</y>
       <w>35</w>
       <h>119</h>
     </coordinates>
@@ -190,8 +190,8 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>455</x>
-      <y>336</y>
+      <x>490</x>
+      <y>322</y>
       <w>35</w>
       <h>126</h>
     </coordinates>

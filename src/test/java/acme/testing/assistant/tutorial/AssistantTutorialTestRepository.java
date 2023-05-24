@@ -10,6 +10,6 @@ import acme.framework.repositories.AbstractRepository;
 
 public interface AssistantTutorialTestRepository extends AbstractRepository {
 
-	@Query("select p from Practicum p where p.company.name = ?1")
-	Collection<Tutorial> findManyTutorialsByAssistantUsername(String username);
+	@Query("SELECT t FROM Tutorial t WHERE t.assistant.userAccount.username= ?1")
+	Collection<Tutorial> findManyTutorialsByAssistantByUserName(String username);
 }

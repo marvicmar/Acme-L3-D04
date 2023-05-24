@@ -55,8 +55,9 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 		Collection<Tutorial> tutorials;
 		String param;
-		//??
-		tutorials = this.repository.findManyTutorialsByAssistantUsername("employer1");
+
+		tutorials = this.repository.findManyTutorialsByAssistantByUserName("assistant1");
+		System.out.println(tutorials.size());
 		for (final Tutorial tutorial : tutorials)
 			if (tutorial.isDraftMode()) {
 				param = String.format("id=%d", tutorial.getId());
@@ -66,17 +67,27 @@ public class AssistantTutorialShowTest extends TestHarness {
 				super.checkPanicExists();
 
 				super.signIn("administrator", "administrator");
-				super.request("/assistant/tutorial/show", param);
+				super.request("/assistant/tutorial/show");
 				super.checkPanicExists();
 				super.signOut();
 
-				super.signIn("employer2", "employer2");
-				super.request("/assistant/tutorial/show", param);
+				super.signIn("company1", "company1");
+				super.request("/assistant/tutorial/show");
 				super.checkPanicExists();
 				super.signOut();
 
 				super.signIn("student1", "student1");
-				super.request("/company/practicum/show", param);
+				super.request("/assistant/tutorial/show");
+				super.checkPanicExists();
+				super.signOut();
+
+				super.signIn("auditor1", "auditor1");
+				super.request("/assistant/tutorial/show");
+				super.checkPanicExists();
+				super.signOut();
+
+				super.signIn("lecturer1", "lecturer1");
+				super.request("/assistant/tutorial/show");
 				super.checkPanicExists();
 				super.signOut();
 			}
