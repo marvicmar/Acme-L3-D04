@@ -1,18 +1,17 @@
 
 package acme.features.company.practicum;
 
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
 import acme.entities.sessionPracticum.SessionPracticum;
 import acme.framework.components.accounts.Principal;
-import acme.framework.components.jsp.SelectChoices;
-import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.Collection;
 
 @Service
 public class CompanyPracticumDeleteService extends AbstractService<Company, Practicum> {
@@ -94,24 +93,4 @@ public class CompanyPracticumDeleteService extends AbstractService<Company, Prac
 		this.repository.deleteAll(sessions);
 		this.repository.delete(practicum);
 	}
-
-	@Override
-	public void unbind(final Practicum practicum) {
-		assert practicum != null;
-
-		Collection<Course> courses;
-		SelectChoices choices;
-		Tuple tuple;
-
-		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "code", practicum.getCourse());
-
-		tuple = super.unbind(practicum, CompanyPracticumDeleteService.PROPERTIES);
-		tuple.put("draftMode", practicum.isDraftMode());
-		tuple.put("course", choices);
-		tuple.put("courseChoices", courses);
-
-		super.getResponse().setData(tuple);
-	}
-
 }

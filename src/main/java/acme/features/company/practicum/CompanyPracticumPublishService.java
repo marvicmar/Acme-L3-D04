@@ -1,6 +1,13 @@
 
 package acme.features.company.practicum;
 
+import java.time.Duration;
+import java.util.Collection;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
 import acme.entities.sessionPracticum.SessionPracticum;
@@ -13,12 +20,6 @@ import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 import acme.services.SpamService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.time.Duration;
-import java.util.Collection;
-import java.util.Date;
 
 @Service
 public class CompanyPracticumPublishService extends AbstractService<Company, Practicum> {
@@ -32,7 +33,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Autowired
 	protected CompanyPracticumRepository	repository;
 	@Autowired
-	protected SpamService spamDetector;
+	protected SpamService					spamDetector;
 
 
 	// AbstractService interface ----------------------------------------------
@@ -128,8 +129,8 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 				return duration.toHours();
 			}).sum();
 
-			moreThan90Percent = totalHours >= estimatedTimeInHours * 0.9;
-			lessThan110Percent = totalHours <= estimatedTimeInHours * 1.1;
+			moreThan90Percent = estimatedTimeInHours >= totalHours * 0.9;
+			lessThan110Percent = estimatedTimeInHours <= totalHours * 1.1;
 
 			super.state(moreThan90Percent && lessThan110Percent, "estimatedTimeInHours", "company.practicum.form.error.not-in-range");
 		}

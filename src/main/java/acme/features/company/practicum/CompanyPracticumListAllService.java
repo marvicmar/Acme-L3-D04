@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.practicum.Practicum;
 import acme.framework.components.models.Tuple;
-import acme.framework.helpers.MessageHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
@@ -51,14 +50,11 @@ public class CompanyPracticumListAllService extends AbstractService<Company, Pra
 		assert practicum != null;
 
 		Tuple tuple;
-		String published;
 		String payload;
 
 		tuple = super.unbind(practicum, CompanyPracticumListAllService.PROPERTIES);
-		published = MessageHelper.getMessage(practicum.isDraftMode() ? "company.practicum.list.label.yes" : "company.practicum.list.label.no");
 		payload = String.format("%s; %s; %s; %s", practicum.getCourse().getTitle(), practicum.getCourse().getCode(), practicum.getAbstractPracticum(), practicum.getGoals());
 		tuple.put("payload", payload);
-		tuple.put("published", published);
 
 		super.getResponse().setData(tuple);
 	}

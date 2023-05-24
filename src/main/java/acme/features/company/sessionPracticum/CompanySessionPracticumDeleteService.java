@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.practicum.Practicum;
 import acme.entities.sessionPracticum.SessionPracticum;
 import acme.framework.components.accounts.Principal;
-import acme.framework.components.models.Tuple;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 
@@ -79,20 +78,5 @@ public class CompanySessionPracticumDeleteService extends AbstractService<Compan
 		assert sessionPracticum != null;
 
 		this.repository.delete(sessionPracticum);
-	}
-
-	@Override
-	public void unbind(final SessionPracticum sessionPracticum) {
-		assert sessionPracticum != null;
-
-		Practicum practicum;
-		Tuple tuple;
-
-		practicum = sessionPracticum.getPracticum();
-		tuple = super.unbind(sessionPracticum, CompanySessionPracticumUpdateService.PROPERTIES_UNBIND);
-		tuple.put("masterId", practicum.getId());
-		tuple.put("draftMode", practicum.isDraftMode());
-
-		super.getResponse().setData(tuple);
 	}
 }
