@@ -15,9 +15,9 @@ practicum-13,ZZZ555,DROP TABLE practicum;,DELETE FROM practicum;,TRUNCATE TABLE 
 practicum-14,ZZZ666,Perfect estimated time,Perfect estimated time,Perfect estimated time,168,company-01,course-05,true
 practicum-15,ZZZ777,Upper 0.9,Upper 0.9,Upper 0.9,153,company-01,course-05,true
 practicum-16,ZZZ888,Lower 1.1,Lower 1.1,Lower 1.1,183,company-01,course-05,true
-practicum-17,ZZZ999,Lower 0.9,Lower 0.9,Lower 0.9,152,company-01,course-05,true
-practicum-18,ZZZ000,Upper 1.1,Upper 1.1,Upper 1.1,184,company-01,course-05,true
+practicum-17,ZZZ999,Lower 0.9,Lower 0.9,Lower 0.9,151,company-01,course-05,true
+practicum-18,ZZZ000,Upper 1.1,Upper 1.1,Upper 1.1,185,company-01,course-05,true
 practicum-19,ZZZ100,YUpdate,YUpdate,YUpdate,184,company-01,course-05,true
-practicum-20,AAA000,YAdditional,YAdditional,YAdditional,184,company-01,course-05,false
-practicum-21,AAA100,YNoAdditional,YNoAdditional,YNoAdditional,184,company-01,course-05,false
-practicum-22,AAA200,YA2dditional,YAdditional,YAdditional,184,company-01,course-05,false
+practicum-20,EEE000,YAdditional,YAdditional,YAdditional,184,company-01,course-05,false
+practicum-21,EEE100,YNoAdditional,YNoAdditional,YNoAdditional,184,company-01,course-05,false
+practicum-22,EEE200,Y2Additional,Y2Additional,Y2Additional,184,company-01,course-05,false
