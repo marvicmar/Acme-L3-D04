@@ -1,5 +1,5 @@
 
-package acme.testing.assistant;
+package acme.testing.assistant.tutorial;
 
 import acme.testing.TestHarness;
 
