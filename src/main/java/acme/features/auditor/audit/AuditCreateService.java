@@ -12,12 +12,15 @@
 
 package acme.features.auditor.audit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
 import acme.entities.courses.Course;
 import acme.framework.components.accounts.Principal;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
@@ -31,7 +34,7 @@ public class AuditCreateService extends AbstractService<Auditor, Audit> {
 	//Constants
 
 	public final static String[]	PROPERTIES	= {
-		"course.code", "code", "conclusion", "strongPoints", "weakPoints", "auditor.firm"
+		"code", "conclusion", "strongPoints", "weakPoints", "auditor.firm"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -62,6 +65,7 @@ public class AuditCreateService extends AbstractService<Auditor, Audit> {
 		Principal principal;
 		int userAccountId;
 		Auditor auditor;
+		final Course course;
 
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
@@ -69,7 +73,6 @@ public class AuditCreateService extends AbstractService<Auditor, Audit> {
 
 		object = new Audit();
 		object.setAuditor(auditor);
-		object.setCourse(new Course());
 		object.setDraftMode(true);
 		super.getBuffer().setData(object);
 	}
@@ -77,8 +80,14 @@ public class AuditCreateService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void bind(final Audit object) {
 		assert object != null;
+		int courseId;
+		Course course;
+
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
 
 		super.bind(object, AuditCreateService.PROPERTIES);
+		object.setCourse(course);
 	}
 
 	@Override
@@ -120,11 +129,19 @@ public class AuditCreateService extends AbstractService<Auditor, Audit> {
 	public void unbind(final Audit object) {
 		Tuple tuple;
 
+		Collection<Course> courses;
+		SelectChoices choices;
+
+		courses = this.repository.findAllCourses();
+		choices = SelectChoices.from(courses, "code", object.getCourse());
+
 		tuple = super.unbind(object, AuditCreateService.PROPERTIES);
-		tuple.put("course", object.getCourse());
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 		tuple.put("auditor", object.getAuditor());
 		tuple.put("myAudit", true);
 		tuple.put("draftMode", true);
+		tuple.put("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
 		super.getResponse().setData(tuple);
 	}
 

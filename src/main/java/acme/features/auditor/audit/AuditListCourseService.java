@@ -106,8 +106,9 @@ public class AuditListCourseService extends AbstractService<Auditor, Audit> {
 
 	@Override
 	public void unbind(final Collection<Audit> objects) {
-		super.getResponse().setGlobal("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
-		super.unbind(objects);
+		boolean isAuditor;
+		isAuditor = super.getRequest().getPrincipal().hasRole(Auditor.class);
+		super.getResponse().setGlobal("isAuditor", isAuditor);
 	}
 
 	@Override

@@ -15,6 +15,7 @@ package acme.features.auditor.auditingRecord;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.audit.Audit;
 import acme.entities.audit_record.AuditingRecord;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
@@ -44,8 +45,18 @@ public class AuditorAuditingRecordShowService extends AbstractService<Auditor, A
 	public void authorise() {
 		boolean status;
 
+		Audit object;
+		int auditId;
+		Auditor auditor;
+		final boolean isMine;
+
+		auditId = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneAuditByAuditingRecordId(auditId);
 		status = super.getRequest().getPrincipal().hasRole(Auditor.class);
-		super.getResponse().setAuthorised(status);
+		auditor = this.repository.findOneAuditorByUserAccountId(super.getRequest().getPrincipal().getAccountId());
+		isMine = auditor != null && object.getAuditor().getId() == auditor.getId();
+
+		super.getResponse().setAuthorised(status && (isMine || !object.isDraftMode()));
 	}
 
 	@Override

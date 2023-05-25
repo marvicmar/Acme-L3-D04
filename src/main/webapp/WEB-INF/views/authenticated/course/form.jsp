@@ -21,10 +21,10 @@
 	<acme:input-textbox readonly="true" code="authenticated.course.title" path="title"/>
 	<acme:input-textbox readonly="true" code="authenticated.course.courseAbstract" path="courseAbstract"/>
 	<acme:input-textbox readonly="true" code="authenticated.course.retailPrice" path="retailPrice"/>
-	<acme:input-textbox readonly="true" code="authenticated.course.furtherInformation" path="furtherInformation"/>
+	<acme:input-textbox readonly="true" code="authenticated.course.link" path="link"/>
 	<acme:input-textbox readonly="true" code="authenticated.course.type" path="type"/>
 	
 	
-	<acme:submit method="get" test="${!isAuditor}" code="authenticated.course.form.button.show-audit" action="/authenticated/audit/list-course?id=${id}"/>
-	<acme:submit method="get" test="${isAuditor}" code="authenticated.course.form.button.show-audit" action="/auditor/audit/list-course?id=${id}"/>
+	<acme:button  test="${!isAuditor}" code="authenticated.course.form.button.show-audit" action="/authenticated/audit/list-course?id=${id}"/>
+	<acme:button test="${isAuditor}" code="authenticated.course.form.button.show-audit" action="/auditor/audit/list-course?id=${id}"/>
 </acme:form>

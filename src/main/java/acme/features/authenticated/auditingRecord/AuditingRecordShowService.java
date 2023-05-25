@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.audit_record.AuditingRecord;
 import acme.framework.components.accounts.Authenticated;
-import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.BinderHelper;
@@ -30,23 +29,28 @@ public class AuditingRecordShowService extends AbstractService<Authenticated, Au
 
 	//Constants
 
-	public final static String[]		PROPERTIES	= {
-		"id", "subject", "assessment", "startAudit", "endAudit", "mark", "link", "special"
+	public final static String[]					PROPERTIES	= {
+		"id", "subject", "assessment", "start", "end", "mark", "link", "special"
 	};
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AuditingRecordRepository	repository;
+	protected AuthenticatedAuditingRecordRepository	repository;
 
 	// AbstractService interface ----------------------------------------------ç
 
 
 	@Override
 	public void authorise() {
-		boolean status;
+		AuditingRecord object;
+		int auditingRecordId;
+		boolean rol;
+		rol = super.getRequest().getPrincipal().hasRole(Authenticated.class);
+		auditingRecordId = super.getRequest().getData("id", int.class);
 
-		status = super.getRequest().getPrincipal().hasRole(Authenticated.class);
-		super.getResponse().setAuthorised(status);
+		object = this.repository.findOneAuditingRecordById(auditingRecordId);
+
+		super.getResponse().setAuthorised(rol && object != null && !object.getAudit().isDraftMode());
 	}
 
 	@Override
@@ -89,7 +93,6 @@ public class AuditingRecordShowService extends AbstractService<Authenticated, Au
 		final int userAccountId;
 		Tuple tuple;
 		int userAuditorId;
-		final SelectChoices choice;
 		Boolean draftMode;
 
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
@@ -97,11 +100,9 @@ public class AuditingRecordShowService extends AbstractService<Authenticated, Au
 		userAuditorId = auditor.getUserAccount().getId();
 		draftMode = object.getAudit().isDraftMode();
 
-		//choice = SelectChoices.from(Mark.class, object.getMark());
 		tuple = BinderHelper.unbind(object, AuditingRecordShowService.PROPERTIES);
 		tuple.put("mark", object.getMark().toString());
 		tuple.put("myAudit", userAccountId == userAuditorId);
-		//tuple.put("choice", choice);
 		tuple.put("auditDraftMode", draftMode);
 		tuple.put("audit", draftMode);
 

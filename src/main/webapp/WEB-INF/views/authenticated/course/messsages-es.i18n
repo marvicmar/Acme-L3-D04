@@ -17,7 +17,7 @@ authenticated.course.code = Código
 authenticated.course.title = Título
 authenticated.course.courseAbstract = Abstracciones
 authenticated.course.retailPrice = Precio
-authenticated.course.furtherInformation = Más información
+authenticated.course.link = Más información
 authenticated.course.type = Tipo
 
 authenticated.course.form.button.create = Registrar

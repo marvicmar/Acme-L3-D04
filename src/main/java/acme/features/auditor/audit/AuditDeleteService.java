@@ -12,10 +12,13 @@
 
 package acme.features.auditor.audit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
+import acme.entities.audit_record.AuditingRecord;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.PrincipalHelper;
@@ -85,6 +88,10 @@ public class AuditDeleteService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void perform(final Audit object) {
 		assert object != null;
+		final Collection<AuditingRecord> auditingRecords;
+
+		auditingRecords = this.repository.findAuditingRecordsByAuditId(object.getId());
+		this.repository.deleteAll(auditingRecords);
 
 		this.repository.delete(object);
 	}

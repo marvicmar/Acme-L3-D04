@@ -12,15 +12,17 @@
 
 package acme.features.auditor.audit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
+import acme.entities.courses.Course;
 import acme.framework.components.accounts.Principal;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
-import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.BinderHelper;
-import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Auditor;
 
@@ -43,10 +45,19 @@ public class AuditShowService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void authorise() {
 		boolean status;
+		Audit object;
+		int auditId;
+		Auditor auditor;
+		final boolean isMine;
 
+		auditId = super.getRequest().getData("id", int.class);
+		object = this.repository.findOneAuditById(auditId);
 		status = super.getRequest().getPrincipal().hasRole(Auditor.class);
+		auditor = this.repository.findOneAuditorByUserAccountId(super.getRequest().getPrincipal().getAccountId());
+		isMine = object.getAuditor().getId() == auditor.getId();
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(status && (isMine || !object.isDraftMode()));
+
 	}
 
 	@Override
@@ -84,21 +95,24 @@ public class AuditShowService extends AbstractService<Auditor, Audit> {
 		assert object != null;
 		Principal principal;
 		int userAccountId;
+		Collection<Course> courses;
+		SelectChoices choices;
+
+		Tuple tuple;
+		courses = this.repository.findAllCourses();
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
 
-		Tuple tuple;
 		tuple = BinderHelper.unbind(object, AuditShowService.PROPERTIES);
 		tuple.put("myAudit", userAccountId == object.getAuditor().getUserAccount().getId());
 		tuple.put("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
+		tuple.put("draftMode", object.isDraftMode());
+		tuple.put("auditDraftMode", object.isDraftMode());
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 		super.getResponse().setData(tuple);
-	}
-
-	@Override
-	public void onSuccess() {
-		if (super.getRequest().getMethod().equals(HttpMethod.POST))
-			PrincipalHelper.handleUpdate();
 	}
 
 }

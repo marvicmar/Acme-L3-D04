@@ -52,16 +52,12 @@ public class AuditingRecord extends AbstractEntity {
 	@Past
 	protected Date				end;
 
-	/*
-	 * @NotNull
-	 * protected Mark mark;
-	 */
-
 	@NotBlank
 	@Pattern(regexp = "^A\\+?|B|C|F-?$", message = "A+ / A / B / C / F / F-")
 	protected String			mark;
 
 	@URL
+	@Length(max = 255)
 	protected String			link;
 
 	protected boolean			special				= false; //false by default
@@ -80,10 +76,11 @@ public class AuditingRecord extends AbstractEntity {
 		return MomentHelper.computeDuration(this.start, this.end);
 	}
 
-
 	// Relationships ----------------------------------------------------------
-	@ManyToOne
+
+
 	@NotNull
 	@Valid
+	@ManyToOne(optional = false)
 	protected Audit audit;
 }

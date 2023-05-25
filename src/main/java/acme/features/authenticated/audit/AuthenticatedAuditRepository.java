@@ -14,16 +14,16 @@ import acme.roles.Auditor;
 @Repository
 public interface AuthenticatedAuditRepository extends AbstractRepository {
 
-	@Query("select a from Audit a where a.id = :id")
+	@Query("select a from Audit a where (a.id = :id and a.draftMode = false)")
 	Audit findOneAuditById(int id);
 
-	@Query("select audit from Audit audit where audit.course.id = :id")
+	@Query("select audit from Audit audit where (audit.course.id = :id and audit.draftMode = false)")
 	Collection<Audit> findAuditsByCourse(int id);
 
 	@Query("select audit from Audit audit where audit.draftMode = false")
 	Collection<Audit> findAuditsPublish();
 
-	@Query("select audit from Audit audit where audit.auditor.userAccount.id = :id")
+	@Query("select audit from Audit audit where (audit.auditor.userAccount.id = :id and audit.draftMode = false)")
 	Collection<Audit> findAuditsByAuditor(int id);
 
 	@Query("select a from Auditor a where a.userAccount.id = :id")

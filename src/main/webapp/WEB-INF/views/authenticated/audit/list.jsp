@@ -24,8 +24,5 @@
 	<acme:list-column code="authenticated.audit.form.label.weakPoints" path="weakPoints" width="20%"/>	
 
 </acme:list>
-<jstl:if test="${isAuditor }">
-	<acme:button code="authenticated.audit.form.button.create" action="/authenticated/audit/create"/>
-	
-</jstl:if>
+
 

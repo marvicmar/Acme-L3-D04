@@ -108,7 +108,6 @@ public class AuthenticatedAuditListCourseService extends AbstractService<Authent
 	@Override
 	public void unbind(final Collection<Audit> objects) {
 		super.getResponse().setGlobal("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
-		super.unbind(objects);
 	}
 
 	@Override
