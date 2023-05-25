@@ -4,3 +4,5 @@ enrolment-02,ZZ999,Prueba de caracteres: 离开塞维利亚大学,Voy a probar q
 enrolment-03,ZZA999,creo que ya esta todo probado,aprobar todas,Chloe Aby,6321,false,student-01,course-03
 enrolment-04,SAA541,Perfeccionar mis conocimientos,Salir con trabajo,Esto es solo una prueba para ver que la longitud máxima de este campo es 75,,true,student-02,course-03
 enrolment-05,FEA542,Ya se ha probado este campo,Ya se ha probado este campo,,,true,student-01,course-02
+enrolment-06,ZZZ000,Terminar,Terminar,,,true,student-01,course-04
+enrolment-07,ZZZ001,motivation7,goals7,,,true,student-01,course-05

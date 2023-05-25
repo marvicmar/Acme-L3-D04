@@ -13,7 +13,7 @@ student.enrolment.list.label.motivation = Motivación
 student.enrolment.list.label.goals = Metas
 student.enrolment.list.label.courseTitle = Curso
 
-student.enrolment.list.button.register = Registrar
+student.enrolment.list.button.create = Crear
 
 student.enrolment.form.label.code = Código
 student.enrolment.form.label.motivation = Motivación

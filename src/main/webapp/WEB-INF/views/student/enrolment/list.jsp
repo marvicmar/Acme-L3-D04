@@ -20,5 +20,5 @@
     <acme:list-column code="student.enrolment.list.label.courseTitle" path="courseTitle" width="60%" />
 </acme:list>
 
-<acme:button code="student.enrolment.list.button.register" action="/student/enrolment/create"/>
+<acme:button code="student.enrolment.list.button.create" action="/student/enrolment/create"/>
 

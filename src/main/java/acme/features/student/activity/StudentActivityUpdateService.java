@@ -18,7 +18,7 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 	// Constants -------------------------------------------------------------
 	public static final String[]		PROPERTIES	= {
-		"title", "summary", "startDate", "endDate", "link"
+		"title", "summary","type", "startDate", "endDate", "link"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -68,7 +68,7 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 	public void bind(final Activity object) {
 		assert object != null;
 
-		super.bind(object, StudentActivityCreateService.PROPERTIES);
+		super.bind(object, StudentActivityUpdateService.PROPERTIES);
 	}
 
 	@Override
@@ -81,8 +81,8 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 			super.state(this.spamService.validateTextInput(object.getTitle()), "title", "activity.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("summary"))
 			super.state(this.spamService.validateTextInput(object.getSummary()), "summary", "activity.error.spam");
-		if (!super.getBuffer().getErrors().hasErrors("link"))
-			super.state(this.spamService.validateTextInput(object.getLink()), "link", "activity.error.spam");
+		if (!super.getBuffer().getErrors().hasErrors("type"))
+			super.state(this.spamService.validateTextInput(object.getType().toString()), "type", "activity.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("link"))
 			super.state(this.spamService.validateTextInput(object.getLink()), "link", "activity.error.spam");
 	}
@@ -103,7 +103,7 @@ public class StudentActivityUpdateService extends AbstractService<Student, Activ
 
 		choices = SelectChoices.from(Approach.class, object.getType());
 
-		tuple = super.unbind(object, StudentActivityDeleteService.PROPERTIES);
+		tuple = super.unbind(object, StudentActivityUpdateService.PROPERTIES);
 		tuple.put("types", choices);
 		tuple.put("readonly", object.getEnrolment().isDraftMode());
 

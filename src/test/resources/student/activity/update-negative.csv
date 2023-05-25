@@ -1,0 +1,11 @@
+enrolmentRecordIndex,activityRecordIndex,title,summary,type,startDate,endDate,link
+0,0,,,---,,,
+0,0,title 1,Esto es solo una prueba para ver que la longitud máxima de este campo la cuál en este caso es de 1001,HANDS_ON_SESSION,2020/12/31 00:00,2025/06/25 13:00,
+0,0,,summary1,THEORY_SESSION,2020/12/31 00:00,2025/06/25 13:00,http://www.example.com
+0,0,title 1,,THEORY_SESSION,2023/05/24 12:30,2023/06/25 18:00,http://www.example.com
+0,0,title 1,summary1,---,2023/05/24 12:30,2023/06/25 18:00,http://www.example.com
+0,0,title 1,summary1,THEORY_SESSION,2023/05/24 12:30,2023/06/25 18:00,url sin formato
+0,0,Esto es solo una prueba para ver que la longitud máxima de este campo es 751,summary1,HANDS_ON_SESSION,2020/12/31 00:00,2025/06/25 13:00,
+0,0,title 1,summary1,THEORY_SESSION,2023/05/24,2023/06/25,http://www.example.com
+0,0,sex,sex,HANDS_ON_SESSION,2020/12/31 00:00,2023/06/25 12:00,
+0,0,title 1,summary1,THEORY_SESSION,2020/12/31 00:00,2025/06/25 13:00,https://Pruebadelongituddelaurlparaquesulongitudnosearechazaporlabasededatosaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalllllllllllllllllllllllllllllllllllllllllllllllllllllkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkmnsdfget
