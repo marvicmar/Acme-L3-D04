@@ -5,7 +5,9 @@ assistant.tutorial.list.label.title = Titulo
 assistant.tutorial.list.button.create = Crear Tutorial
 assistant.session.list.button.create = Crear Sesion
 assistant.tutorial.list.label.summary = Resumen
-
+assistant.tutorial.list.label.draftMode = Publicado
+assistant.tutorial.list.label.yes = Si
+assistant.tutorial.list.label.no = No
 # form ###############################################################
 assistant.tutorial.form.label.code = Codigo
 assistant.tutorial.form.label.course = Curso

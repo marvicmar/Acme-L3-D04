@@ -2,7 +2,9 @@
 assistant.session.list.label.title = Title
 assistant.session.list.label.type = Type
 assistant.session.list.label.draftMode = Published
-
+assistant.session.list.label.yes = Yes
+assistant.session.list.label.no = No
+assistant.session.list.label.tutorial= Code Tutorial
 # form ###############################################################
 assistant.session.form.label.title = Title
 assistant.session.form.label.summary = Summary

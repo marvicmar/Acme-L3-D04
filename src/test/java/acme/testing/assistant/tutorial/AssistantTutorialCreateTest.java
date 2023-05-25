@@ -7,11 +7,11 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AssistantTutorialCreateTest extends TestHarness {
+class AssistantTutorialCreateTest extends TestHarness {
 
 	// Test data --------------------------------------------------------------
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/tutorial/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	void test100Positive(final int assistantRecordIndex, final String code, final String course, final String title, final String summary, final String goals, final String estimatedTime) {
 		// HINT: this test authenticates as a assistant and then lists his or her
 		// HINT: tutorials, creates a new one, and check that it's been created properly.
@@ -51,7 +51,7 @@ public class AssistantTutorialCreateTest extends TestHarness {
 	}
 
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/tutorial/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	void test200Negative(final int assistantRecordIndex, final String code, final String course, final String title, final String summary, final String goals, final String estimatedTime) {
 		// HINT: this test attempts to create tutorial with incorrect data.
 

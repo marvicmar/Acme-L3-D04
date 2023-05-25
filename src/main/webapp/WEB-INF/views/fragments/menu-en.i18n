@@ -64,7 +64,7 @@ master.menu.assistant = Assistant
 master.menu.assistant.dashboard = DashBoard
 master.menu.assistant.list-all = List all tutorials
 master.menu.assistant.list-mine = List my tutorials
-master.menu.assistant.session.list-all = List all sessions
+master.menu.assistant.session.list-mine = List my sessions
 
 # master.menu.provider ########################################################
 master.menu.provider = Provider

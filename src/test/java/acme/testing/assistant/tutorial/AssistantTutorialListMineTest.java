@@ -7,11 +7,11 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AssistantTutorialListMineTest extends TestHarness {
+class AssistantTutorialListMineTest extends TestHarness {
 
 	// Test data --------------------------------------------------------------
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/list-mine-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/tutorial/list-mine-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	void test100Positive(final int tutorialRecordIndex, final String code, final String title, final String estimatedTime, final String summary) {
 		// HINT: this test authenticates as a company, lists his or her tutorials only,
 		// HINT+ and then checks that the listing has the expected data.

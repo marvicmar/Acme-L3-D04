@@ -26,10 +26,10 @@ public interface AssistantSessionRepository extends AbstractRepository {
 	@Query("SELECT t FROM Tutorial t")
 	Collection<Tutorial> findAllTutorial();
 
-	@Query("SELECT s FROM Session s WHERE s.tutorial.id= ?1")
+	@Query("SELECT s FROM Session s WHERE( s.tutorial.id= ?1) AND (s.draftMode = false)")
 	Collection<Session> findManySessionByTutorialId(int id);
 
-	@Query("SELECT s FROM Session s WHERE s.draftMode = false")
-	Collection<Session> findManySession();
+	@Query("SELECT s FROM Session s WHERE (s.tutorial.assistant.id =?1) AND (s.draftMode=true)")
+	Collection<Session> findManySessionByAssistantId(int id);
 
 }

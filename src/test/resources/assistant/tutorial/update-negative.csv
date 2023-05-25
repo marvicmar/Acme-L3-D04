@@ -1,0 +1,18 @@
+tutorialRecordIndex, code, course, title, summary, goals, estimatedTime
+0,Code,MHI863,Title,Abstract,Abstract,10
+1,AAA111,MHI863,Title,,Goals,10
+2,AAA,MHI863,Title,Abstract,Goals,10
+3,AAA111,MHI863,Title,Abstract,,0
+4,Title,MHI863,Abstract, ,Goals,10
+5,AAA149,MHI863,Title sex,Abstract,Goals,10
+6,AAA111,MHI863,Title,Abstract,Goals,0
+7,AAA111,MHI863,Title,Abstract,Goals,-10
+8,AAA111,MHI863,Title,Abstract practicum with 101 characters 00000000000000000000000000000000000000000000000000000000000005,Goals,10
+9,SEX111,MHI863,Title,Abstract,Goals,10
+10,AAA111,MHI863,Title with 76 characters 000000000000000000000000000000000000000000000000005,Abstract,Goals,10
+11,AAA111,MHI863,Title,Abstract sex,Goals,10
+12,AAA111,MHI863,Abstract,--,Goals,-10
+13,111,MHI863,Abstract,´´,Goals,10
+14,AAA111,MHI863,Title,Abstract,Goal with 101 characters 0000000000000000000000000000000000000000000000000000000000000000000000000005,0
+15,AAA111,MHI863,Title,Abstract,Goals sex,10
+16,AAA111,MHI863,Title sex,Abstract,Goals,10

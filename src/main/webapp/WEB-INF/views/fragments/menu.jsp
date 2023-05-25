@@ -66,7 +66,7 @@
 		<acme:menu-option code="master.menu.assistant" access="hasRole('Assistant')">
 			<acme:menu-suboption code="master.menu.assistant.list-all" action="/assistant/tutorial/list-all"/>
 			<acme:menu-suboption code="master.menu.assistant.list-mine" action="/assistant/tutorial/list-mine"/>
-			<acme:menu-suboption code="master.menu.assistant.session.list-all" action="/assistant/session/list-all"/> <!-- Creo que no es necesario -->
+			<acme:menu-suboption code="master.menu.assistant.session.list-mine" action="/assistant/session/list-mine"/> <!-- Creo que no es necesario -->
       		<acme:menu-separator/>
       		<acme:menu-suboption code="master.menu.assistant.dashboard" action="/assistant/assistant-dashboard/show"/>
 		</acme:menu-option>

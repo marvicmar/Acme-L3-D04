@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MessageHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -58,11 +59,11 @@ public class AssistantTutorialListMineService extends AbstractService<Assistant,
 	@Override
 	public void unbind(final Tutorial tutorial) {
 		assert tutorial != null;
-
+		final String draftMode;
 		Tuple tuple;
-
+		draftMode = MessageHelper.getMessage(tutorial.isDraftMode() ? "assistant.tutorial.list.label.no" : "assistant.tutorial.list.label.yes");
 		tuple = super.unbind(tutorial, AssistantTutorialListMineService.PROPERTIES);
-
+		tuple.put("draftMode", draftMode);
 		super.getResponse().setData(tuple);
 	}
 }

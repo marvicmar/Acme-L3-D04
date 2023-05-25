@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.entities.tutorial.Tutorial;
 import acme.testing.TestHarness;
 
-public class AssistantTutorialShowTest extends TestHarness {
+class AssistantTutorialShowTest extends TestHarness {
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
@@ -20,7 +20,7 @@ public class AssistantTutorialShowTest extends TestHarness {
 
 	// Test data --------------------------------------------------------------
 	@ParameterizedTest
-	@CsvFileSource(resources = "/assistant/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/tutorial/show-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	void test100Positive(final int tutorialRecordIndex, final String code, final String course, final String title, final String summary, final String goals, final String estimatedTime) {
 		// HINT: this test signs in as a assistant, lists all the tutorials, click on
 		// HINT+ one of them, and checks that the form has the expected data.
