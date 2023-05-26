@@ -1,25 +1,32 @@
 
 package acme.entities.sessionPracticum;
 
-import acme.entities.practicum.Practicum;
-import acme.framework.data.AbstractEntity;
-import lombok.Getter;
-import lombok.Setter;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
+import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
+
+import acme.entities.practicum.Practicum;
+import acme.framework.data.AbstractEntity;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@Table(indexes = {
+	@Index(columnList = "id")
+})
 public class SessionPracticum extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -53,8 +60,6 @@ public class SessionPracticum extends AbstractEntity {
 	private String				link;
 
 	private boolean				additional;
-
-	//private boolean				confirmed;
 
 	// Derived attributes -----------------------------------------------------
 

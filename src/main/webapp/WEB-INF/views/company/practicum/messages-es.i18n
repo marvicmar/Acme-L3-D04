@@ -38,6 +38,7 @@ company.practicum.list.button.create = Crear
 # Messages for error in form
 company.practicum.form.error.not-in-range = El tiempo estimado en horas debe estar entre el valor real por 0.9 y el valor real por 1.1
 company.practicum.form.error.not-unique-code = El código debe ser único
+company.practicum.form.error.practicum-without-sessions = La práctica debe tener al menos una sesión
 company.practicum.form.error.spam.code = El código no puede ser spam
 company.practicum.form.error.spam.title = El título no puede ser spam
 company.practicum.form.error.spam.abstractPracticum = El resumen de la práctica no puede ser spam

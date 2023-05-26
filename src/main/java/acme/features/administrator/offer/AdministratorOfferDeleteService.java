@@ -1,7 +1,6 @@
 
 package acme.features.administrator.offer;
 
-import acme.entities.banner.Banner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

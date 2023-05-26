@@ -106,6 +106,16 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 			super.state(isUnique || noChangeCode, "code", "company.practicum.form.error.not-unique-code");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			boolean hasSessions;
+			int practicumId;
+
+			practicumId = super.getRequest().getData("id", int.class);
+			hasSessions = !this.repository.findManySessionPracticesByPracticumId(practicumId).isEmpty();
+
+			super.state(hasSessions, "code", "company.practicum.form.error.practicum-without-sessions");
+		}
+
 		// Únicamente se deberá de comprobar que el tiempo estimado es correcto cuando se va a publicar.
 		if (!super.getBuffer().getErrors().hasErrors("estimatedTimeInHours")) {
 			Collection<SessionPracticum> sessions;
