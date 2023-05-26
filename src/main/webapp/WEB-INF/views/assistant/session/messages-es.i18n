@@ -2,7 +2,9 @@
 assistant.session.list.label.title = Titulo
 assistant.session.list.label.type = Tipo
 assistant.session.list.label.draftMode = Publicado
-
+assistant.session.list.label.yes = Si
+assistant.session.list.label.no = No
+assistant.session.list.label.tutorial= Codigo de Tutorial
 # form ###############################################################
 assistant.session.form.label.title = Titulo
 assistant.session.form.label.summary = Resumen

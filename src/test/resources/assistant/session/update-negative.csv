@@ -1,0 +1,6 @@
+tutorialRecordIndex,sessionRecordIndex,title,summary,type,start,end,link
+0,0,nuevo1 ,abstract1,THEORY_SESSION,2025/09/07 10:00,2025/10/07 10:00,http://www.google.com
+0,0,Title with strange letters: Ã¡Ã©Ã­Ã³ÃºÃ¼Ã±,nuevo,HANDS_ON_SESSION,2022/07/30 00:00,2022/07/31 04:00,http://www.example.com
+0,0,<script>alert('The title alert');</script>,abstractnuevo7,THEORY_SESSION,2022/07/30 00:00,2022/07/31 04:00,http://www.example.com
+0,0,Title with strange letters: Ã¡Ã©Ã­Ã³ÃºÃ¼Ã±,with point.,HANDS_ON_SESSION,2022/07/30 00:00,2022/07/31 04:00,http://www.example.com
+0,0,nuevo4,new with comma,THEORY_SESSION,2025/09/07 10:00,2025/10/07 10:00,http://www.example.com

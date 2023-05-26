@@ -51,6 +51,7 @@ public class Session extends AbstractEntity {
 	protected Date				end;
 
 	@URL
+	@Length(max = 255)
 	protected String			link;
 
 	protected boolean			draftMode;

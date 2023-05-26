@@ -1,0 +1,9 @@
+tutorialRecordIndex,sessionRecordIndex,title,summary,type,start,end,link
+0,0,ZABTitle with 75 characters 00000000000000000000000000000000000000000000005000000000000000,Abstract,HANDS_ON_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com
+0,0,ZACTitle with 75 characters sex 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 50000000,Abstract,THEORY_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com
+0,0,ZADTitle with point.,Abstract,THEORY_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com
+0,0,"ZAETitle with comma,",Abstract,THEORY_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com
+0,0,ZAFTitle with strange letters: áéíóúüñ,Abstract,THEORY_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com
+0,0,ZAGTitle with strange characters: !@#$%^&*(),Abstract,THEORY_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com
+0,0,ZAHTitle with strange characters: !@#$%^&*()_+=-{}[]|:;<>?,Abstract,THEORY_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com
+0,0,ZAITitle in other language: 日本語,Abstract,HANDS_ON_SESSION,2023/09/09 00:00,2023/10/01 00:00,https://www.google.com

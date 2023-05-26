@@ -10,6 +10,7 @@ import acme.entities.session.Session;
 import acme.entities.tutorial.Tutorial;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MessageHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Assistant;
 
@@ -18,7 +19,7 @@ public class AssistantSessionListService extends AbstractService<Assistant, Sess
 
 	// Constants -------------------------------------------------------------
 	public static final String[]			PROPERTIES	= {
-		"title", "summary", "type", "start", "end", "link", "draftMode"
+		"title", "summary", "type", "start", "end", "link", "draftMode", "tutorial"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -45,7 +46,7 @@ public class AssistantSessionListService extends AbstractService<Assistant, Sess
 		tutorialId = super.getRequest().getData("id", int.class);
 		tutorial = this.repository.findOneTutorialById(tutorialId);
 		principal = super.getRequest().getPrincipal();
-		status = tutorial != null && principal.hasRole(Assistant.class);
+		status = tutorial != null && principal.hasRole(Assistant.class) && !tutorial.isDraftMode();
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -64,11 +65,15 @@ public class AssistantSessionListService extends AbstractService<Assistant, Sess
 	@Override
 	public void unbind(final Session session) {
 		assert session != null;
+		final String draftMode;
+		final Tutorial tutorial;
 
 		Tuple tuple;
-
+		tutorial = this.repository.findOneSessionById(session.getId()).getTutorial();
+		draftMode = MessageHelper.getMessage(session.isDraftMode() ? "assistant.session.list.label.no" : "assistant.session.list.label.yes");
 		tuple = super.unbind(session, AssistantSessionListService.PROPERTIES);
-
+		tuple.put("draftMode", draftMode);
+		tuple.put("tutorial", tutorial.getCode());
 		super.getResponse().setData(tuple);
 	}
 }
