@@ -92,7 +92,7 @@ public class AssistantSessionDeleteService extends AbstractService<Assistant, Se
 		choices = SelectChoices.from(Approach.class, session.getType());
 
 		tuple = super.unbind(session, AssistantSessionCreateService.PROPERTIES);
-		tuple.put("masterId", super.getRequest().getData("masterId", int.class));
+		tuple.put("id", super.getRequest().getData("id", int.class));
 		tuple.put("type", choices);
 		tuple.put("tutorialDraftMode", session.getTutorial().isDraftMode());
 		super.getResponse().setData(tuple);

@@ -35,11 +35,7 @@ public class AssistantTutorialCreateService extends AbstractService<Assistant, T
 	// AbstractService interface ----------------------------------------------
 	@Override
 	public void check() {
-		boolean status;
-
-		status = super.getRequest().hasData("course", int.class);
-
-		super.getResponse().setChecked(status);
+		super.getResponse().setChecked(true);
 	}
 
 	@Override

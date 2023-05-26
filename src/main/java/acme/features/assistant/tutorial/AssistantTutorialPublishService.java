@@ -36,8 +36,7 @@ public class AssistantTutorialPublishService extends AbstractService<Assistant, 
 	public void check() {
 		boolean status;
 
-		status = super.getRequest().hasData("id", int.class) && super.getRequest().hasData("course", int.class);
-
+		status = super.getRequest().hasData("id", int.class);
 		super.getResponse().setChecked(status);
 	}
 
