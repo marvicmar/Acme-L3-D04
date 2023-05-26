@@ -9,7 +9,7 @@ any.peep.list.moment = Fecha de publicación
 any.peep.list.title = Titulo
 any.peep.list.nick = Apodo
 
-any.peep.button.publish = Publicar Peep
+any.peep.button.publish = Crear
 
 peep.error.spam = El texto contiene Spam
 any.peep.form.error.spam.title = El titulo no puede ser spam
