@@ -3,7 +3,9 @@ package acme.entities.practicum;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,6 +23,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(indexes = {
+	@Index(columnList = "id"), @Index(columnList = "code"),
+})
 public class Practicum extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------

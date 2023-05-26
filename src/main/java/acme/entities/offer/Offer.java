@@ -1,7 +1,12 @@
 
 package acme.entities.offer;
 
-import java.util.Date;
+import acme.framework.components.datatypes.Money;
+import acme.framework.data.AbstractEntity;
+import lombok.Getter;
+import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.URL;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -9,14 +14,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.URL;
-
-import acme.framework.components.datatypes.Money;
-import acme.framework.data.AbstractEntity;
-import lombok.Getter;
-import lombok.Setter;
+import java.util.Date;
 
 @Entity
 @Getter
@@ -56,6 +54,7 @@ public class Offer extends AbstractEntity {
 	protected Money				price;
 
 	@URL
+	@Length(max = 255)
 	protected String			link;
 
 	// Derived attributes -----------------------------------------------------

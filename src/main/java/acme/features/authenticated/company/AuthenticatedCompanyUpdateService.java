@@ -17,13 +17,13 @@ import acme.roles.Company;
 public class AuthenticatedCompanyUpdateService extends AbstractService<Authenticated, Company> {
 
 	// Constants -------------------------------------------------------------
-	protected static final String[]				PROPERTIES	= {
-		"name", "vatNumber", "summary", "link"
+	protected static final String[] PROPERTIES = {
+			"name", "vatNumber", "summary", "link"
 	};
 
 	// Internal state ---------------------------------------------------------
 	@Autowired
-	protected AuthenticatedCompanyRepository	repository;
+	protected AuthenticatedCompanyRepository repository;
 	@Autowired
 	protected SpamService spamDetector;
 
@@ -36,7 +36,13 @@ public class AuthenticatedCompanyUpdateService extends AbstractService<Authentic
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		Principal principal;
+
+		principal = super.getRequest().getPrincipal();
+		status = principal.hasRole(Company.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

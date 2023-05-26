@@ -43,6 +43,6 @@ company.session-practicum.error.start-after-now = La fecha de inicio debe ser po
 company.session-practicum.error.end-before-start = La fecha de fin debe ser posterior a la fecha de inicio.
 company.session-practicum.error.confirmed = La sesión debe estar confirmada para ser mostrada en la web pública.
 company.session-practicum.error.title = El título no puede estar vacío.
-company.session-practicum.error.abstractSession = El resumen no puede estar vacío.
+company.session-practicum.error.abstract-session = El resumen no puede estar vacío.
 company.session-practicum.error.description = La descripción no puede estar vacía.
 company.session-practicum.error.link = El enlace no puede estar vacío.

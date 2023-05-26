@@ -5,9 +5,6 @@ import java.time.Duration;
 import java.util.Collection;
 import java.util.Date;
 
-import acme.framework.controllers.HttpMethod;
-import acme.framework.helpers.PrincipalHelper;
-import acme.services.SpamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +14,12 @@ import acme.entities.sessionPracticum.SessionPracticum;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
+import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.MomentHelper;
+import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
+import acme.services.SpamService;
 
 @Service
 public class CompanyPracticumPublishService extends AbstractService<Company, Practicum> {
@@ -33,7 +33,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	@Autowired
 	protected CompanyPracticumRepository	repository;
 	@Autowired
-	protected SpamService spamDetector;
+	protected SpamService					spamDetector;
 
 
 	// AbstractService interface ----------------------------------------------
@@ -106,6 +106,16 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 			super.state(isUnique || noChangeCode, "code", "company.practicum.form.error.not-unique-code");
 		}
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			boolean hasSessions;
+			int practicumId;
+
+			practicumId = super.getRequest().getData("id", int.class);
+			hasSessions = !this.repository.findManySessionPracticesByPracticumId(practicumId).isEmpty();
+
+			super.state(hasSessions, "code", "company.practicum.form.error.practicum-without-sessions");
+		}
+
 		// Únicamente se deberá de comprobar que el tiempo estimado es correcto cuando se va a publicar.
 		if (!super.getBuffer().getErrors().hasErrors("estimatedTimeInHours")) {
 			Collection<SessionPracticum> sessions;
@@ -129,8 +139,8 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 				return duration.toHours();
 			}).sum();
 
-			moreThan90Percent = totalHours >= estimatedTimeInHours * 0.9;
-			lessThan110Percent = totalHours <= estimatedTimeInHours * 1.1;
+			moreThan90Percent = estimatedTimeInHours >= totalHours * 0.9;
+			lessThan110Percent = estimatedTimeInHours <= totalHours * 1.1;
 
 			super.state(moreThan90Percent && lessThan110Percent, "estimatedTimeInHours", "company.practicum.form.error.not-in-range");
 		}
@@ -164,7 +174,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 		Tuple tuple;
 
 		courses = this.repository.findAllCourses();
-		choices = SelectChoices.from(courses, "title", practicum.getCourse());
+		choices = SelectChoices.from(courses, "code", practicum.getCourse());
 
 		tuple = super.unbind(practicum, CompanyPracticumPublishService.PROPERTIES);
 		tuple.put("draftMode", practicum.isDraftMode());
