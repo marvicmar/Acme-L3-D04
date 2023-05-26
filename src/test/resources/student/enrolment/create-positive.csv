@@ -1,0 +1,5 @@
+recordIndex,code,motivation,goals,course
+0,AAA000,motivation 10,goals 10,title-course
+1,AAA002,Esto es solo una prueba para ver que la longitud máxima de este campo es 75,goals 11,title-course
+2,AAA003,motivation 12,Esto es solo una prueba para ver que la longitud máxima de este campo la cuál en este caso es de 100,title-course
+3,AAA004,motivation 13,goals 13,T

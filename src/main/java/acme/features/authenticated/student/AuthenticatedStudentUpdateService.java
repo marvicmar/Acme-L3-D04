@@ -25,7 +25,13 @@ public class AuthenticatedStudentUpdateService extends AbstractService<Authentic
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		final Principal principal;
+
+		principal = super.getRequest().getPrincipal();
+		status = principal.hasRole(Student.class);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override

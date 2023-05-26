@@ -17,7 +17,7 @@ public class StudentActivityDeleteService extends AbstractService<Student, Activ
 
 	// Constants -------------------------------------------------------------
 	public static final String[]		PROPERTIES	= {
-		"title", "summary", "startDate", "endDate", "link"
+		"title", "summary","type" ,"startDate", "endDate", "link"
 	};
 
 	// Internal state ---------------------------------------------------------

@@ -1,0 +1,11 @@
+recordIndex,code,motivation,goals,course
+0,,,,
+0,AAA000,,,
+0,AAA001,motivation 1,,
+0,AAA002,,goals 2,
+0,AAA003,,,title-course
+0,AAA004,Voy a probar que el motivation de la segunda actividad acepte 75 caracteres+,goals2,T
+0,ANCLA 005,motivation2,goals3,title-course
+0,AAA006,motivation3,Esto es solo una prueba para ver que la longitud máxima de este campo la cuál en este caso es de 100+,title-course
+0,DDD007,motivation3,goals3,T
+0,AAA007,sex,sex,T

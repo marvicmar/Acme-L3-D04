@@ -1,0 +1,4 @@
+enrolmentRecordIndex,activityRecordIndex,title,summary,type,startDate,endDate,link
+0,0,Esto es solo una prueba para ver que la longitud máxima de este campo es 75,summary1,HANDS_ON_SESSION,2020/12/31 00:00,2025/06/25 13:00,
+0,1,Etitle-4,summary4,THEORY_SESSION,2023/03/15 21:00,2023/03/15 23:00,http://www.example.com
+2,0,Prueba caracteres: お寿司が大好きです,Prueba de caracteres: من سوشیم خۆشدەوێت,HANDS_ON_SESSION,2021/01/01 0:00,2021/01/01 5:00,https://www.icsi.in/icsi-2019/programme/student-03

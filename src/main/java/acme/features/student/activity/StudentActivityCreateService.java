@@ -19,7 +19,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 
 	// Constants -------------------------------------------------------------
 	public static final String[]		PROPERTIES	= {
-		"title", "summary", "startDate", "endDate", "link"
+		"title", "summary", "type","startDate", "endDate", "link"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -61,7 +61,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 		object = new Activity();
 		object.setTitle("");
 		object.setSummary("");
-		object.setType(Approach.THEORY_SESSION);
+		object.setType(null);
 		object.setStartDate(null);
 		object.setEndDate(null);
 		object.setLink("");
@@ -91,8 +91,6 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 			super.state(this.spamService.validateTextInput(object.getSummary()), "summary", "activity.error.spam");
 		if (!super.getBuffer().getErrors().hasErrors("link"))
 			super.state(this.spamService.validateTextInput(object.getLink()), "link", "activity.error.spam");
-		if (!super.getBuffer().getErrors().hasErrors("link"))
-			super.state(this.spamService.validateTextInput(object.getLink()), "link", "activity.error.spam");
 	}
 
 	@Override
@@ -110,7 +108,7 @@ public class StudentActivityCreateService extends AbstractService<Student, Activ
 
 		choices = SelectChoices.from(Approach.class, object.getType());
 
-		tuple = super.unbind(object, "title", "summary", "startDate", "endDate", "link");
+		tuple = super.unbind(object, "title", "type","summary", "startDate", "endDate", "link");
 		tuple.put("enrolmentId", super.getRequest().getData("enrolmentId", int.class));
 		tuple.put("type", choices.getSelected().getKey());
 		tuple.put("types", choices);

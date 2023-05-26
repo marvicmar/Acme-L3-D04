@@ -1,0 +1,4 @@
+enrolmentRecordIndex,activityRecordIndex,code,title,type
+0,0,DDD007,Esto es solo una prueba para ver que la longitud máxima de este campo es 75,HANDS_ON_SESSION
+0,1,DDD007,Etitle-4,THEORY_SESSION
+2,0,ZZA999,Prueba caracteres: お寿司が大好きです,HANDS_ON_SESSION

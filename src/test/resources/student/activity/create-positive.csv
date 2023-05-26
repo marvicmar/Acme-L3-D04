@@ -1,0 +1,5 @@
+enrolmentRecordIndex,activityRecordIndex,title,summary,type,startDate,endDate,link
+0,0,Atitle 1,summary1,HANDS_ON_SESSION,2021/01/01 12:00,2021/01/01 15:00,https://www.icsi.in/icsi-2019/programme/student-03
+0,1,B# Esto es solo una prueba para ver que la longitud máxima de este campo 75,summary1,HANDS_ON_SESSION,2023/05/24 19:00,2023/05/25 07:05,
+0,2,Ctitle 2,Esto es solo una prueba para ver que la longitud máxima de este campo la cuál en este caso es de 100,THEORY_SESSION,2021/01/01 10:00,2021/01/01 15:00,https://www.example.com
+0,3,Dtitle3,summary3,THEORY_SESSION,2014/08/30 17:38,2014/08/30 18:20,https://Pruebadelongituddelaurlparaquesulongitudnosearechazaporlabasededatosaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaalllllllllllllllllllllllllllllllllllllllllllllllllllllkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkmnsdfge

@@ -52,6 +52,7 @@ public class Activity extends AbstractEntity {
 	protected Date				endDate;
 
 	@URL
+	@Length(max=255)
 	protected String			link;
 
 	@Valid

@@ -13,7 +13,7 @@ student.enrolment.list.label.motivation = Motivation
 student.enrolment.list.label.goals = Goals
 student.enrolment.list.label.courseTitle = Course
 
-student.enrolment.list.button.register = Register
+student.enrolment.list.button.create = Create
 
 student.enrolment.form.label.code = Code:
 student.enrolment.form.label.motivation = Motivation:
@@ -30,7 +30,7 @@ student.enrolment.form.button.activities = Activities
 student.enrolment.form.button.update = Update
 student.enrolment.form.button.delete = Delete
 student.enrolment.form.button.publish = Publish
-student.enrolment.form.button.create = Create
+student.enrolment.form.button.create=Create
 
 student.enrolment.form.error.duplicated = Duplicated code
 student.enrolment.form.error.expirationDate = Invalid expiration date
