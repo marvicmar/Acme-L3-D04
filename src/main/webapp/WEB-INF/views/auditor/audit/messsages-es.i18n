@@ -33,3 +33,4 @@ auditingRecord.error.not-valid-mark = Debes introducir una calificación tal que
 auditingRecord.error.not-enougth-time = Duración mínima 30 minutos
 
 offer.error.spam = El texto contiene Spam
+audit.error.publish = Debes de añadir al menos un registro

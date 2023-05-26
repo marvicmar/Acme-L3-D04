@@ -18,7 +18,7 @@ authenticated.course.code = Code
 authenticated.course.title = Title
 authenticated.course.courseAbstract = Course abstract
 authenticated.course.retailPrice = Retail price
-authenticated.course.furtherInformation = Further information
+authenticated.course.link = Further information
 authenticated.course.type = Type
 
 

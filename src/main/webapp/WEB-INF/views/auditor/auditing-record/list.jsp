@@ -17,8 +17,8 @@
 <acme:list>
 	<acme:list-column code="authenticated.auditingRecord.form.label.subject" path="subject" width="20%"/>	
 	<acme:list-column code="authenticated.auditingRecord.form.label.assessment" path="assessment" width="20%"/>
-	<acme:list-column code="authenticated.auditingRecord.form.label.startAudit" path="startAudit" width="20%"/>	
-	<acme:list-column code="authenticated.auditingRecord.form.label.endAudit" path="endAudit" width="20%"/>
+	<acme:list-column code="authenticated.auditingRecord.form.label.startAudit" path="start" width="20%"/>	
+	<acme:list-column code="authenticated.auditingRecord.form.label.endAudit" path="end" width="20%"/>
 	<acme:list-column code="authenticated.auditingRecord.form.label.duration" path="duration" width="15%"/>	
 	<acme:list-column code="authenticated.auditingRecord.form.label.mark" path="mark" width="5%"/>	
 </acme:list>

@@ -23,21 +23,9 @@
 	<acme:input-textarea readonly="true" code="authenticated.audit.form.label.conclusion" path="conclusion"/>
 	<acme:input-textarea readonly="true" code="authenticated.audit.form.label.strongPoints" path="strongPoints"/>
 	<acme:input-textarea readonly="true" code="authenticated.audit.form.label.weakPoints" path="weakPoints"/>
-	<jstl:if test="${myAudit}">
-		<acme:input-checkbox readonly="true" code="authenticated.audit.form.label.draftMode" path="draftMode"/>
-	</jstl:if>
-	<jstl:choose>
-		<jstl:when test="${acme:anyOf(_command, 'show|update|delete')}">
-			<acme:submit method="get" code="authenticated.audit.form.button.records" action="/authenticated/auditing-record/list?auditId=${id}"/>
-			
-			<acme:submit test="${myAudit && draftMode}" code="authenticated.audit.form.button.publish" action="/authenticated/audit/publish"/>
-		
-			<acme:submit test="${myAudit && draftMode}" code="authenticated.audit.form.button.update" action="/authenticated/audit/update"/>
-			<acme:submit test="${myAudit && draftMode}" code="authenticated.audit.form.button.delete" action="/authenticated/audit/delete"/>
-		</jstl:when>
-		<jstl:when test="${_command == 'create'}">
-			<acme:submit code="authenticated.audit.form.button.create" action="/authenticated/audit/create"/>
-		</jstl:when>		
-	</jstl:choose>	
+
+
+	<acme:button code="authenticated.audit.form.button.records" action="/authenticated/auditing-record/list?auditId=${id}"/>
+	
 	
 </acme:form>

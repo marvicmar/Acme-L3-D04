@@ -1,0 +1,6 @@
+auditRecordIndex,auditingRecordIndex,courseCode,code,conclusion,strongPoints,weakPoints,subject,assessment,start,end,mark,link
+0,0,A001,PP992,conclusion4,strongPoints4,weakpoints4,#new_subject8,assessment8,2020/06/06 10:00,2020/10/11 12:00,F-,http://www.example
+0,0,A001,PP992,conclusion4,strongPoints4,weakpoints4,##new_subject9,assessment9,2020/07/06 10:00,2020/10/11 12:00,C,http://www.example
+0,0,A001,PP992,conclusion4,strongPoints4,weakpoints4,###new_subject91,assessment10,2020/08/06 10:00,2020/10/11 12:00,A,http://www.example
+0,0,A001,PP992,conclusion4,strongPoints4,weakpoints4,####new_subject92,assessment11,2020/09/06 10:00,2020/10/11 12:00,F,http://www.example
+0,0,A001,PP992,conclusion4,subjecuvfnijneipvbrepibreÑrevrevhrunr^`´345678t93,weakpoints4,#######new_subject93,assessment12,2020/10/06 10:00,2020/10/11 12:00,C,http://www.example

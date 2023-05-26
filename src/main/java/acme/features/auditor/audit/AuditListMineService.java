@@ -101,7 +101,6 @@ public class AuditListMineService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void unbind(final Collection<Audit> objects) {
 		super.getResponse().setGlobal("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
-		super.unbind(objects);
 	}
 
 	@Override

@@ -1,4 +1,12 @@
 key,code,conclusion,strongPoints,weakPoints,key:auditor,key:course,draftMode
-audit-01,PP989,conclusion1,strongPoints1,weakpoints1,auditor-01,course-01,0
+audit-01,PP999,conclusion1,strongPoints1,weakpoints1,auditor-01,course-01,0
 audit-02,PP990,conclusion2,strongPoints2,weakpoints2,auditor-02,course-01,1
-audit-03,PP991,conclusion3,strongPoints3,weakpoints3,auditor-02,course-02,0
+audit-03,PP991,conclusion3,strongPoints3,weakpoints3,auditor-02,course-02,1
+audit-04,PP992,conclusion4,strongPoints4,weakpoints4,auditor-01,course-01,1
+audit-05,PP993,conclusion5,strongPoints5,weakpoints5,auditor-01,course-01,1
+audit-06,PP994,conclusion6,strongPoints6,weakpoints6,auditor-01,course-01,1
+audit-07,PP995,conclusion7,strongPoints7,weakpoints7,auditor-01,course-01,1
+audit-08,PP996,conclusion8,strongPoints8,weakpoints8,auditor-01,course-01,1
+audit-09,PP997,conclusion9,strongPoints9,weakpoints9,auditor-02,course-02,1
+audit-10,PP998,conclusion10,strongPoints10,weakpoints10,auditor-02,course-02,1
+audit-11,PPP999,conclusion11,strongPoints11,weakpoints11,auditor-02,course-01,0

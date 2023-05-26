@@ -31,7 +31,7 @@ public class AuditListPublishService extends AbstractService<Auditor, Audit> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
+	protected final static String[]	PROPERTIES	= {
 		"id", "course.code", "code", "conclusion", "strongPoints", "weakPoints", "draftMode"
 	};
 
@@ -111,7 +111,6 @@ public class AuditListPublishService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void unbind(final Collection<Audit> objects) {
 		super.getResponse().setGlobal("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
-		super.unbind(objects);
 	}
 
 	@Override

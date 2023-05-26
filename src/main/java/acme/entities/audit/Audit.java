@@ -29,12 +29,12 @@ public class Audit extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotNull
-	@ManyToOne
+	@ManyToOne(optional = false)
 	protected Course			course;
 
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "^[A-Z]{1,3}[0-9]{3}$")
+	@Pattern(regexp = "^[A-Z]{1,3}\\d{3}$")
 	protected String			code;
 
 	@NotBlank
@@ -51,16 +51,7 @@ public class Audit extends AbstractEntity {
 
 	protected boolean			draftMode;
 
-	// Derived attributes -----------------------------------------------------
-	/*
-	 * @Transient
-	 * protected String marks() {
-	 * final String marks = this.auditingRecords.stream().map(a -> a.getMark().toString()).collect(Collectors.toList()).toString();
-	 * return marks.substring(1, marks.length() - 1);
-	 * }
-	 */
-
 	// Relationships ----------------------------------------------------------
-	@ManyToOne
+	@ManyToOne(optional = false)
 	protected Auditor			auditor;
 }

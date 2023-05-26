@@ -19,8 +19,8 @@
 <acme:form>
 	<acme:input-textbox readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.subject" path="subject"/>
 	<acme:input-textbox readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.assessment" path="assessment"/>
-	<acme:input-moment readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.startAudit" path="startAudit"/>
-	<acme:input-moment readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.endAudit" path="endAudit"/>
+	<acme:input-moment readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.startAudit" path="start"/>
+	<acme:input-moment readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.endAudit" path="end"/>
 	<acme:input-textbox readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.mark" path="mark" placeholder="authenticated.auditingRecord.form.label.placeHolder.mark"/>
 	<acme:input-url readonly="${special && auditDraftMode || !myAudit}" code="authenticated.auditingRecord.form.label.link" path="link"/>
 	

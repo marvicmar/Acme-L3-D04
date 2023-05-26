@@ -12,12 +12,15 @@
 
 package acme.features.auditor.audit;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
 import acme.entities.courses.Course;
 import acme.framework.components.accounts.Principal;
+import acme.framework.components.jsp.SelectChoices;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.BinderHelper;
@@ -31,8 +34,8 @@ public class AuditPublishService extends AbstractService<Auditor, Audit> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
-		"course.code", "code", "conclusion", "strongPoints", "weakPoints", "auditor.firm", "draftMode"
+	protected final static String[]	PROPERTIES	= {
+		"code", "conclusion", "strongPoints", "weakPoints", "auditor.firm"
 	};
 
 	// Internal state ---------------------------------------------------------
@@ -81,27 +84,34 @@ public class AuditPublishService extends AbstractService<Auditor, Audit> {
 	@Override
 	public void bind(final Audit object) {
 		assert object != null;
+		int courseId;
+		Course course;
 
-		super.bind(object, AuditPublishService.PROPERTIES);
+		courseId = super.getRequest().getData("course", int.class);
+		course = this.repository.findOneCourseById(courseId);
+
+		super.bind(object, AuditCreateService.PROPERTIES);
+		object.setCourse(course);
 	}
 
 	@Override
 	public void validate(final Audit object) {
 		assert object != null;
-		assert object.getCourse().getCode() != null;
+		assert object.getCourse() != null;
+
+		int sizeAudits;
 
 		final Course course = this.repository.findOneCurseByCode(object.getCourse().getCode());
 		object.setCourse(course);
+		sizeAudits = this.repository.findSizeOfAudit(object.getId());
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			boolean existCourse;
-			final boolean isUnique;
 
 			existCourse = course == null;
-			super.state(!existCourse, "course.code", "audit.error.not-exist-curse");
+			super.state(!existCourse, "course", "audit.error.not-exist-curse");
 
-			isUnique = this.repository.isUniqueCodeAudit(object.getCode());
-			super.state(isUnique, "code", "audit.error.exist-code");
 			super.state(this.spamService.validateTextInput(object.getCode()), "code", "audit.error.spam");
+			super.state(sizeAudits != 0, "code", "audit.error.publish");
 
 		}
 		if (!super.getBuffer().getErrors().hasErrors("conclusion"))
@@ -125,15 +135,22 @@ public class AuditPublishService extends AbstractService<Auditor, Audit> {
 		assert object != null;
 		Principal principal;
 		int userAccountId;
+		final Collection<Course> courses;
+		final SelectChoices choices;
 
+		courses = this.repository.findAllCourses();
+		choices = SelectChoices.from(courses, "code", object.getCourse());
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
 
 		Tuple tuple;
 		final int idAuditor = object.getAuditor().getUserAccount().getId();
 		tuple = BinderHelper.unbind(object, AuditPublishService.PROPERTIES);
+		tuple.put("course", choices.getSelected().getKey());
+		tuple.put("courses", choices);
 		tuple.put("myAudit", userAccountId == idAuditor);
 		tuple.put("draftMode", object.isDraftMode());
+		tuple.put("isAuditor", super.getRequest().getPrincipal().hasRole(Auditor.class));
 		super.getResponse().setData(tuple);
 	}
 

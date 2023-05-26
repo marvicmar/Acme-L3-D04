@@ -21,7 +21,6 @@
 	<acme:list-column code="authenticated.course.title" path="title" width="20%"/>
 	<acme:list-column code="authenticated.course.courseAbstract" path="courseAbstract" width="20%"/>	
 	<acme:list-column code="authenticated.course.retailPrice" path="retailPrice" width="20%"/>
-	<acme:list-column code="authenticated.course.furtherInformation" path="furtherInformation" width="20%"/>	
 	<acme:list-column code="authenticated.course.type" path="type" width="20%"/>	
 
 </acme:list>

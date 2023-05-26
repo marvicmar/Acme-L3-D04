@@ -1,5 +1,5 @@
 
-package acme.entities.audit_record;
+package acme.entities.auditRecord;
 
 import java.time.Duration;
 import java.util.Date;
@@ -42,24 +42,22 @@ public class AuditingRecord extends AbstractEntity {
 	@Length(max = 100)
 	protected String			assessment;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	protected Date				startAudit;
+	protected Date				start;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
-	protected Date				endAudit;
-
-	/*
-	 * @NotNull
-	 * protected Mark mark;
-	 */
+	protected Date				end;
 
 	@NotBlank
-	@Pattern(regexp = "^A\\+?|B|C|F-?$")
+	@Pattern(regexp = "^A\\+?|B|C|F-?$", message = "A+ / A / B / C / F / F-")
 	protected String			mark;
 
 	@URL
+	@Length(max = 255)
 	protected String			link;
 
 	protected boolean			special				= false; //false by default
@@ -68,20 +66,21 @@ public class AuditingRecord extends AbstractEntity {
 	@Override
 	public String toString() {
 		//I adjust the getMark to get A+ or F- in case AP or FL
-		return "AuditingRecord [subject=" + this.subject + ", assessment=" + this.assessment + ", startAudit=" + this.startAudit + ", endAudit=" + this.endAudit + ", mark=" + this.mark.toString() + ", link=" + this.link + "]";
+		return "AuditingRecord [subject=" + this.subject + ", assessment=" + this.assessment + ", startAudit=" + this.start + ", endAudit=" + this.end + ", mark=" + this.mark.toString() + ", link=" + this.link + "]";
 	}
 
 	// Derived attributes -----------------------------------------------------
 
 	@Transient
 	public Duration getDuration() {
-		return MomentHelper.computeDuration(this.startAudit, this.endAudit);
+		return MomentHelper.computeDuration(this.start, this.end);
 	}
 
-
 	// Relationships ----------------------------------------------------------
-	@ManyToOne
+
+
 	@NotNull
 	@Valid
+	@ManyToOne(optional = false)
 	protected Audit audit;
 }

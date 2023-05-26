@@ -18,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.courses.Course;
-import acme.features.auditor.AuditorRepository;
+import acme.features.authenticated.audit.AuthenticatedAuditRepository;
 import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
@@ -32,22 +32,26 @@ public class AuthenticatedCourseListService extends AbstractService<Authenticate
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
+	public final static String[]			PROPERTIES	= {
 		"code", "title", "courseAbstract", "retailPrice", "link", "type"
 	};
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected CurrencyService		currencyService;
-	protected AuditorRepository		repository;
+	protected CurrencyService				currencyService;
+	@Autowired
+	protected AuthenticatedAuditRepository	repository;
 
 	// AbstractService interface ----------------------------------------------ç
 
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+
+		status = super.getRequest().getPrincipal().hasRole(Authenticated.class);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
