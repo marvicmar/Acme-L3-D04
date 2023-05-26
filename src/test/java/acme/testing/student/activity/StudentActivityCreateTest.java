@@ -1,3 +1,4 @@
+
 package acme.testing.student.activity;
 
 import java.util.Collection;
@@ -10,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import acme.entities.enrolment.Enrolment;
 import acme.testing.TestHarness;
 
-public class StudentActivityCreateTest extends TestHarness{
-	
+public class StudentActivityCreateTest extends TestHarness {
+
 	@Autowired
 	protected StudentActivityTestRepository repository;
 
@@ -123,7 +124,7 @@ public class StudentActivityCreateTest extends TestHarness{
 			super.request("/student/activity/create", param);
 			super.checkPanicExists();
 			super.signOut();
-			
+
 			super.signIn("student2", "student2");
 			super.request("/student/enrolment/show", param);
 			super.checkPanicExists();
