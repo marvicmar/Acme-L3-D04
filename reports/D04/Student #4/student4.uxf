@@ -27,8 +27,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>296</y>
+      <x>328</x>
+      <y>328</y>
       <w>344</w>
       <h>128</h>
     </coordinates>
@@ -47,10 +47,10 @@ Practicum
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>368</x>
-      <y>592</y>
+      <x>328</x>
+      <y>624</y>
       <w>344</w>
-      <h>144</h>
+      <h>136</h>
     </coordinates>
     <panel_attributes>bg=green
 &lt;&lt;Entity&gt;&gt;
@@ -62,15 +62,14 @@ SessionPracticum
 + description: String {NotBlank, Lenght(0,100)}
 + start: {TIMESTAMP}
 + end: {TIMESTAMP} 
-+ link: {URL}
-+ additional: booalean</panel_attributes>
++ link: {URL}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>416</y>
+      <x>488</x>
+      <y>448</y>
       <w>80</w>
       <h>192</h>
     </coordinates>
@@ -82,8 +81,8 @@ contains &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>360</x>
-      <y>8</y>
+      <x>320</x>
+      <y>40</y>
       <w>344</w>
       <h>96</h>
     </coordinates>
@@ -100,8 +99,8 @@ Company
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>528</x>
-      <y>96</y>
+      <x>488</x>
+      <y>128</y>
       <w>80</w>
       <h>216</h>
     </coordinates>
@@ -114,8 +113,8 @@ contains &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>776</x>
-      <y>0</y>
+      <x>736</x>
+      <y>32</y>
       <w>344</w>
       <h>160</h>
     </coordinates>
@@ -123,22 +122,17 @@ contains &gt;</panel_attributes>
 &lt;&lt;Form&gt;&gt;
 CompanyDashboard
 --
-+ / totalNumberOfPracticaByMonth: List&lt;Integer&gt;	
-+ / averageSessionLength: Double {Positive}
-+ / deviationSessionLength: Double {Positive}
-+ / minimumSessionLength: Double {Positive}
-+ / maximumSessionLength: Double {Positive}
-+ / averagePracticaLength: Double {Positive}
-+ / deviationPracticaLength: Double {Positive}
-+ / minimumPracticaLength: Double {Positive}
-+ / maximumPracticaLength: Double {Positive}</panel_attributes>
++ / totalNumberOfPracticaByMonthForTheorySession: Map&lt;String, Long&gt;	
++ / totalNumberOfPracticaByMonthForHandsSession: Map&lt;String, Long&gt;
++ / sessionLenght: Statistic
++ / practicaLenght: Statistic</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>336</y>
+      <x>0</x>
+      <y>368</y>
       <w>112</w>
       <h>40</h>
     </coordinates>
@@ -150,8 +144,8 @@ Course</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>336</y>
+      <x>104</x>
+      <y>368</y>
       <w>240</w>
       <h>40</h>
     </coordinates>
@@ -160,5 +154,24 @@ m1=1
 m2=0..*
 contains &gt;</panel_attributes>
     <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>248</y>
+      <w>344</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;Form&gt;&gt;
+Statistic
+--
++ / count: int	
++ / average: double
++ / max: double
++ / min: double
++ / deviation: double</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
