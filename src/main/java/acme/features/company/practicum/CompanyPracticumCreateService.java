@@ -34,7 +34,11 @@ public class CompanyPracticumCreateService extends AbstractService<Company, Prac
 	// AbstractService interface ----------------------------------------------
 	@Override
 	public void check() {
-		super.getResponse().setChecked(true);
+		boolean status;
+
+		status = super.getRequest().hasData("course", int.class);
+
+		super.getResponse().setChecked(status);
 	}
 
 	@Override

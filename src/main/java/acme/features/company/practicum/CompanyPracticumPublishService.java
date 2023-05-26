@@ -41,7 +41,7 @@ public class CompanyPracticumPublishService extends AbstractService<Company, Pra
 	public void check() {
 		boolean status;
 
-		status = super.getRequest().hasData("id", int.class);
+		status = super.getRequest().hasData("id", int.class) && super.getRequest().hasData("course", int.class);
 
 		super.getResponse().setChecked(status);
 	}
