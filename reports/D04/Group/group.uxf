@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>54</x>
+      <y>198</y>
+      <w>297</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Banner
+--
++ instantiation: Date{TIMESTAMP,Past,NotNull}
++ startDate: Date {TIMESTAMP,NotNull}
++ endDate: Date {TIMESTAMP,NotNull}
++ picture: String{URL,NotNull}
++ slogan: String{NotBlank,Length(0,75)}
++ link: String{URL,NotNull}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>405</x>
+      <y>198</y>
+      <w>270</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Note
+--
++ instantiation: Date{TIMESTAMP,NotNull}
++ title: String{NotBlank,Length(0,75)}
++ / author: String
++ message: String{NotBlank,Length(0,100)}
++ emailAddress: String{Email,NotNull}
++ link: String{URL}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>729</x>
+      <y>198</y>
+      <w>297</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Peep
+--
++ instantiation: Date{NotNull,TIMESTAMP,Past}
++ title: String{NotBlank,Length(0,75)}
++ nick: String{NotBlank,Length(0,75)}
++ message: String{NotBlank,Length(0,100)}
++ emailAddress: String{Email}
++ link: String{URL}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>207</x>
+      <y>432</y>
+      <w>306</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Offer
+--
++ instantiation: Date {TIMESTAMP,Past,NotNull}
++ heading: String {NotBlank,Length(0,75)}
++ summary: String {NotBlank,Length(0,100)}
++ startDate: Date {TIMESTAMP,NotNull}
++ endDate: Date {TIMESTAMP,NotNull}
++ price: Double {Min(0),NotNull}
++ link: String {URL}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>432</y>
+      <w>288</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Bulletin
+--
++ instantiation: Date{NotNull,TIMESTAMP,Past}
++ title: String{NotBlank,Length(0,75)}
++ message: String{NotBlank,Length(0,100)}
++ flags: boolean {NotNull}
++ link: String{URL}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>387</x>
+      <y>18</y>
+      <w>324</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>The author must be computed as follows: 
+“〈username〉 - 〈surname, name〉”, where
+“〈user-name〉” denotes the username of 
+the principal who has posted the note and 
+“〈surname, name〉” denotes his or her full name.
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>531</x>
+      <y>108</y>
+      <w>27</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>639</x>
+      <y>657</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>A flag to indicate whether 
+it is critical or not,
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>729</x>
+      <y>585</y>
+      <w>27</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>216</x>
+      <y>657</y>
+      <w>243</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>An availability period (at least 
+one day after the offer is instantiated 
+and must last for at least one week)
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>585</y>
+      <w>27</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>54</x>
+      <y>36</y>
+      <w>279</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>A display period (must start at any 
+moment after the instantiation/update 
+moment and must last for at least one week
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>198</x>
+      <y>108</y>
+      <w>27</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>441</y>
+      <w>468</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;Form&gt;&gt;
+Admin Dashboard
+--
++ numberOfAssistants: Integer
++ numberOfAuditors: Integer
++ numberOfCompanys: Integer
++ numberOfConsumers: Integer
++ numberOfProviders: Integer
++ numberOfLecturers: Integer
++ linkAndEmailPeepsRatio: Double
++ criticalBulletinsRatio: Double
++ averageBudgetByCurrency: Map&lt;String, Double&gt;
++ minimumBudgetByCurrency: Map&lt;String, Double&gt;
++ maximumBudgetByCurrency: Map&lt;String, Double&gt;
++ standardDeviationBudgetByCurrency: Map&lt;String, Double&gt;
++ averageNotesInLast10Weeks: Double
++ minimumNotesInLast10Weeks: Double
++ maximumNotesInLast10Weeks: Double
++ standardDeviationNotesInLast10Weeks: Double
++ / NonCriticalBulletinsRatio: Double</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

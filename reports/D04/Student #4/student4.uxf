@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+// fontsize=14
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+</help_text>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>296</y>
+      <w>344</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Practicum
+--
++ code: String {NotBlank, UNIQUE, Pattern("^[A-Z]{1,3}[0-9]{3}$")}
++ title: String {NotBlank, Lenght(0,75)}
++ abstractPracticum: String {NotBlank, Lenght(0,100)}
++ goals: String {NotBlank, Lenght(0,100)}
++ estimatedTimeInHourds: Double {NotNull, Positive}
++ draftMode: Boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>368</x>
+      <y>592</y>
+      <w>344</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+SessionPracticum
+--
++ code: String {NotBlank, UNIQUE, Pattern("^[A-Z]{1,3}[0-9]{3}$")}
++ title: String {NotBlank, Lenght(0,75)}
++ abstractSession: String {NotBlank, Lenght(0,100)}
++ description: String {NotBlank, Lenght(0,100)}
++ start: {TIMESTAMP}
++ end: {TIMESTAMP} 
++ link: {URL}
++ additional: booalean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>416</y>
+      <w>80</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-x
+m2=0..*
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>8</y>
+      <w>344</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Role&gt;&gt;
+Company
+--
++ name: String {NotBlank, Lenght(75)}
++ vatNumber: String {NotBlank, Lenght(0,25)}
++ summary: String {NotBlank, Lenght(0,100)}
++ link: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>96</y>
+      <w>80</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>776</x>
+      <y>0</y>
+      <w>344</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>bg=yellow
+&lt;&lt;Form&gt;&gt;
+CompanyDashboard
+--
++ / totalNumberOfPracticaByMonth: List&lt;Integer&gt;	
++ / averageSessionLength: Double {Positive}
++ / deviationSessionLength: Double {Positive}
++ / minimumSessionLength: Double {Positive}
++ / maximumSessionLength: Double {Positive}
++ / averagePracticaLength: Double {Positive}
++ / deviationPracticaLength: Double {Positive}
++ / minimumPracticaLength: Double {Positive}
++ / maximumPracticaLength: Double {Positive}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>336</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>bg=green
+&lt;&lt;Entity&gt;&gt;
+Course</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>336</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+</diagram>
