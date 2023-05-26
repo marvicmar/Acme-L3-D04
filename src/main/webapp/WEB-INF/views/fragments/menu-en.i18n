@@ -26,7 +26,7 @@ master.menu.sign-out = Sign out
 
 # master.menu.any #################################################################
 master.menu.any = Any
-master.menu.any.peeps = Peeps List
+master.menu.any.peeps = List all peeps
 
 # master.menu.anonymous #######################################################
 master.menu.anonymous = Anonymous
@@ -101,7 +101,7 @@ master.menu.auditor.list-by-course = List all audits by course
 master.menu.company = Company
 master.menu.company.favourite-link = Favourite link
 master.menu.company.all-practicums = List all practicums
-master.menu.company.my-practicums = LIst my practicums
+master.menu.company.my-practicums = List my practicums
 master.menu.company.dashboard = Dashboard
 
 

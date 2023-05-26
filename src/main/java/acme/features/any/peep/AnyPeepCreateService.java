@@ -12,7 +12,6 @@
 
 package acme.features.any.peep;
 
-import acme.services.SpamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,23 +21,25 @@ import acme.framework.components.accounts.Authenticated;
 import acme.framework.components.accounts.Principal;
 import acme.framework.components.accounts.UserAccount;
 import acme.framework.components.models.Tuple;
+import acme.framework.helpers.MomentHelper;
 import acme.framework.services.AbstractService;
+import acme.services.SpamService;
 
 @Service
 public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 
 	//Constants
 
-	protected static final String[] PROPERTIES = {
-			"moment", "title", "nick", "message", "email", "link", "draftMode"
+	protected static final String[]	PROPERTIES	= {
+		"moment", "title", "nick", "message", "email", "link", "draftMode"
 	};
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AnyPeepRepository repository;
+	protected AnyPeepRepository		repository;
 	@Autowired
-	protected SpamService spamDetector;
+	protected SpamService			spamDetector;
 
 	// AbstractService<Authenticated, Consumer> ---------------------------
 
@@ -80,7 +81,10 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 	@Override
 	public void bind(final Peep object) {
 		assert object != null;
+
 		super.bind(object, AnyPeepCreateService.PROPERTIES);
+
+		object.setMoment(MomentHelper.getCurrentMoment());
 	}
 
 	@Override
@@ -106,7 +110,6 @@ public class AnyPeepCreateService extends AbstractService<Any, Peep> {
 		assert object != null;
 
 		this.repository.save(object);
-
 	}
 
 	@Override
