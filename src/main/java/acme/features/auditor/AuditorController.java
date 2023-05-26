@@ -32,8 +32,8 @@ public class AuditorController extends AbstractController<Authenticated, Auditor
 	@Autowired
 	protected AuditorUpdateService	updateService;
 
-	@Autowired
-	protected AuditListService		auditListService;
+	//	@Autowired
+	//	protected AuditListService		auditListService;
 
 	// Constructors -----------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class AuditorController extends AbstractController<Authenticated, Auditor
 		super.addBasicCommand("create", this.createService);
 		super.addBasicCommand("update", this.updateService);
 
-		super.addCustomCommand("list-audit", "list", this.auditListService);
+		//		super.addCustomCommand("list-audit", "list", this.auditListService);
 	}
 
 }

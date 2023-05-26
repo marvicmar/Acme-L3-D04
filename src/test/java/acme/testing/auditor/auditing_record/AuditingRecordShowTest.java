@@ -42,6 +42,8 @@ public class AuditingRecordShowTest extends TestHarness {
 		super.clickOnButton("Records");
 
 		super.checkListingExists();
+
+		super.sortListing(1, "asc");
 		super.checkColumnHasValue(auditingRecordIndex, 0, subject);
 		super.checkColumnHasValue(auditingRecordIndex, 1, assessment);
 		super.checkColumnHasValue(auditingRecordIndex, 2, start);
@@ -85,6 +87,13 @@ public class AuditingRecordShowTest extends TestHarness {
 			super.signOut();
 
 			super.signIn("company1", "company1");
+			super.request("/auditor/auditing-record/show", param);
+			super.checkPanicExists();
+			super.request("/authenticated/auditing-record/show", param);
+			super.checkPanicExists();
+			super.signOut();
+
+			super.signIn("auditor2", "auditor2");
 			super.request("/auditor/auditing-record/show", param);
 			super.checkPanicExists();
 			super.request("/authenticated/auditing-record/show", param);
