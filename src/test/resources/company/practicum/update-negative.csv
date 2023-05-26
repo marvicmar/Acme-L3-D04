@@ -1,0 +1,19 @@
+course,code,title,abstractPracticum,goals,estimatedTimeInHours
+---,AAA111,Title,Abstract,Goals,10
+A001,,Title,Abstract,Goals,10
+A001,111,,Abstract,Goals,10
+A001,AAA,Title,Abstract,Goals,10
+A001,Code,Title,Abstract,Abstract,10
+A001,SEX111,Title,Abstract,Goals,10
+A001,ZZZ000,Title,Abstract,Goals,10
+A001,AAA111,,Abstract,Goals,10
+A001,AAA111,Title with 76 characters 000000000000000000000000000000000000000000000000005,Abstract,Goals,10
+A001,AAA111,Title sex,Abstract,Goals,10
+A001,AAA111,Title,,Goals,10
+A001,AAA111,Title,Abstract practicum with 101 characters 00000000000000000000000000000000000000000000000000000000000005,Goals,10
+A001,AAA111,Title,Abstract sex,Goals,10
+A001,AAA111,Title,Abstract,,0
+A001,AAA111,Title,Abstract,Goal with 101 characters 0000000000000000000000000000000000000000000000000000000000000000000000000005,0
+A001,AAA111,Title,Abstract,Goals sex,10
+A001,AAA111,Title,Abstract,Goals,0
+A001,AAA111,Title,Abstract,Goals,-10

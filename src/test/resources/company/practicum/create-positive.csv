@@ -1,0 +1,41 @@
+practicumRecordIndex,course,code,title,abstractPracticum,goals,estimatedTimeInHours
+0,A001,AAA111,ZAATitle,Abstract,Goals,10.00
+0,A001,AA111,ZABTitle,Abstract,Goals,10.00
+0,A001,A111,ZACTitle,Abstract,Goals,10.00
+0,A001,AAA112,ZADTitle with 75 characters 00000000000000000000000000000000000000000000005,Abstract,Goals,10.00
+0,A001,AAA114,ZAETitle with 75 characters sex 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5,Abstract,Goals,10.00
+0,A001,AAA115,ZAFTitle with point.,Abstract,Goals,10.00
+0,A001,AAA116,"ZAGTitle with comma,",Abstract,Goals,10.00
+0,A001,AAA117,ZAHTitle with strange letters: áéíóúüñ,Abstract,Goals,10.00
+0,A001,AAA118,ZAITitle with strange characters: !@#$%^&*(),Abstract,Goals,10.00
+0,A001,AAA119,ZAJTitle with strange characters: !@#$%^&*()_+=-{}[]|:;<>?,Abstract,Goals,10.00
+0,A001,AAA120,ZAKTitle in other language: 日本語,Abstract,Goals,10.00
+0,A001,AAA121,ZAL<script>alert('The title alert');</script>,Abstract,Goals,10.00
+0,A001,AAA122,ZAM<h1>The title in HTML</h1>,Abstract,Goals,10.00
+0,A001,AAA123,ZANDROP TABLE practicum;,Abstract,Goals,10.00
+0,A001,AAA124,ZAOTitle,Abstract practicum with 100 characters 0000000000000000000000000000000000000000000000000000000000005,Goals,10.00
+0,A001,AAA125,ZARTitle,A,Goals,10.00
+0,A001,AAA126,ZASTitle,Abstract practicum with 100 characters sex 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5,Goals,10.00
+0,A001,AAA127,ZATTitle,Abstract practicum with point.,Goals,10.00
+0,A001,AAA128,ZAUTitle,"Abstract practicum with comma,",Goals,10.00
+0,A001,AAA129,ZAVTitle,Abstract practicum with strange letters: áéíóúüñ,Goals,10.00
+0,A001,AAA130,ZAWTitle,Abstract practicum with strange characters: !@#$%^&*(),Goals,10.00
+0,A001,AAA131,ZAXTitle,Abstract practicum with strange characters: !@#$%^&*()_+=-{}[]|:;<>?,Goals,10.00
+0,A001,AAA132,ZAYTitle,Abstract practicum in other language: 日本語,Goals,10.00
+0,A001,AAA133,ZAZTitle,<script>alert('The abstract alert');</script>,Goals,10.00
+0,A001,AAA134,ZBATitle,<h1>The abstract in HTML</h1>,Goals,10.00
+0,A001,AAA135,ZBBTitle,DROP TABLE practicum;,Goals,10.00
+0,A001,AAA136,ZBCTitle,Abstract,Goal with 100 characters 000000000000000000000000000000000000000000000000000000000000000000000000005,10.00
+0,A001,AAA137,ZBDTitle,Abstract,G,10.00
+0,A001,AAA138,ZBETitle,Abstract,Goal with 100 characters sex 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5,10.00
+0,A001,AAA139,ZBFTitle,Abstract,Goal with point.,10.00
+0,A001,AAA140,ZBGTitle,Abstract,"Goal with comma,",10.00
+0,A001,AAA141,ZBHTitle,Abstract,Goal with strange letters: áéíóúüñ,10.00
+0,A001,AAA142,ZBITitle,Abstract,Goal with strange characters: !@#$%^&*(),10.00
+0,A001,AAA143,ZBJTitle,Abstract,Goal with strange characters: !@#$%^&*()_+=-{}[]|:;<>?,10.00
+0,A001,AAA144,ZBKTitle,Abstract,Goal in other language: 日本語,10.00
+0,A001,AAA145,ZBLTitle,Abstract,<script>alert('The goal alert');</script>,10.00
+0,A001,AAA146,ZBMTitle,Abstract,<h1>The goal in HTML</h1>,10.00
+0,A001,AAA147,ZBNTitle,Abstract,DROP TABLE practicum;,10.00
+0,A001,AAA148,ZBOTitle,Abstract,Goals,1.00
+0,A001,AAA149,ZBPTitle,Abstract,Goals,"214,748,364.00"
