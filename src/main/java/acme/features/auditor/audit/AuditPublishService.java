@@ -34,7 +34,7 @@ public class AuditPublishService extends AbstractService<Auditor, Audit> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
+	protected final static String[]	PROPERTIES	= {
 		"code", "conclusion", "strongPoints", "weakPoints", "auditor.firm"
 	};
 

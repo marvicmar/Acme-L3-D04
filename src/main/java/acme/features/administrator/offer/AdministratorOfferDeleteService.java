@@ -1,7 +1,6 @@
 
 package acme.features.administrator.offer;
 
-import acme.entities.banner.Banner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +22,7 @@ public class AdministratorOfferDeleteService extends AbstractService<Administrat
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	protected AdministratorOfferRepository repository;
+	protected AdministratorOfferRepository	repository;
 
 	// AbstractService interface ----------------------------------------------
 

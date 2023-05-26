@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
-import acme.entities.audit_record.AuditingRecord;
+import acme.entities.auditRecord.AuditingRecord;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.MomentHelper;
@@ -33,7 +33,7 @@ public class AuditorAuditingRecordCreateService extends AbstractService<Auditor,
 
 	//Constants
 
-	public final static String[]				PROPERTIES	= {
+	protected final static String[]				PROPERTIES	= {
 		"subject", "assessment", "start", "mark", "end", "link", "special"
 	};
 

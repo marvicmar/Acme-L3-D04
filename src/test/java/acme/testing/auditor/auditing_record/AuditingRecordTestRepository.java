@@ -6,7 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 
 import acme.entities.audit.Audit;
-import acme.entities.audit_record.AuditingRecord;
+import acme.entities.auditRecord.AuditingRecord;
 import acme.framework.repositories.AbstractRepository;
 
 public interface AuditingRecordTestRepository extends AbstractRepository {

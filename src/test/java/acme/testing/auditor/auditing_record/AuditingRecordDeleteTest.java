@@ -6,7 +6,7 @@ import java.util.Collection;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import acme.entities.audit_record.AuditingRecord;
+import acme.entities.auditRecord.AuditingRecord;
 import acme.testing.TestHarness;
 
 public class AuditingRecordDeleteTest extends TestHarness {

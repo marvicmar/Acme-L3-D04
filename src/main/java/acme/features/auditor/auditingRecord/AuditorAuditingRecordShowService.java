@@ -16,8 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.audit.Audit;
-import acme.entities.audit_record.AuditingRecord;
-import acme.framework.components.jsp.SelectChoices;
+import acme.entities.auditRecord.AuditingRecord;
 import acme.framework.components.models.Tuple;
 import acme.framework.controllers.HttpMethod;
 import acme.framework.helpers.BinderHelper;
@@ -30,7 +29,7 @@ public class AuditorAuditingRecordShowService extends AbstractService<Auditor, A
 
 	//Constants
 
-	public final static String[]				PROPERTIES	= {
+	protected final static String[]				PROPERTIES	= {
 		"id", "subject", "assessment", "start", "end", "mark", "link", "special"
 	};
 	// Internal state ---------------------------------------------------------
@@ -99,7 +98,6 @@ public class AuditorAuditingRecordShowService extends AbstractService<Auditor, A
 		final int userAccountId;
 		Tuple tuple;
 		int userAuditorId;
-		final SelectChoices choice;
 		Boolean draftMode;
 
 		userAccountId = super.getRequest().getPrincipal().getAccountId();
@@ -107,11 +105,9 @@ public class AuditorAuditingRecordShowService extends AbstractService<Auditor, A
 		userAuditorId = auditor.getUserAccount().getId();
 		draftMode = object.getAudit().isDraftMode();
 
-		//choice = SelectChoices.from(Mark.class, object.getMark());
 		tuple = BinderHelper.unbind(object, AuditorAuditingRecordShowService.PROPERTIES);
 		tuple.put("mark", object.getMark().toString());
 		tuple.put("myAudit", userAccountId == userAuditorId);
-		//tuple.put("choice", choice);
 		tuple.put("auditDraftMode", draftMode);
 		tuple.put("audit", draftMode);
 

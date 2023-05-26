@@ -33,7 +33,7 @@ public class AuditCreateService extends AbstractService<Auditor, Audit> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
+	protected final static String[]	PROPERTIES	= {
 		"code", "conclusion", "strongPoints", "weakPoints", "auditor.firm"
 	};
 
@@ -65,7 +65,6 @@ public class AuditCreateService extends AbstractService<Auditor, Audit> {
 		Principal principal;
 		int userAccountId;
 		Auditor auditor;
-		final Course course;
 
 		principal = super.getRequest().getPrincipal();
 		userAccountId = principal.getAccountId();
