@@ -1,0 +1,38 @@
+title,nick,message,email,url,username,password
+Title,ZAANick,Message,example@gmail.com,https://www.google.com,student1,student1
+Title with 75 characters 00000000000000000000000000000000000000000000005,ZABNick,Message,example@gmail.com,https://www.google.com,auditor1,auditor1
+T,ZACNick,Message,example@gmail.com,https://www.google.com,company1,company1
+Title with 75 characters sex 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5,ZADNick,Message,example@gmail.com,https://www.google.com,company1,company1
+Title with point.,ZAENick,Message,example@gmail.com,https://www.google.com,assistant1,assistant1
+"Title with comma,",ZAFNick,Message,example@gmail.com,https://www.google.com,administrator1,administrator1
+Title with strange letters: áéíóúüñ,ZAGNick,Message,example@gmail.com,https://www.google.com,lecturer1,lecturer1
+ZAITitle with strange characters: !@#$%^&*(),ZAHNick,Message,example@gmail.com,https://www.google.com,company1,company1
+Title with strange characters: !@#$%^&*()_+=-{}[]|:;<>?,ZAITitle,Message,example@gmail.com,https://www.google.com,company1,company1
+Title in other language: 日本語,ZAJTitle,Message,example@gmail.com,https://www.google.com,company1,company1
+<script>alert('The title alert');</script>,ZAKNick,Message,example@gmail.com,https://www.google.com,student1,student1
+<h1>The title in HTML</h1>,ZALNick,Message,example@gmail.com,https://www.google.com,student1,student1
+DROP TABLE practicum;,ZAMNick,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZANNick with 75 characters 000000000000000000000000000000000000000000005,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZAONick with 75 characters sex 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZAPNick with point.,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,"ZAQNick with comma,",Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZARNick with strange letters: áéíóúüñ,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZASNick with strange characters: !@#$%^&*(),Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZATNick in other language: 日本語,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZAU<script>alert('The Nick alert');</script>,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZAV<h1>The Nick in HTML</h1>,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZAWDROP TABLE practicum;,Message,example@gmail.com,https://www.google.com,student1,student1
+Title,ZAXNick,Message with 100 characters 000000000000000000000000000000000000000000000000000000000000000000000005,example@gmail.com,https://www.google.com,student1,student1
+Tilte,ZAYNick,Message with 100 characters sex 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5,example@gmail.com,https://www.google.com,student1,student1
+Title,ZAZNick,Message with point.,example@gmail.com,https://www.google.com,student1,student1
+Title,ZBABNick,"Message with comma,",example@gmail.com,https://www.google.com,student1,student1
+Title,ZBBNick,Message with strange letters: áéíóúüñ,example@gmail.com,https://www.google.com,student1,student1
+Title,ZBCNick,Message with strange characters: !@#$%^&*(),example@gmail.com,https://www.google.com,student1,student1
+Title,ZBDNick,Message with strange characters: !@#$%^&*()_+=-{}[]|:;<>?,example@gmail.com,https://www.google.com,student1,student1
+Title,ZBENick,Message in other language: 日本語,example@gmail.com,https://www.google.com,student1,student1
+Title,ZBFNick,<script>alert('The Message alert');</script>,example@gmail.com,https://www.google.com,student1,student1
+Title,ZBGNick,<h1>The Message in HTML</h1>,example@gmail.com,https://www.google.com,student1,student1
+Title,ZBHNick,DROP TABLE practicum;,example@gmail.com,https://www.google.com,student1,student1
+Title,ZBINick,Message,,https://www.google.com,student1,student1
+Title,ZBKNick,Message,example@gmail.com,,student1,student1
+Title,ZBLNick,Message,example@gmail.com,https://www.255caracteresdelink.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com,student1,student1
