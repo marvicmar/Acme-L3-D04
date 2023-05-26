@@ -30,7 +30,7 @@ public class AuditorUpdateService extends AbstractService<Authenticated, Auditor
 
 	//Constants
 
-	protected final static String[]	PROPERTIES	= {
+	protected static final String[]	PROPERTIES	= {
 		"firm", "proffesionalId", "certifications", "link"
 	};
 
