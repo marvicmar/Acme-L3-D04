@@ -1,6 +1,11 @@
 
 package acme.features.company.practicum;
 
+import java.util.Collection;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import acme.entities.courses.Course;
 import acme.entities.practicum.Practicum;
 import acme.framework.components.accounts.Principal;
@@ -11,10 +16,6 @@ import acme.framework.helpers.PrincipalHelper;
 import acme.framework.services.AbstractService;
 import acme.roles.Company;
 import acme.services.SpamService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.Collection;
 
 @Service
 public class CompanyPracticumUpdateService extends AbstractService<Company, Practicum> {
@@ -28,7 +29,7 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	@Autowired
 	protected CompanyPracticumRepository	repository;
 	@Autowired
-	protected SpamService spamDetector;
+	protected SpamService					spamDetector;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -37,8 +38,7 @@ public class CompanyPracticumUpdateService extends AbstractService<Company, Prac
 	public void check() {
 		boolean status;
 
-		status = super.getRequest().hasData("id", int.class) && super.getRequest().hasData("course", int.class);
-
+		status = super.getRequest().hasData("id", int.class);
 		super.getResponse().setChecked(status);
 	}
 
