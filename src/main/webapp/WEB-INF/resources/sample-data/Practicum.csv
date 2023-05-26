@@ -1,7 +1,7 @@
 key,code,title,abstractPracticum,goals,estimatedTimeInHours,key:company,key:course,draftMode
 practicum-01,MMM234,Title 1,Abstract practicum 1,Goal 1,10,company-01,course-01,false
 practicum-02,ABC012,Title 2,Abstract practicum 2,Goal 2,20,company-02,course-02,false
-practicum-03,XDC987,Title 3,Abstract practicum 3,Goal 3,30,company-01,course-03,false
+practicum-03,XDC987,Title 3,Abstract practicum 3,Goal 3,30,company-01,course-03,true
 practicum-04,BCA123,Title 4,Abstract practicum 4,Goal 4,40,company-02,course-04,false
 practicum-05,A123,Title with 75 characters 00000000000000000000000000000000000000000000000005,Abstract practicum with 100 characters 0000000000000000000000000000000000000000000000000000000000005,Goal with 100 characters 000000000000000000000000000000000000000000000000000000000000000000000000005,40,company-01,course-05,false
 practicum-06,BB456,Title with point.,Abstract practicum with point.,Goal with point.,50,company-02,course-06,false

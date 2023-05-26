@@ -2,6 +2,6 @@ practicumRecordIndex,code,estimatedTimeInHours,title,published
 0,A123,40.00,Title with 75 characters 00000000000000000000000000000000000000000000000005,Yes
 1,CC789,60.00,"Title with comma,",Yes
 2,EE345,80.00,Title with strange characters: !@#$%^&*(),Yes
-3,MMM234,10.00,Title 1,Yes
-4,XDC987,30.00,Title 3,Yes
-4,ZZZ000,184.00,Upper 1.1,No
+3,EEE000,184.00,YAdditional,Yes
+4,EEE100,184.00,YNoAdditional,Yes
+5,EEE200,184.00,Y2Additional,Yes
