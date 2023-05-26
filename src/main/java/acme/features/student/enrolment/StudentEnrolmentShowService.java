@@ -18,7 +18,7 @@ import acme.roles.Student;
 public class StudentEnrolmentShowService extends AbstractService<Student, Enrolment> {
 
 	// Constants -------------------------------------------------------------
-	public static final String[]			PROPERTIES	= {
+	protected static final String[]			PROPERTIES	= {
 		"code", "motivation", "goals", "draftMode"
 	};
 

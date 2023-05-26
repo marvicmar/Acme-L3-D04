@@ -33,7 +33,7 @@ public class AuthenticatedAuditListCourseService extends AbstractService<Authent
 
 	//Constants
 
-	public final static String[]			PROPERTIES	= {
+	protected final static String[]			PROPERTIES	= {
 		"id", "course.code", "code", "conclusion", "strongPoints", "weakPoints", "draftMode"
 	};
 

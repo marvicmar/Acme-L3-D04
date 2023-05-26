@@ -31,7 +31,7 @@ public class AuditShowService extends AbstractService<Auditor, Audit> {
 
 	//Constants
 
-	public final static String[]	PROPERTIES	= {
+	protected final static String[]	PROPERTIES	= {
 		"id", "course.code", "code", "conclusion", "strongPoints", "weakPoints", "auditor.firm", "draftMode"
 	};
 	// Internal state ---------------------------------------------------------

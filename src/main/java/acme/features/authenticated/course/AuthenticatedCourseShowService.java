@@ -30,7 +30,7 @@ public class AuthenticatedCourseShowService extends AbstractService<Authenticate
 
 	//Constants
 
-	public final static String[]			PROPERTIES	= {
+	protected final static String[]			PROPERTIES	= {
 		"id", "code", "title", "courseAbstract", "retailPrice", "link", "type"
 	};
 
