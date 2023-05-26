@@ -1,5 +1,25 @@
-tutorialRecordIndex, code,title,estimatedTime,summary
-0, TUT995,title5, 7.30,<script>alert('The title alert');</script>
-1, TUT996, title4, 5.30,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv
-2, TUT997,title3,40.30,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv
-4, TUT999, title with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB, 10.20,summary1
+tutorialRecordIndex, code,title,summary,estimatedTime
+0,TUT999,title with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB,summary1,10.20
+1,TUT998,title2,summary2,10.30
+2,TUT997,title3,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,40.30
+3,TUT996,title4,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,5.30
+4,TUT995,title5,<script>alert('The title alert');</script>,7.30
+5,TUT994,title with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB,summary1,10.20
+6,TUT993,title2,summary2,10.30
+7,TUT992,title3,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,40.30
+8,TUT991,title4,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,5.30
+9,TUT990,title5,<script>alert('The title alert');</script>,7.30
+10,TUT988,title2,summary2,10.30
+11,TUT987,title3,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,40.30
+12,TUT986,title4,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,5.30
+13,TUT985,title5,<script>alert('The title alert');</script>,7.30
+14,TUT984,title with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB,summary1,10.20
+15,TUT983,title2,summary2,10.30
+16,TUT982,title3,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,40.30
+17,TUT981,title4,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,5.30
+18,TUT980,title5,<script>alert('The title alert');</script>,7.30
+19,TUT979,title with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB,summary1,10.20
+20,TUT978,title2,summary2,10.30
+21,TUT977,title3,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,40.30
+22,TUT976,title4,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv,5.30
+23,TUT975,title5,<script>alert('The title alert');</script>,7.30

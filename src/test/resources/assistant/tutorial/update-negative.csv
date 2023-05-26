@@ -1,18 +1,15 @@
-tutorialRecordIndex, code, course, title, summary, goals, estimatedTime
-0,Code,MHI863,Title,Abstract,Abstract,10
-1,AAA111,MHI863,Title,,Goals,10
-2,AAA,MHI863,Title,Abstract,Goals,10
-3,AAA111,MHI863,Title,Abstract,,0
-4,Title,MHI863,Abstract, ,Goals,10
-5,AAA149,MHI863,Title sex,Abstract,Goals,10
-6,AAA111,MHI863,Title,Abstract,Goals,0
-7,AAA111,MHI863,Title,Abstract,Goals,-10
-8,AAA111,MHI863,Title,Abstract practicum with 101 characters 00000000000000000000000000000000000000000000000000000000000005,Goals,10
-9,SEX111,MHI863,Title,Abstract,Goals,10
-10,AAA111,MHI863,Title with 76 characters 000000000000000000000000000000000000000000000000005,Abstract,Goals,10
-11,AAA111,MHI863,Title,Abstract sex,Goals,10
-12,AAA111,MHI863,Abstract,--,Goals,-10
-13,111,MHI863,Abstract,´´,Goals,10
-14,AAA111,MHI863,Title,Abstract,Goal with 101 characters 0000000000000000000000000000000000000000000000000000000000000000000000000005,0
-15,AAA111,MHI863,Title,Abstract,Goals sex,10
-16,AAA111,MHI863,Title sex,Abstract,Goals,10
+tutorialRecordIndex,code,course,title,summary,goals,estimatedTime
+1,sdsadasd,A031,Title,Abstract,DROP TABLE tutorial;,10.00
+2,AAA114,A007,Title with 75 characters sex 00 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 500000,Abstract,Goals,10.00
+3,AAA143,A014,Title,Abstract,asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasasdddGoal in other language: 日本語,-10.00
+4,AAA138,A015,Title,Abstract,Goal with point.,-10.00
+5,AAA121,A003,<h1>The title in HTML</h1>,Abstract,Goals,-10.00
+6,AAA118,A027,Title with strange characters: !@#$%^&*()_+=-{}[]|:;<>?,Abstract,Goals,-10.00
+7,AAA127,ZA010,,"Abstract tutorial with comma,",Goals,10.00
+8,AAA113,A029,Title with point.,Abstract,Goals,
+9,AAA120,A024,<script>alert('The title alert');</script>,Abstract,Goals,-10.00
+10,AAA116,A026,Title with strange letters: áéíóúüñ,Abstract,Goals,-10.00
+11,AAA117,A005,Title with strange characters: !@#$%^&*(),Abstract,Goals,-10.00
+12,AAA141,A013,Title,Abstract,Goal with strange characters: !@#$%^&*(),-10.00
+13,AAA135,D999,Title,Abstract,Goal with 100 characters 000000000000000000000000000000000000000000000000000000000000000000000000005,-10.00
+14,AAA139,BB111,Title,Abstract,"Goal with comma,",-10.00

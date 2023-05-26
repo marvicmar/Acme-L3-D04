@@ -48,7 +48,7 @@ class AssistantSessionCreateTest extends TestHarness {
 
 	@ParameterizedTest
 
-	@CsvFileSource(resources = "/company/session-practicum/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/assistant/session/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	void test200Negative(final int practicumRecordIndex, final int sessionPracticumRecordIndex, final String title, final String summary, final String type, final String start, final String end, final String link) {
 		// HINT: this test attempts to create session practicums using wrong data.
 
@@ -59,7 +59,7 @@ class AssistantSessionCreateTest extends TestHarness {
 		super.sortListing(2, "desc");
 
 		super.clickOnListingRecord(0);
-		super.clickOnButton("Session create");
+		super.clickOnButton("Session Create");
 
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("summary", summary);
@@ -68,6 +68,7 @@ class AssistantSessionCreateTest extends TestHarness {
 		super.fillInputBoxIn("end", end);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create Session");
+		super.checkErrorsExist();
 
 		super.signOut();
 	}

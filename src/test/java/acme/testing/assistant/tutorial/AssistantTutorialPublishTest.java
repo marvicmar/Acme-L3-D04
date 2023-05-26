@@ -30,7 +30,7 @@ class AssistantTutorialPublishTest extends TestHarness {
 		super.clickOnMenu("Assistant", "List my tutorials");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		super.checkColumnHasValue(tutorialRecordIndex, 4, "no");
+		super.checkColumnHasValue(tutorialRecordIndex, 4, "No");
 
 		super.clickOnListingRecord(tutorialRecordIndex);
 		super.checkFormExists();
@@ -65,7 +65,7 @@ class AssistantTutorialPublishTest extends TestHarness {
 		Collection<Tutorial> tutorials;
 		String params;
 
-		tutorials = this.repository.findManyTutorialsByAssistantByUserName("company1");
+		tutorials = this.repository.findManyTutorialsByAssistantByUserName("assistant1");
 		for (final Tutorial tutorial : tutorials)
 			if (tutorial.isDraftMode()) {
 				params = String.format("id=%d", tutorial.getId());

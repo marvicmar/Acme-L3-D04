@@ -1,5 +1,6 @@
-tutorialRecordIndex, code,title,estimatedTime,summary
-0, TUT995,title5, 7.30,<script>alert('The title alert');</script>
-1, TUT996, title4, 5.30,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv
-2, TUT997,title3,40.30,100 characters oasdhjoasjdhioasjdsklvn kdnvuighsuiafhbsdiufbisdbfuisdfsdjkncvsdjkfnksjnfksdnvjkdsnv
-4, TUT999, title with a100 characters AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBB, 10.20,summary1
+tutorialRecordIndex, sessionRecordIndex, Code, title,type, published
+0, 0,TUT993,title2,HANDS_ON_SESSION, No
+1, 1,TUT994,title1,THEORY_SESSION, No
+2, 2,TUT992,Title with strange letters: Ã¡Ã©Ã­Ã³ÃºÃ¼Ã±,HANDS_ON_SESSION, No
+3, 3,TUT991,<script>alert('The title alert');</script>,HANDS_ON_SESSION, No
+4, 4,TUT990,<h1>The abstract session in HTML</h1>,HANDS_ON_SESSION, No
