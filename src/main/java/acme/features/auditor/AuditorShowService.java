@@ -29,6 +29,7 @@ public class AuditorShowService extends AbstractService<Authenticated, Auditor> 
 
 	//Constants
 
+
 	protected static final String[]	PROPERTIES	= {
 		"firm", "proffesionalId", "certifications", "link"
 	};

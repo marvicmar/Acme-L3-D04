@@ -19,7 +19,7 @@ import acme.services.SpamService;
 public class StudentEnrolmentUpdateService extends AbstractService<Student, Enrolment> {
 
 	// Constants -------------------------------------------------------------
-	public static final String[]			PROPERTIES	= {
+	protected static final String[]			PROPERTIES	= {
 		"code", "motivation", "goals"
 	};
 

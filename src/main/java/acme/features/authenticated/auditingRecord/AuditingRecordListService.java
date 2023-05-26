@@ -32,7 +32,7 @@ public class AuditingRecordListService extends AbstractService<Authenticated, Au
 
 	//Constants
 
-	public final static String[]					PROPERTIES	= {
+	protected final static String[]					PROPERTIES	= {
 		"subject", "assessment", "start", "end", "mark", "link", "special"
 	};
 

@@ -23,7 +23,7 @@ import acme.services.SpamService;
 public class AssistantSessionCreateService extends AbstractService<Assistant, Session> {
 
 	// Constants -------------------------------------------------------------
-	public static final String[]			PROPERTIES	= {
+	protected static final String[]			PROPERTIES	= {
 		"title", "summary", "type", "start", "end", "link", "draftMode"
 	};
 
